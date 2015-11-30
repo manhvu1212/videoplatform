@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Rewrite to html cache if it exists and the request is off a static page
+# (no url query params, no session cookies and only get requests)
+# A new cache will be created every hour
+#RewriteCond %{REQUEST_METHOD} GET
+#RewriteCond %{QUERY_STRING} !.*=.*
+#RewriteCond %{HTTP_COOKIE} !^.*(cartalyst_sentry).*$
+#RewriteCond %{DOCUMENT_ROOT}/cache/html/%{TIME_DAY}/%{TIME_HOUR}/%{HTTP_HOST}/$1/index.html -f
+#RewriteRule ^(.*) /cache/html/%{TIME_DAY}/%{TIME_HOUR}/%{HTTP_HOST}/$1/index.html [L]

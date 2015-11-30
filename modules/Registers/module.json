@@ -1,0 +1,15 @@
+{
+    "name": "Registers",
+    "alias": "registers",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Registers\\Providers\\RegistersServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

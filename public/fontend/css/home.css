@@ -1,0 +1,97 @@
+.show-faq{
+    display: none;
+}
+.a_faq:hover{
+    cursor: pointer;
+}
+
+.submit_next {
+    display: inline-block;
+    padding: 5px 30px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 3px;
+    background: #91C46C;
+    text-decoration: none!important;
+    transition: all 1s ease;
+    border:none;
+}
+span.s{
+    color:#32a7ac;
+}
+.p_pro{
+    color:#91C46C;
+    margin-left: 40px;
+    display: none;
+}
+.label-b{
+    font-size: 16px;margin-bottom: 10px;margin-top: 7px;
+}
+.Option,#Amount_Contribution2-error,#Amount_Contribution-error,.div_Transfer_assets {
+    margin-left: 40px;
+}
+.table_Liquidation th,.table_Liquidation td{
+    text-align: center;
+}
+#add_beneficiary:hover,.delete_beneficiary:hover,.register-step1:hover{cursor: pointer;}
+.help-block-error{color:red;}
+
+#signingIframe{
+    width: 100%;
+    height:800px;
+}
+
+.p_error{
+    color:red;
+}
+.Specific_Instructions{
+    margin-left:15px;
+}
+
+
+#div_pop h2{
+    color: #70A743;
+    position: relative;
+    margin-top: 0;
+    font-size: 40px;
+}
+.x_close:hover{
+    cursor: pointer;
+}
+#div_pop span{
+    color:#39A4A9;
+    position: absolute;
+    right:0px;
+}
+#background {
+    position: absolute;
+    background: #000;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+.label_title{
+    font-size: 16px;margin-bottom: 20px;margin-top: 7px;
+}
+.nobold{font-weight: normal !important;}
+.title_bold{font-weight: bold !important;}
+#div_pop {
+    border-radius: 3px;
+    border: 2px solid #117F88;
+}
+.alfooter:hover{color:#38a7ac;}
+.alfooter{color:#fff;}
+.a_home{color:#505050;}
+
+.pa-sc-pri-us {
+       height: 400px;
+    overflow-y: scroll;
+}
+.pa-sc-pri-us h2{
+    font-size:24px;
+}
+
+.h4_title:hover{cursor: pointer;}

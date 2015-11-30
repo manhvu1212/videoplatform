@@ -1,0 +1,103 @@
+/* alert */
+div#popup_container {
+    border: 1px solid #CCCDDF;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    min-width: 340px !important;
+    text-align: center;
+    background: #fff;
+    box-shadow:  1px 1px 1px 1px;
+}
+h1#popup_title {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 1px;
+}
+div#popup_content {
+    margin: 0px;
+    padding: 0px;
+}
+
+.img-dd{
+    width:80px;
+    height: 80px;
+    border:1px solid #dedede;
+}
+
+/***
+Page Loading
+***/
+.page-on-load {
+    background: #fefefe;
+}
+.page-on-load .page-header,
+.page-on-load .page-container,
+.page-on-load .page-footer,
+.page-on-load > .clearfix {
+    display: none;
+    transition: all 2s;
+}
+.page-head {
+    display: none;
+}
+.page-breadcrumb li a {
+    font-weight: bold;
+}
+.ui-widget-header {
+    background: #45B6AF!important;
+}
+.form-control {
+}
+.input-group .input-group-addon {
+    background: #45B6AF;
+    color: #ffffff;
+}
+.ui-dialog-title {
+    color: #ffffff!important;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+    background: url("../../assets/global/img/portlet-remove-icon-white.png");
+    border: none;
+    outline: none;
+    width: 11px!important;
+    height: 16px!important;
+    right: 8px!important;
+}
+.ui-dialog .ui-dialog-titlebar-close:hover {
+    opacity: 0.7;
+}
+.ui-widget-content {
+    background: #ffffff!important;
+}
+html {
+    min-height: 100%;
+    position: relative;
+}
+body {
+    margin-bottom: 30px;
+}
+.page-footer-inner {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+}
+.panel {
+    border: 1px solid #60aee4!important;
+}
+.panel-heading {
+    background-color: #3598dc;
+    font-size: 18px;
+    color: #ffffff;
+    display: inline-block;
+    width: 100%;
+}
+.tab-bg-dark-navy-blue {
+    background-color: transparent!important;
+}
+.bootstrap-switch-primary{width: 32px !important;}
+.pp-ad-mx .radio {
+    padding-top: 0!important;
+}
+.pp-ad-mx input[type=radio] {
+    margin-left: 0!important;
+}

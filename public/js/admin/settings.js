@@ -1,0 +1,51 @@
+/**
+ * Created by mrhoang on 4/13/15.
+ */
+var SETTING = {
+    site_setting:function(){
+        jQuery('#sbmit_site_setting').click(function(){
+            jQuery.ajax({
+                url:getBaseURL()+'/manager/system/setting/site-setting-store',
+                data:jQuery('#form-site-setting').serialize(),
+                type:'POST',
+                success:function(data){
+                    window.location.reload()
+                }
+            })
+        })
+    },
+    smtp_setting:function(){
+        jQuery('#sbmit_smtp_setting').click(function(){
+            jQuery.ajax({
+                url:getBaseURL()+'/manager/system/setting/smtp-setting-store',
+                data:jQuery('#form-smtp-setting').serialize(),
+                type:'POST',
+                success:function(data){
+                    window.location.reload()
+                }
+            })
+        })
+    },
+    file_setting:function(){
+        jQuery('#sbmitfile_setting').click(function(){
+            jQuery.ajax({
+                url:getBaseURL()+'/manager/system/setting/file-setting-store',
+                data:jQuery('#form-file-setting').serialize(),
+                type:'POST',
+                success:function(data){
+                    window.location.reload()
+                }
+            })
+        })
+    },
+    upload_image: function (obj) {
+        POPUPFILE.open(function(data){
+            jQuery('#imageurl'+obj).val(data.url);
+        });
+    },
+}
+jQuery(document).ready(function(){
+    SETTING.site_setting();
+    SETTING.smtp_setting();
+    SETTING.file_setting();
+})

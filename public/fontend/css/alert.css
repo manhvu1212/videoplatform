@@ -1,0 +1,25 @@
+/* alert */
+div#popup_container {
+    border: 1px solid #CCCDDF;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    min-width: 340px !important;
+    text-align: center;
+    background: #fff;
+    box-shadow:  1px 1px 1px 1px;
+}
+h1#popup_title {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 1px;
+}
+div#popup_content {
+    margin: 0px;
+    padding: 0px;
+}
+
+.img-dd{
+    width:80px;
+    height: 80px;
+    border:1px solid #dedede;
+}
