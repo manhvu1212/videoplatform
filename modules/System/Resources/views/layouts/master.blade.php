@@ -39,8 +39,10 @@
         }
     ?>
     <script>
+        <?php if(isset($setting1->content)){ ?>
         var SETTINGS = <?php echo $setting->content?>;
         var UPLOAD = { size:<?php echo $setting1->maximum_size*1024*1024 ;?>, ext:"<?php echo $setting1->extension ?>"}
+        <?php } ?>
     </script>
     @yield('style')
     @yield('scriptheader')
