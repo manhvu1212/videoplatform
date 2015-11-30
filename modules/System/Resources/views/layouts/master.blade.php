@@ -33,7 +33,10 @@
     <?php
     $setting=Utility::setting();
     $setting1=Utility::setting('file_settings');
-    $setting1=json_decode($setting1->content);
+        if(isset($setting1->content)){
+            $setting1=json_decode($setting1->content);
+
+        }
     ?>
     <script>
         var SETTINGS = <?php echo $setting->content?>;
