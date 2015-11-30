@@ -3,7 +3,8 @@
 namespace App\Entities;
 
 
-use Illuminate\Database\Eloquent\Model;
+
+use Jenssegers\Mongodb\Model;
 
 class Settings extends Model
 {
