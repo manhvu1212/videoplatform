@@ -15,7 +15,7 @@ $setting=json_decode($setting->content);
     <a href="javascript:void(0)" id="cb-mob-close" class="cb-link">x</a>
     <nav class="main-nav">
         <ul id="menu-home-1" class="nav navbar-nav menuTopcus">
-            <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-self-directed-ira") ?>">Self-Directed IRA</a>
+            <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-self-directed-ira") ?>">Self-Directed IRA ypn</a>
 
             </li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/page-services") ?>">Services</a>
