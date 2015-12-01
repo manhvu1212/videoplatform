@@ -24,11 +24,9 @@ use Pingpong\Modules\Routing\Controller;
 class FrontendController extends Controller {
 
     public  function  getVideos(){
-        $objVideos = new Videos();
-
-        $videos = $objVideos->get();
-
-        print_r(json_encode("ypn"));die;
+        $objSetting = new Settings();
+        $ypn = $objSetting->get();
+        print_r($ypn);die;
     }
     public function home(){
         $objSetting = new Settings();
