@@ -41,7 +41,6 @@ class FrontendController extends Controller {
             "company"   =>"freelance"
         );
         $content =array($obj1,$obj2,$obj3);
-        print_r($content);die;
         $objVideos->save($content);
     }
     public function home(){
