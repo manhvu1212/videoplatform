@@ -50,7 +50,7 @@ $setting=json_decode($setting->content);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </a> 
+                </a>
             </div>
             <div class="menu-center">
                 <nav id="main-navigation" class="main-nav">
