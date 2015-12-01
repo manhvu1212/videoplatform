@@ -25,7 +25,7 @@ class FrontendController extends Controller {
 
     public function getVideos(){
         $objVideos  = new Videos();
-        $videos = $objVideos->where(array('obj1' => array('id' => 1)))->get();
+        $videos = $objVideos->where()->get();
         echo '<pre>';
         print_r($videos);
         die;
