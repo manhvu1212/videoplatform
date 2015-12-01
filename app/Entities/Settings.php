@@ -11,6 +11,4 @@ class Settings extends Model
     protected $fillable = [];
     protected $connection = 'mongodb';
     protected $collection = 'Settings';
-
-
 }
