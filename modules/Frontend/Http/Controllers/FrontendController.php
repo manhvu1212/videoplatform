@@ -43,7 +43,7 @@ class FrontendController extends Controller {
             "name"      =>"ypn",
             "company"   =>"freelancer"
         );
-        $objVideos->$obj2->name = "ngooc anhh";
+        $objVideos->obj2->name = "ngooc anhh";
         $objVideos->save();
     }
     public function home(){
