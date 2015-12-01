@@ -40,7 +40,7 @@ class FrontendController extends Controller {
             "name"      =>"ypn",
             "company"   =>"freelance"
         );
-        $content =array($obj1,$obj2,obj3);
+        $content =array($obj1,$obj2,$obj3);
         $objVideos->save($content);
     }
     public function home(){
