@@ -44,7 +44,7 @@ class FrontendController extends Controller {
         $obj3=array(
             "id"        => 3,
             "name"      =>"ypn",
-            "company"   =>"freelance"
+            "company"   =>"freelancer"
         );
         $objVideos->obj2 = $obj2;
         $objVideos->save();
