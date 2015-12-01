@@ -26,9 +26,15 @@ class FrontendController extends Controller {
     public  function  getVideos(){
         $objVideos = new Videos();
 
-        $videos = $objVideos->get();
+        $content = array();
 
-        print_r(json_decode($videos->__tostring()));die;
+        $content['id'] = "1";
+        $content['name']= "Phamnhuy";
+        $content['company'] ="vptech";
+
+        print_r($content)
+
+
     }
     public function home(){
         $objSetting = new Settings();
