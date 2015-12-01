@@ -25,7 +25,7 @@ class FrontendController extends Controller {
 
     public function getVideos(){
         $objVideos  = new Videos();
-        $objVideos = $objVideos->where(array('obj2.name' =>  'hna cogn'))->get();
+        $objVideos = $objVideos->where(array('obj2.name' =>  'hna cogn'))->first();
        // $videos = $objVideos->where(array('obj1'=>array("name"=>"Phamnhuy")))->get();
         $obj1= array(
             "id"        =>1,
@@ -44,9 +44,9 @@ class FrontendController extends Controller {
             "company"   =>"freelancer"
         );
 
-        //print_r($objVideos);die;
+        print_r($objVideos);die;
 
-        pr($objVideos);
+
         die;
 
 
