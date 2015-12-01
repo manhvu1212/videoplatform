@@ -32,7 +32,8 @@ class FrontendController extends Controller {
         $content['name']= "Phamnhuy";
         $content['company'] ="vptech";
 
-        print_r($content);
+        $objVideos->content = json_encode($content);
+        $objVideos->save();
 
 
     }
