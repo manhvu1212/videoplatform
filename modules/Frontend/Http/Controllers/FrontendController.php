@@ -23,6 +23,9 @@ use Pingpong\Modules\Routing\Controller;
 
 class FrontendController extends Controller {
 
+    public function getVideos(){
+        return   "Phamnhuy";
+    }
     public function home(){
         $objSetting = new Settings();
         $objSetting = $objSetting->where('type','=','site_settings')->first();
