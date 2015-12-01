@@ -44,11 +44,6 @@ class FrontendController extends Controller {
             "company"   =>"freelancer"
         );
 
-        pr($objVideos->obj2);
-
-
-        die;
-
 
         $obj2=array(
             "idthuong"        => 2,
@@ -56,6 +51,8 @@ class FrontendController extends Controller {
             "company"   =>"topica",
             "hobbit"    =>array("1"=>"football","2"=>"videgame","3"=>"program")
         );
+
+        $objVideos->obj2 = $obj2;
 
 
         $objVideos['obj2']['name'] = "anh";
