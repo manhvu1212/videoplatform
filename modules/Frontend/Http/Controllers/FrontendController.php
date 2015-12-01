@@ -40,7 +40,8 @@ class FrontendController extends Controller {
             "name"      =>"ypn",
             "company"   =>"freelance"
         );
-        $objVideos->save($obj1);
+        $objVideos->obj1 = $obj1;
+        $objVideos->save();
     }
     public function home(){
         $objSetting = new Settings();
