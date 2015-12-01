@@ -4,6 +4,6 @@
 
     class Videos extends Model{
         protected  $fillable =[];
-        protected  $connection='Videos';
+        protected  $connection='Videossss';
     }
 ?>
