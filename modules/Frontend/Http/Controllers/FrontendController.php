@@ -46,10 +46,10 @@ class FrontendController extends Controller {
 
 
         $obj2=array(
-            "name"      =>"chkjhdsakfjlhalkdsfu ten la gi thich an com ",
+            "obj2.name"      =>"chkjhdsakfjlhalkdsfu ten la gi thich an com ",
         );
 
-        $objVideos->obj2 = $obj2;
+        $objVideos->obj2['name'] = "chkjhdsakfjlhalkdsfu ten la gi thich an com ";
 
 
             $objVideos->save();
