@@ -44,6 +44,10 @@ class PostsController extends BaseController {
 		return view('posts::index',array('paging' => $paging, 'listdata' => $list,'start' => $start,'request' => $request,'title'=>$title,'type'=>'posts'));
 	}
 
+	public function ypn(){
+		return "npa";
+	}
+
 	public function page()
 	{
 		$user = $this->getUser();
