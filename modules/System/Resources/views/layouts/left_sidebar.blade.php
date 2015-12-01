@@ -104,8 +104,8 @@ $user = Sentry::getUser();
                             <span class="title">Videos</span>
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="manager/videos">List</a></li>
-                            <li><a href="manager/videos/add">Add</a></li>
+                            <li><a href="/manager/videos">List</a></li>
+                            <li><a href="/manager/videos/add">Add</a></li>
                         </ul>
                     </li>
 
