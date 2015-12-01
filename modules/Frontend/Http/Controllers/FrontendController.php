@@ -44,7 +44,7 @@ class FrontendController extends Controller {
             "company"   =>"freelancer"
         );
 
-        print_r(json_decode($objVideos)->obj2->name);die;
+        print_r(json_decode($objVideos));die;
         $objVideos->obj2->name = "anh";
         $objVideos->save();
     }
