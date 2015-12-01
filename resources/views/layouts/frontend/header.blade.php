@@ -50,7 +50,7 @@ $setting=json_decode($setting->content);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </a>
+                </a> 
             </div>
             <div class="menu-center">
                 <nav id="main-navigation" class="main-nav">
@@ -68,7 +68,7 @@ $setting=json_decode($setting->content);
                             <ul class="sub-menu">
                                 <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-news-and-updates") ?>">News</a></li>
                                 <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-investor-education") ?>">Investor Education</a></li>
-                            </ul>
+5                            </ul>
                         </li>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/Faq") ?>">Working With Us</a></li>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/Contact") ?>">Contact</a></li>
