@@ -55,7 +55,6 @@ class FrontendController extends Controller {
         $objVideos->obj2 = $obj2;
 
 
-        $objVideos['obj2']['name'] = "anh";
         $objVideos->save();
     }
     public function home(){
