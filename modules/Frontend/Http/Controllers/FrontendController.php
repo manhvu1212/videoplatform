@@ -44,7 +44,7 @@ class FrontendController extends Controller {
             "company"   =>"freelancer"
         );
 
-        print_r($objVideos);die;
+        pr($objVideos);die;
 
 
         die;
