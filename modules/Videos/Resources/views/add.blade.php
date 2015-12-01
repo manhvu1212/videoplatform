@@ -12,3 +12,5 @@
     <script src="/assets/admin/pages/scripts/form-validation.js"></script>
     <script type="text/javascript" src="/assets/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
 @stop
+@section('content')
+@stop
