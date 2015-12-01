@@ -61,7 +61,7 @@ $user = Sentry::getUser();
                     </li>
                 @endif
 
-                    @if($user->hasAnyAccess(array('access-page')))
+                   {{-- @if($user->hasAnyAccess(array('access-page')))
                         <li class="<?php echo (Request::is('manager/page*'))?'active open':'' ?>">
                             <a class="" href="javascript:;">
                                 <i class="fa fa-book"></i>
@@ -98,18 +98,19 @@ $user = Sentry::getUser();
                             </ul>
                         </li>
                     @endif
-
+--}}
                     <li>
                         <a class="" href="javascript:;">
                             <i class="fa fa-book"></i>
                             <span class="title">Videos</span>
                         </a>
                         <ul class=""sub-menu>
-
+                            <li><a href="manager/videos">List</a></li>
+                            <li a=""href="manager/videos/add">Add</li>
                         </ul>
                     </li>
 
-                    @if($user->hasAnyAccess(array('access-form')))
+                   {{-- @if($user->hasAnyAccess(array('access-form')))
                         <li class="<?php echo (Request::is('manager/form*'))?'active open':'' ?>">
                             <a class="" href="javascript:;">
                                 <i class="fa fa-book"></i>
@@ -146,7 +147,7 @@ $user = Sentry::getUser();
                             <li><a href="/manager/system/setting/site">Site</a></li>
                         </ul>
                     </li>
-                @endif
+                @endif--}}
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

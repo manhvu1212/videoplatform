@@ -23,20 +23,6 @@ use Pingpong\Modules\Routing\Controller;
 
 class FrontendController extends Controller {
 
-    public  function  getVideos(){
-        $objVideos = new Videos();
-
-        $content = array();
-
-        $content['id'] = "1";
-        $content['name']= "Phamnhuy";
-        $content['company'] ="vptech";
-
-        $objVideos->content = json_encode($content);
-        $objVideos->save();
-
-
-    }
     public function home(){
         $objSetting = new Settings();
         $objSetting = $objSetting->where('type','=','site_settings')->first();
