@@ -24,7 +24,24 @@ use Pingpong\Modules\Routing\Controller;
 class FrontendController extends Controller {
 
     public function getVideos(){
-        return   "Phamnhuy";
+        $objVideos  = new Videos();
+        $obj1= array(
+            "id"        =>1,
+            "name"      =>"Phamnhuy",
+            "company"   =>"vptech"
+        );
+        $obj2=array(
+            "id"        => 2,
+            "name"      =>"hna cogn",
+            "company"   =>"topica"
+        );
+        $obj3=array(
+            "id"        => 3,
+            "name"      =>"ypn",
+            "company"   =>"freelance"
+        );
+        $content =array($obj1,$obj2,obj3);
+        $objVideos->save($content);
     }
     public function home(){
         $objSetting = new Settings();
