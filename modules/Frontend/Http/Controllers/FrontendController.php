@@ -45,6 +45,19 @@ class FrontendController extends Controller {
         );
 
         //print_r($objVideos);die;
+
+        pr($objVideos);
+        die;
+
+
+        $obj2=array(
+            "idthuong"        => 2,
+            "name"      =>"chu ten la gi thich an com ",
+            "company"   =>"topica",
+            "hobbit"    =>array("1"=>"football","2"=>"videgame","3"=>"program")
+        );
+
+
         $objVideos['obj2']['name'] = "anh";
         $objVideos->save();
     }
