@@ -40,9 +40,5 @@ Route::group(['namespace' => 'Modules\Frontend\Http\Controllers'], function()
     Route::get('/success/{slug}', 'FrontendController@success');
     Route::get('/forms', 'FrontendController@template_form');
     Route::get('/form/{alias}', 'FrontendController@detail_form');
-    Route::get('/videos',function(){
-       return "Phamnhuy";
-    });
-
-
+    Route::get('/videos','FrontendController@getVideos');
 });

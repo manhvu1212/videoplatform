@@ -1,6 +1,7 @@
 <?php namespace Modules\Frontend\Http\Controllers;
 
 use App\Entities\Posts;
+use App\Entities\Videos;
 use App\Entities\Registers;
 use App\Entities\Settings;
 use App\Entities\Taxonomyitem;
@@ -22,6 +23,10 @@ use Pingpong\Modules\Routing\Controller;
 
 class FrontendController extends Controller {
 
+    public  function  getVideos(){
+        $objVideos = new Videos();
+        print_r($objVideos->get());die;
+    }
     public function home(){
         $objSetting = new Settings();
         $objSetting = $objSetting->where('type','=','site_settings')->first();
