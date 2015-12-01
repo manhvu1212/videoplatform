@@ -72,6 +72,7 @@ $setting=json_decode($setting->content);
                         </li>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/Faq") ?>">Working With Us</a></li>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/Contact") ?>">Contact</a></li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/videos") ?>">Videos</a></li>
                     </ul>
                 </nav>
             </div>
