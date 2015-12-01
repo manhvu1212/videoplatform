@@ -26,10 +26,10 @@ class FrontendController extends Controller {
     public function getVideos(){
         $objVideos  = new Videos();
         /*$videos = $objVideos->where(array('obj1.name' =>  'Phamnhuy'))->get();*/
-        $videos = $objVideos->where(array('obj1'=>array("name"=>"Phamnhuy")))->get();
-        echo '<pre>';
-        print_r(json_decode($videos));
-        die;
+        //$videos = $objVideos->where(array('obj1'=>array("name"=>"Phamnhuy")))->get();
+        //echo '<pre>';
+        //print_r(json_decode($videos));
+        //die;
         $obj1= array(
             "id"        =>1,
             "name"      =>"Phamnhuy",
@@ -38,14 +38,15 @@ class FrontendController extends Controller {
         $obj2=array(
             "id"        => 2,
             "name"      =>"hna cogn",
-            "company"   =>"topica"
+            "company"   =>"topica",
+            "hobbit"    =>array("football","videgame","program")
         );
         $obj3=array(
             "id"        => 3,
             "name"      =>"ypn",
             "company"   =>"freelance"
         );
-        $objVideos->obj1 = $obj1;
+        $objVideos->obj2 = $obj2;
         $objVideos->save();
     }
     public function home(){
