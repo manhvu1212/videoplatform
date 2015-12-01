@@ -39,7 +39,7 @@ class FrontendController extends Controller {
             "id"        => 2,
             "name"      =>"hna cogn",
             "company"   =>"topica",
-            "hobbit"    =>array("football","videgame","program")
+            "hobbit"    =>array("1"=>"football","2"=>"videgame","3"=>"program")
         );
         $obj3=array(
             "id"        => 3,
