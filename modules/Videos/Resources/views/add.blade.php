@@ -13,4 +13,13 @@
     <script type="text/javascript" src="/assets/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
 @stop
 @section('content')
+    <ul class="page-breadcrumb breadcrumb">
+        <li>
+            <a href="/dashboard">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a href="#">Add new</a>
+        </li>
+    </ul>
 @stop
