@@ -1,6 +1,8 @@
 <?php
 Route::group(['prefix' => 'manager/videos', 'namespace' => 'Modules\Videos\Http\Controllers'], function()
 {
-	Route::get('/','VideosController@index');
-	Route::get('/add','VideosController@add');
+	Route::get('/','');
+	Route::get('/add',function(){
+		return "Phamnhuy";
+	});
 });
