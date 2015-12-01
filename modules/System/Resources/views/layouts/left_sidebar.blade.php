@@ -99,6 +99,16 @@ $user = Sentry::getUser();
                         </li>
                     @endif
 
+                    <li>
+                        <a class="" href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span class="title">Videos</span>
+                        </a>
+                        <ul class=""sub-menu>
+
+                        </ul>
+                    </li>
+
                     @if($user->hasAnyAccess(array('access-form')))
                         <li class="<?php echo (Request::is('manager/form*'))?'active open':'' ?>">
                             <a class="" href="javascript:;">

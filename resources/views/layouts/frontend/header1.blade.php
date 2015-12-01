@@ -2,6 +2,7 @@
 $user = Utility::getUser();
 $setting = Utility::setting();
 $setting=json_decode($setting->content);
+
 ?>
 <div class="register-log">
     <div class="container">

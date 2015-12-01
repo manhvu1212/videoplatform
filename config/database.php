@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -63,6 +63,8 @@ return [
             'prefix'    => '',
             'strict'    => false,
         ],
+
+
 
         'pgsql' => [
             'driver'   => 'pgsql',
