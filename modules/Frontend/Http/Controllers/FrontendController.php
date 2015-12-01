@@ -32,7 +32,7 @@ class FrontendController extends Controller {
         $content['name']= "Phamnhuy";
         $content['company'] ="vptech";
 
-        print_r($content)
+        print_r($content);
 
 
     }
