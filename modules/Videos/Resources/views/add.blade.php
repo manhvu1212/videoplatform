@@ -57,9 +57,8 @@
                                      <div class="col-md-8"><input type="text" name="url" id="url" class="form-control"></div>
                                 </div> 
 
-                                <div>
-                                    <label class="col-md-3"></label>
-                                    <div class="col-md-8">
+                                <div>                                    
+                                    <div class="col-md-offset-3 col-md-8">
                                         <iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div> 
@@ -69,19 +68,20 @@
                                     <div class="col-md-8"><textarea name="description" class="form-control content_post" style="height:300px;" id="description"></textarea></div>
                                 </div> 
 
+                                <div class="form-actions">
+                                    <div>
+                                        <div class="col-md-offset-3 col-md-8">
+                                            <button type="submit" class="btn green" id="submit">Submit</button>
+                                            <button type="button" class="btn default">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>  
+
                             </div>
                             <div class="col-md-3">
                                 <p>Ypn</p>
                             </div>
-                        </div>
-                        <div class="form-actions">
-                            <div class="row">
-                                <div class="col-md-offset-3 col-md-9">
-                                    <button type="submit" class="btn green" id="submit">Submit</button>
-                                    <button type="button" class="btn default">Cancel</button>
-                                </div>
-                            </div>
-                        </div>                      
+                        </div>                                            
                     </form>
                 </div>
             </div>
