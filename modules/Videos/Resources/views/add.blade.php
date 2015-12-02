@@ -23,7 +23,7 @@
             <a href="#">Add new</a>
         </li>
     </ul>
-    <div class="row">
+    <div class="row" style="padding-top:20px;">
         <div class="col-md-12">
             <div class="portlet box blue">
                 <div class="portlet-title">
