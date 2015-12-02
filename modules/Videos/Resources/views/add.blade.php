@@ -86,7 +86,7 @@
                                     <div class="input-group-addon" onclick="VIDEOS.upload_image(this)" >Upload</div>
                                 </div>
                                 <div class="list-img">
-                                    <div class="div-img-dd">
+                                    <div class="video-img-dd">
                                         <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
                                             <h1>Title</h1>

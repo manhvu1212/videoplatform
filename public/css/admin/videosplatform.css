@@ -1,4 +1,7 @@
-.div-img-dd{
+.video-img-dd{
 	display: inline-flex;
 	margin-top: 10px;
+}
+.list-img{
+	padding: 0 15px;
 }
