@@ -53,7 +53,7 @@ class SystemController extends Controller {
         $validate = Validator::make($input,$rules);
         if(!$validate->fails()){
             if(isset($input['_id']) && $input['_id']!=''){
-                $objSetting = Settings::where('id','=',$input['_id'])->first();
+                $objSetting = Settings::where('_id','=',$input['_id'])->first();
                 $objSetting->type = isset($input['type'])?$input['type']:'';
                 $content=array();
                 $content['site_title']= isset($input['site_title'])?$input['site_title']:'';
@@ -207,7 +207,7 @@ class SystemController extends Controller {
         $validate = Validator::make($input,$rules);
         if(!$validate->fails()){
             if(isset($input['_id']) && $input['_id']!=''){
-                $objSetting = Settings::where('id','=',$input['_id'])->first();;
+                $objSetting = Settings::where('_id','=',$input['_id'])->first();;
                 $content=array();
                 $content['extension']= isset($input['extension'])?$input['extension']:'';
                 $content['thumb_image']= isset($input['thumb_image'])?$input['thumb_image']:'';
