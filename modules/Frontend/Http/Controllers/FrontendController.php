@@ -48,11 +48,11 @@ class FrontendController extends Controller {
         $obj2=array(
             "obj2"      =>"chkjhdsakfjlhalkdsfu ten la gi thich an com ",
         );
-        print_r($objVideos);die;
-       $objVideos->obj2 = $obj2;
+      /*  print_r($objVideos);die;
+       $objVideos->obj2 = $obj2;*/
 
 
-            $objVideos->save();
+        $objVideos->save($obj1);
     }
     public function home(){
         $objSetting = new Settings();
