@@ -37,13 +37,12 @@ var VIDEOS ={
     }
 }
 
-function onYouTubeIframeAPIReady() {
+/*function onYouTubeIframeAPIReady() {
     player = new YT.Player('div_iframe', {
         width: 600,
         height: 400,      
         playerVars: {
-            color: 'red',
-            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+            color: 'red',           
         },
         events: {
             onReady: initialize,
@@ -72,7 +71,7 @@ function initialize(){
         updateProgressBar();
     }, 1000)
 }
-
+*/
 
 jQuery(document).ready(function(){
 	VIDEOS.tinymceconfig();

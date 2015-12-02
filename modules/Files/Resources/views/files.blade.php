@@ -11,6 +11,7 @@
 	<link href="<?php echo Config::get('app.domain'); ?>/js/contextMenu1/src/jquery.contextMenu.css" rel="stylesheet" />
 	<!-- Just for debugging purposes. Don't actually copy this line! -->
 	<!--[if lt IE 9]>
+
 	<script src="<?php echo Config::get('app.domain'); ?>/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 s and media queries -->
