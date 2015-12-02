@@ -45,27 +45,21 @@
                     <form method="post" id="form-add" class="form-horizontal">
                         <input id="_token" type="hidden" name="_token" value="{{csrf_token()}}">
                         <input id="_id" name="_id" type="hidden">                        
-                        <div class="form-group">
-                            <div class="control-label col-md-3">{{trans('system.title')}}<span class="required">*</span></div>
-                            <div class="col-md-4"><input type="text" class="form-control" id="title" name="title" value=""/></div>
-                        </div>
-                        <div class="form-group">
-                           <label class="control-label col-md-3">Url Videos</label>
-                           <div class="col-md-4">
-                               <input type="text" class="form-control" id="url_videos" value="">
-                           </div>  
-                           <div class="col-md-2"><button type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>  
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3"></label>
-                            <div class="col-md-4">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="form-control col-md-3">Titles</label>
+                                        <div class="col-md-4"><input type="text" class="form-control"></div>
+                                    </div>
+                                    <div class="form-group">
+                                         <label class="form-control col-md-3">Videos Url</label>
+                                         <div class="col-md-4"><input type="text" class="form-control"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Description</label>
-                            <div class="col-md-8">
-                                <textarea name="description" style="height:300px;" id="description" class="form-control content_post"></textarea>
+                            <div class="col-md-3">
+                                <p>Ypn</p>
                             </div>
                         </div>
                         <div class="form-actions">
