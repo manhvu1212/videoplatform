@@ -33,12 +33,12 @@ var VIDEOS ={
     reload_video:function(){
     	var url_vd = jQuery('#url_video').val();
     	console.log(url_vd);
-    	jQuery('#div_iframe').html('<iframe id="video-iframe" style="width:100%;" height="315" src="'+url_vd+'" frameborder="0" allowfullscreen></iframe>')
+    	jQuery('#div_iframe').html('<div id="iframe"><iframe id="video-iframe" style="width:100%;" height="315" src="'+url_vd+'" frameborder="0" allowfullscreen></iframe></div>')
     }
 }
 
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('div_iframe', {       
+    player = new YT.Player('iframe', {       
         playerVars: {
             color: 'red',
             playlist: 'taJ60kskkns,FG0fTKAqZ5g'
