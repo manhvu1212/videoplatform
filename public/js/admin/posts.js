@@ -144,7 +144,7 @@ var POST = {
 
 
     upload_image: function (obj) {
-       cconsole.log(obj);
+       console.log(obj);
     },
 
     validation_form:function(){
