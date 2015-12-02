@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="list-img">
                                     <div class="div-img-dd">
-                                        <img src="http://placehold.it/200x200">
+                                        <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
                                             <h1>Title</h1>
                                             <h3>http://linkyoutube.com</h3>
