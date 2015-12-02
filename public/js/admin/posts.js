@@ -145,6 +145,7 @@ var POST = {
 
     upload_image: function (obj) {
         POPUPFILE.open(function(data){
+            console.log("dpsfj");
             jQuery('#imageurl').val(data.url);
             jQuery('#imageid').val(data._id);
             jQuery('#div_img-dd').show();
