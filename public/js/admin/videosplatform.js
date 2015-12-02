@@ -1,5 +1,5 @@
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('video-placeholder', {
+    player = new YT.Player('div_iframe', {
         width: 600,
         height: 400,
         videoId: 'NrF8NNvO6Zwss',
