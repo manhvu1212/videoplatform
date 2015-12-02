@@ -33,7 +33,9 @@ function initialize(){
         updateTimerDisplay();
         updateProgressBar();
     }, 1000)
-}IDEOS ={
+}
+
+var VIDEOS ={
 	  tinymceconfig:function(){
         try{
             tinymce.init({
