@@ -54,7 +54,7 @@
                            <div class="col-md-4">
                                <input type="text" class="form-control" id="url_videos" value="">
                            </div>  
-                           <div class="col-md-2"><button type="button" class="btn btn-default">Reload</button></div>  
+                           <div class="col-md-2"><button type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>  
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3"></label>
