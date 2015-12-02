@@ -44,23 +44,19 @@
                     <form>
                         <input id="_token" type="hidden" name="_token" value="{{csrf_token()}}">
                         <input id="_id" name="_id" type="hidden">                        
-                        <div class="form-body">
-                            <div class="form-group">
-                                <div class="control-label col-md-3">{{trans('system.title')}}<span class="required">*</span></div>
-                                <div class="col-md-4"><input type="text" class="form-control" id="title" name="title" value=""/></div>
-                            </div>
+                        <div class="form-group">
+                            <div class="control-label col-md-3">{{trans('system.title')}}<span class="required">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="title" name="title" value=""/></div>
                         </div>
-                        <div class="form-body">
-                            <div class="form-group">
-                               <label class="control-label col-md-3">Url Videos</label>
-                               <div class="col-md-4">
-                                   <input type="text" class="form-control" id="url_videos" value="">
-                               </div>
-                            </div>
+                        <div class="form-group">
+                           <label class="control-label col-md-3">Url Videos</label>
+                           <div class="col-md-9">
+                               <input type="text" class="form-control" id="url_videos" value="">
+                           </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Description</label>
-                            <div class="col-md-8">
+                            <div class="col-md-9">
                                 <textarea name="description" style="height:300px;" id="description" class="form-control content_post"></textarea>
                             </div>
                         </div>
