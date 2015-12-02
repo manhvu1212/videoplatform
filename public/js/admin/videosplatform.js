@@ -20,8 +20,14 @@ var VIDEOS ={
         }catch (e){}
     },
 
-    upload_image:function(){
-    	console.log('upload');
+    upload_image:function(obj){
+    	POPUPFILE.open(function(data){
+            jQuery('#imageurl').val(data.url);
+            jQuery('#imageid').val(data._id);
+            jQuery('#div_img-dd').show();
+            jQuery('.div_img-dd').html('<img src="'+SETTINGS.domain_image+'thumbs/200/200/'+data.url+'" class="img-dd" />');
+
+        });
     },
 }
 
