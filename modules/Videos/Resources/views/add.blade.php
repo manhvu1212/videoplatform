@@ -27,7 +27,7 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>{{trans('system.post')}}
+                        <i class="fa fa-gift"></i>{{trans('system.videos')}}
                     </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse" data-original-title="" title="">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="portlet-body form">
-                    
+
                 </div>
             </div>
         </div>
