@@ -12,6 +12,7 @@
     <script type="text/javascript" src="/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
     <script src="/assets/admin/pages/scripts/form-validation.js"></script>
     <script type="text/javascript" src="/assets/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 @stop
 @section('content')
     <ul class="page-breadcrumb breadcrumb">
@@ -59,8 +60,7 @@
                                 </div> 
 
                                 <div class="form-group">                                  
-                                    <div class="col-md-offset-3 col-md-9" id="div_iframe">                                       
-                                    </div>
+                                    <div class="col-md-offset-3 col-md-9" id="div_iframe"></div>
                                 </div> 
 
                                 <div class="form-group">

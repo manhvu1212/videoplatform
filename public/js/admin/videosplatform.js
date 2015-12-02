@@ -36,6 +36,45 @@ var VIDEOS ={
     	jQuery('#div_iframe').html('<iframe id="video-iframe" style="width:100%;" height="315" src="'+url_vd+'" frameborder="0" allowfullscreen></iframe>')
     }
 }
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('div_iframe', {
+        width: 600,
+        height: 400,
+        videoId: 'Xa0Q0J5tOP0',
+        playerVars: {
+            color: 'red',
+            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+        },
+        events: {
+            onReady: initialize,
+            onStateChange:function(event){
+                if (event.data == YT.PlayerState.PLAYING)
+                    {  alert("Playing.."); }
+                 else if (event.data == YT.PlayerState.PAUSED)
+                    { alert ("Paused.."); }
+            }
+        }
+    });
+}
+
+function initialize(){
+    // Update the controls on load
+   /* updateTimerDisplay();
+    updateProgressBar();*/
+
+    // Clear any old interval.
+    clearInterval(time_update_interval);
+
+    // Start interval to update elapsed time display and
+    // the elapsed part of the progress bar every second.
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        updateProgressBar();
+    }, 1000)
+}
+
+
 jQuery(document).ready(function(){
 	VIDEOS.tinymceconfig();
 });	
