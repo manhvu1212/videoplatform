@@ -51,8 +51,9 @@ class FrontendController extends Controller {
       /*  print_r($objVideos);die;
        $objVideos->obj2 = $obj2;*/
 
+        $objVideos->obj1 = $obj1;
 
-        $objVideos->save($obj1);
+        $objVideos->save();
     }
     public function home(){
         $objSetting = new Settings();
