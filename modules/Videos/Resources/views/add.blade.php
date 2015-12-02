@@ -48,11 +48,11 @@
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="row">
-                                    <div class="form-group">
-                                        <label class="form-control col-md-3">Titles</label>
+                                    <div>
+                                        <label class="col-md-3">Titles</label>
                                         <div class="col-md-4"><input type="text" class="form-control"></div>
                                     </div>
-                                    <div class="form-group">
+                                    <div>
                                          <label class="form-control col-md-3">Videos Url</label>
                                          <div class="col-md-4"><input type="text" class="form-control"></div>
                                     </div>
