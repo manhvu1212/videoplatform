@@ -188,7 +188,7 @@ class FilesController extends BaseController {
         $user = $this->getUser();
         $request = Request::all();
         $objPhotos = new Files();
-        $photo = $objPhotos->where('id','=',$request['id'])->where('uid','=',$user['id'])->first();
+        $photo = $objPhotos->where('_id','=',new \MongoId($request['id']))->where('uid','=',$user['id'])->first();
         $photo->name = $request['name'];
         $photo->title = $request['title'];
         $photo->save();
