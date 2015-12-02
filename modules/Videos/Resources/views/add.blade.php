@@ -82,7 +82,7 @@
                                 <div class="input-group" style="padding:0px 15px !important;">
                                     <input type="hidden" id="imageid" name="imageid" >
                                     <input type="text" class="form-control" readonly id = "imageurl" name="imageurl" value="{{isset($img->url)?$img->url:''}}">
-                                    <div class="input-group-addon" onclick="POST.upload_image(this)" >Upload</div>
+                                    <div class="input-group-addon" onclick="VIDEOS.upload_image(this)" >Upload</div>
                                 </div>
                             </div>
                         </div>                                            

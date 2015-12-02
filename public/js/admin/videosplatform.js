@@ -19,6 +19,10 @@ var VIDEOS ={
             });
         }catch (e){}
     },
+
+    upload_image:function(){
+    	console.log('upload');
+    },
 }
 
 $(document).ready(function(){
