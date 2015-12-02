@@ -22,4 +22,28 @@
             <a href="#">Add new</a>
         </li>
     </ul>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>{{trans('system.post')}}
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse" data-original-title="" title="">
+                        </a>
+                        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title="">
+                        </a>
+                        <a href="javascript:;" class="reload" data-original-title="" title="">
+                        </a>
+                        <a href="javascript:;" class="remove" data-original-title="" title="">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
