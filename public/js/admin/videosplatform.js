@@ -1,3 +1,22 @@
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('div_iframe', {
+        width: 600,
+        height: 400,     
+        playerVars: {
+            color: 'red',
+            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+        },
+        events: {          
+            onStateChange:function(event){
+                if (event.data == YT.PlayerState.PLAYING)
+                    {  alert("Playing.."); }
+                 else if (event.data == YT.PlayerState.PAUSED)
+                    { alert ("Paused.."); }
+            }
+        }
+    });
+}
+
 var VIDEOS ={
 	  tinymceconfig:function(){
         try{
@@ -29,30 +48,13 @@ var VIDEOS ={
 
         });
     },
-}
 
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('div_iframe', {       
-        playerVars: {
-            color: 'red',
-            videoId: 's6zR2T9vn2c',
-            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
-        },
-        events: {
-            //onReady: initialize,
-            onStateChange:function(event){
-                if (event.data == YT.PlayerState.PLAYING)
-                    {  alert("Playing.."); }
-                 else if (event.data == YT.PlayerState.PAUSED)
-                    { alert ("Paused.."); }
-            }
-        }
-    });
+    reload_video:function(){
+    	var url_vd = jQuery('#url_video').val();
+    	console.log(url_vd);
+    	jQuery('#div_iframe').html('<iframe id="video-iframe" style="width:100%;" height="315" src="'+url_vd+'" frameborder="0" allowfullscreen></iframe>')
+    }
 }
-
-jQuery('#btn-reload').click(function(){
-	alert("click me");
-});
 
 jQuery(document).ready(function(){
 	VIDEOS.tinymceconfig();
