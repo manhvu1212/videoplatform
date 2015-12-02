@@ -92,23 +92,28 @@
                                             <h1>Title</h1>
                                             <h3>http://linkyoutube.com</h3>
                                         </div>
+                                    </div> 
+                                     <div class="video-img-dd">
+                                        <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
                                             <h1>Title</h1>
                                             <h3>http://linkyoutube.com</h3>
                                         </div>
+                                    </div>     
+                                     <div class="video-img-dd">
+                                        <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
                                             <h1>Title</h1>
                                             <h3>http://linkyoutube.com</h3>
                                         </div>
+                                    </div>     
+                                     <div class="video-img-dd">
+                                        <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
                                             <h1>Title</h1>
                                             <h3>http://linkyoutube.com</h3>
                                         </div>
-                                        <div class="img-caption">
-                                            <h1>Title</h1>
-                                            <h3>http://linkyoutube.com</h3>
-                                        </div>
-                                    </div>                                    
+                                    </div>                                        
                                 </div>
                             </div>
                         </div>                                            
