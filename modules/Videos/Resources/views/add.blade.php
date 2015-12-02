@@ -88,29 +88,33 @@
                                     <div class="video-img-dd">
                                         <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
-                                            <h1>Title</h1>
-                                            <h3>http://linkyoutube.com</h3>
+                                            <h2>Title</h2>
+                                            <h4>http://linkyoutube.com</h4>
+                                            <h5>Times : <i>1:20</i></h5>
                                         </div>
                                     </div> 
                                      <div class="video-img-dd">
                                         <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
-                                            <h1>Title</h1>
-                                            <h3>http://linkyoutube.com</h3>
+                                            <h2>Title</h2>
+                                            <h4>http://linkyoutube.com</h4>
+                                            <h5>Times : <i>1:20</i></h5>
                                         </div>
                                     </div>     
                                      <div class="video-img-dd">
                                         <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
-                                            <h1>Title</h1>
-                                            <h3>http://linkyoutube.com</h3>
+                                            <h2>Title</h2>
+                                            <h4>http://linkyoutube.com</h4>
+                                            <h5>Times : <i>1:20</i></h5>
                                         </div>
                                     </div>     
                                      <div class="video-img-dd">
                                         <img src="http://placehold.it/100x100">
                                         <div class="img-caption">
-                                            <h1>Title</h1>
-                                            <h3>http://linkyoutube.com</h3>
+                                             <h2>Title</h2>
+                                            <h4>http://linkyoutube.com</h4>
+                                            <h5>Times : <i>1:20</i></h5>
                                         </div>
                                     </div>                                        
                                 </div>

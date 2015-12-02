@@ -1,6 +1,8 @@
 .video-img-dd{
 	display: inline-flex;
 	margin-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
 }
 .list-img{
 	padding: 0 15px;
@@ -9,4 +11,4 @@
 	padding-left: 10px;
 }
 
-.list-img .img-caption h1{margin-top: 0;}
+.list-img .img-caption h2{margin-top: 0;}
