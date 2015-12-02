@@ -1,6 +1,7 @@
 .video-img-dd{
 	display: inline-flex;
 	margin-top: 10px;
+	border-bottom: 1px solid #ddd;
 }
 .list-img{
 	padding: 0 15px;
