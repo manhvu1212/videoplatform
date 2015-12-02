@@ -47,23 +47,23 @@
                         <input id="_id" name="_id" type="hidden">                        
                         <div class="row">
                             <div class="col-md-9">                              
-                                <div>
+                                <div class="form-group">
                                     <label class="col-md-3 control-label">Titles</label>
                                     <div class="col-md-8"><input type="text" name="title" id="title" class="form-control"></div>
                                 </div>
 
-                                <div>
+                                <div class="form-group">
                                      <label class="col-md-3 control-label">Videos Url</label>
                                      <div class="col-md-8"><input type="text" name="url" id="url" class="form-control"></div>
                                 </div> 
 
-                                <div>                                    
+                                <div class="form-group">                                    
                                     <div class="col-md-offset-3 col-md-8">
                                         <iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div> 
 
-                                <div>
+                                <div class="form-group">
                                     <label class="col-md-3 control-label">Description</label>
                                     <div class="col-md-8"><textarea name="description" class="form-control content_post" style="height:300px;" id="description"></textarea></div>
                                 </div> 
