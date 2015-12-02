@@ -1,13 +1,14 @@
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('div_iframe', {
+    player = new YT.Player('video-placeholder', {
         width: 600,
-        height: 400,  
-        videoId: 'NrF8NNvO6Zwss',   
+        height: 400,
+        videoId: 'NrF8NNvO6Zwss',
         playerVars: {
             color: 'red',
             playlist: 'taJ60kskkns,FG0fTKAqZ5g'
         },
-        events: {          
+        events: {
+            onReady: initialize,
             onStateChange:function(event){
                 if (event.data == YT.PlayerState.PLAYING)
                     {  alert("Playing.."); }
@@ -18,7 +19,21 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-var VIDEOS ={
+function initialize(){
+    // Update the controls on load
+    updateTimerDisplay();
+    updateProgressBar();
+
+    // Clear any old interval.
+    clearInterval(time_update_interval);
+
+    // Start interval to update elapsed time display and
+    // the elapsed part of the progress bar every second.
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        updateProgressBar();
+    }, 1000)
+}IDEOS ={
 	  tinymceconfig:function(){
         try{
             tinymce.init({
