@@ -27,7 +27,7 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i>{{trans('system.videos')}}
+                        <i class="fa fa-gift"></i> Videos
                     </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse" data-original-title="" title="">
@@ -41,7 +41,36 @@
                     </div>
                 </div>
                 <div class="portlet-body form">
-
+                    <form>
+                        <input id="_token" type="hidden" name="_token" value="{{csrf_token()}}">
+                        <input id="_id" name="_id" type="hidden">
+                        <div class=""form-body>
+                            <div class="form-group">
+                                <div class="control-label col-md-3">{{trans('system.title')}}<span class="required">*</span></div>
+                                <div class="col-md-4"><input type="text" class="form-control" id="title" name="title" value=""/></div>
+                            </div>
+                            <div class="form-group">
+                               <label class="control-label col-md-3">Url Videos <span class="required">*</span></label>
+                               <div class="col-md-4">
+                                   <input type="text" class="form-control" id="url_videos" value="">
+                               </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Description</label>
+                                <div class="col-md-8">
+                                    <textarea name="description" style="height:300px;" id="description" class="form-control content_post"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green" id="submit">Submit</button>
+                                    <button type="button" class="btn default">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
