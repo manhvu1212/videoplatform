@@ -46,17 +46,15 @@
                         <input id="_token" type="hidden" name="_token" value="{{csrf_token()}}">
                         <input id="_id" name="_id" type="hidden">                        
                         <div class="row">
-                            <div class="col-md-9">
-                                <div class="row">
-                                    <div>
-                                        <label class="col-md-3">Titles</label>
-                                        <div class="col-md-9"><input type="text"></div>
-                                    </div>
-                                    <div>
-                                         <label class="form-control col-md-3">Videos Url</label>
-                                         <div class="col-md-4"><input type="text"></div>
-                                    </div>
+                            <div class="col-md-9">                              
+                                <div>
+                                    <label class="col-md-3">Titles</label>
+                                    <div class="col-md-9"><input type="text" name="title" id="title" class="form-control"></div>
                                 </div>
+                                <div>
+                                     <label class="col-md-3">Videos Url</label>
+                                     <div class="col-md-9"><input type="text" name="url" id="url" class="form-control"></div>
+                                </div>                               
                             </div>
                             <div class="col-md-3">
                                 <p>Ypn</p>
