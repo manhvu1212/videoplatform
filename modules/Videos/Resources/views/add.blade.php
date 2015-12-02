@@ -50,11 +50,11 @@
                                 <div class="row">
                                     <div>
                                         <label class="col-md-3">Titles</label>
-                                        <div class="col-md-9"><input type="text" class="form-control"></div>
+                                        <div class="col-md-9"><input type="text"></div>
                                     </div>
                                     <div>
                                          <label class="form-control col-md-3">Videos Url</label>
-                                         <div class="col-md-4"><input type="text" class="form-control"></div>
+                                         <div class="col-md-4"><input type="text"></div>
                                     </div>
                                 </div>
                             </div>
