@@ -45,13 +45,17 @@
                     <form method="post" id="form-add" class="form-horizontal">
                         <input id="_token" type="hidden" name="_token" value="{{csrf_token()}}">
                         <input id="_id" name="_id" type="hidden">                        
-                        <div class"col-md-9">
-                            <div class="form-group">
-                                <label class="form-control col-md-3">Titles</label>
-                                <div class="col-md-4"><input type="text" class="form-control"></div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label class="form-control col-md-3">Titles</label>
+                                    <div class="col-md-4"><input type="text" class="form-control"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <p>Ypn</p>
                             </div>
                         </div>
-                        <div class="col-md-3"></div>
                         <div class="form-actions">
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-9">
