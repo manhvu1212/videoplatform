@@ -53,8 +53,9 @@
                            <label class="control-label col-md-3">Url Videos</label>
                            <div class="col-md-4">
                                <input type="text" class="form-control" id="url_videos" value="">
-                           </div>
+                           </div>    
                         </div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
                         <div class="form-group">
                             <label class="control-label col-md-3">Description</label>
                             <div class="col-md-9">
