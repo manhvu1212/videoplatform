@@ -49,12 +49,12 @@
                             <div class="col-md-9">                              
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Titles</label>
-                                    <div class="col-md-8"><input type="text" name="title" id="title" class="form-control"></div>
+                                    <div class="col-md-9"><input type="text" name="title" id="title" class="form-control"></div>
                                 </div>
 
                                 <div class="form-group">
                                      <label class="col-md-3 control-label">Videos Url</label>
-                                     <div class="col-md-8"><input type="text" name="url" id="url" class="form-control"></div>
+                                     <div class="col-md-9"><input type="text" name="url" id="url" class="form-control"></div>
                                 </div> 
 
                                 <div class="form-group">                                    
@@ -65,12 +65,12 @@
 
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Description</label>
-                                    <div class="col-md-8"><textarea name="description" class="form-control content_post" style="height:300px;" id="description"></textarea></div>
+                                    <div class="col-md-9"><textarea name="description" class="form-control content_post" style="height:300px;" id="description"></textarea></div>
                                 </div> 
 
                                 <div class="form-actions">
                                     <div>
-                                        <div class="col-md-offset-3 col-md-8">
+                                        <div class="col-md-offset-3 col-md-9">
                                             <button type="submit" class="btn green" id="submit">Submit</button>
                                             <button type="button" class="btn default">Cancel</button>
                                         </div>
