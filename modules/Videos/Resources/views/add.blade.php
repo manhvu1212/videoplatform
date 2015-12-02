@@ -54,11 +54,12 @@
 
                                 <div class="form-group">
                                      <label class="col-md-3 control-label">Videos Url</label>
-                                     <div class="col-md-9"><input type="text" name="url" id="url" class="form-control"></div>
+                                     <div class="col-md-7"><input type="text" name="url" id="url" class="form-control"></div>
+                                     <div class="col-md-2"><button type="button" class="btn btn-default"><i class="fa fa-refesh"></i></button></div>
                                 </div> 
 
                                 <div class="form-group">                                    
-                                    <div class="col-md-offset-3 col-md-8">
+                                    <div class="col-md-offset-3 col-md-9">
                                         <iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div> 
