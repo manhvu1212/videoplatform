@@ -2,7 +2,7 @@
 @section('style')
     <link rel="stylesheet" type="text/css" href="/js/select2/select2.css" />
     <link rel="stylesheet" type="text/css" href="/css/admin/home.css" />
-    <link rel="stylesheet" type="text/css" href="css/admin/videosplatform.css">
+    <link rel="stylesheet" type="text/css" href="/css/admin/videosplatform.css">
 @stop
 @section('script')
     <script src="/js/tinymce/tinymce.min.js" ></script>
