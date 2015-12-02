@@ -91,4 +91,6 @@
             </div>
         </div>
     </div>
+
+    {!! Utility::files() !!}
 @stop
