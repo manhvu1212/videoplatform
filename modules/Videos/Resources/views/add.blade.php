@@ -55,7 +55,7 @@
                                 <div class="form-group">
                                      <label class="col-md-3 control-label">Videos Url</label>
                                      <div class="col-md-7"><input type="text" name="url" id="url" class="form-control"></div>
-                                     <div class="col-md-2"><button type="button" class="btn btn-default"><i class="fa fa-refesh"></i></button></div>
+                                     <div class="col-md-2"><button type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>
                                 </div> 
 
                                 <div class="form-group">                                    
