@@ -23,7 +23,7 @@
             <a href="#">Add new</a>
         </li>
     </ul>
-    <div class="row" style="padding-top:20px;">
+    <div class="row">
         <div class="col-md-12">
             <div class="portlet box blue">
                 <div class="portlet-title">
@@ -45,7 +45,7 @@
                     <form method="post" id="form-add" class="form-horizontal">
                         <input id="_token" type="hidden" name="_token" value="{{csrf_token()}}">
                         <input id="_id" name="_id" type="hidden">                        
-                        <div class="row">
+                        <div class="row"  style="padding-top:20px;">
                             <div class="col-md-9">                              
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Titles<span class="required"> *</span></label>
