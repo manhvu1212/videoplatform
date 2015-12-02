@@ -64,7 +64,7 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Description</label>
-                            <div class="col-md-9">
+                            <div class="col-md-8">
                                 <textarea name="description" style="height:300px;" id="description" class="form-control content_post"></textarea>
                             </div>
                         </div>
