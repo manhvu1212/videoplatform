@@ -47,12 +47,12 @@
                         <div class="row">
                             <div class="col-md-9">                              
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Titles</label>
+                                    <label class="col-md-3 control-label">Titles<span class="required"> *</span></label>
                                     <div class="col-md-9"><input type="text" name="title" id="title" class="form-control"></div>
                                 </div>
 
                                 <div class="form-group">
-                                     <label class="col-md-3 control-label">Videos Url</label>
+                                     <label class="col-md-3 control-label">Videos Url<span class="required"> *</span></label>
                                      <div class="col-md-8"><input type="text" name="url" id="url" class="form-control"></div>
                                      <div class="col-md-1" style="text-align:right;"><button type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>
                                 </div> 
