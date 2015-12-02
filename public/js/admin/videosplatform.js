@@ -63,7 +63,7 @@ function initialize(){
     updateProgressBar();*/
 
     // Clear any old interval.
-    clearInterval(time_update_interval);
+   // clearInterval(time_update_interval);
 
     // Start interval to update elapsed time display and
     // the elapsed part of the progress bar every second.
