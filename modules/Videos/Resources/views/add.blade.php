@@ -48,12 +48,12 @@
                         <div class="row">
                             <div class="col-md-9">                              
                                 <div>
-                                    <label class="col-md-3">Titles</label>
+                                    <label class="col-md-3 control-label">Titles</label>
                                     <div class="col-md-8"><input type="text" name="title" id="title" class="form-control"></div>
                                 </div>
 
                                 <div>
-                                     <label class="col-md-3">Videos Url</label>
+                                     <label class="col-md-3 control-label">Videos Url</label>
                                      <div class="col-md-8"><input type="text" name="url" id="url" class="form-control"></div>
                                 </div> 
 
@@ -64,7 +64,7 @@
                                 </div> 
 
                                 <div>
-                                    <label class="col-md-3">Description</label>
+                                    <label class="col-md-3 control-label">Description</label>
                                     <div class="col-md-8"><textarea name="description" class="form-control content_post" style="height:300px;" id="description"></textarea></div>
                                 </div> 
 
