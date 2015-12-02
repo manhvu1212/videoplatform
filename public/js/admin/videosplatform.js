@@ -38,7 +38,7 @@ var VIDEOS ={
 }
 
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('video-iframe', {       
+    player = new YT.Player('div_iframe', {       
         playerVars: {
             color: 'red',
             playlist: 'taJ60kskkns,FG0fTKAqZ5g'
