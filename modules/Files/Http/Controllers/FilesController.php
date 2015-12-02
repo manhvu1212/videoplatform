@@ -69,7 +69,7 @@ class FilesController extends BaseController {
 		}
 
 		if(isset($data['id']) && $data['id']!=''){
-            $objFolder = $objFolder->where('id','=',$data['id'])->first();
+            $objFolder = $objFolder->where('_id','=',$data['id'])->first();
             $objFolder->name = $data['name'];
             $objFolder->uid = intval($user['id']);
             $objFolder->save();
@@ -88,14 +88,14 @@ class FilesController extends BaseController {
 		}
 		else{
 			$objFolder = new Folder();
-			$objFolder->where('id','=',$data['id'])->delete();
+			$objFolder->where('_id','=',$data['id'])->delete();
 			$objFiles = new Files();
 			$listdata = $objFiles->where('folder_id','=',$data['id'])->get();
 
 			foreach ($listdata as $v) {
 				@unlink(PATH_IMG.$v['url']);
 				$objFiles = new Files();
-				$objFiles->where('id','=',$v['id'])->delete();
+				$objFiles->where('_id','=',$v['id'])->delete();
 			}
             return Response::json('1');
 		}
@@ -106,7 +106,7 @@ class FilesController extends BaseController {
 	{
 		$data= Input::all();
 		$objFiles = new Files();
-		$file = $objFiles->where('id','=',$data['id'])->first();
+		$file = $objFiles->where('_id','=',$data['id'])->first();
 
 		if(is_file(PATH_IMG.'/'.$file['url']))
 			@unlink(PATH_IMG.'/'.$file['url']);
