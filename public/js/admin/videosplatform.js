@@ -40,8 +40,7 @@ var VIDEOS ={
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('div_iframe', {
         width: 600,
-        height: 400,
-        videoId: 'Xa0Q0J5tOP0',
+        height: 400,      
         playerVars: {
             color: 'red',
             playlist: 'taJ60kskkns,FG0fTKAqZ5g'
