@@ -78,8 +78,12 @@
                                 </div>  
 
                             </div>
-                            <div class="col-md-3">
-                                <p>Ypn</p>
+                            <div class="col-md-3">                               
+                                <div>
+                                    <input type="hidden" id="imageid" name="imageid" >
+                                    <input type="text" class="form-control" readonly id = "imageurl" name="imageurl" value="{{isset($img->url)?$img->url:''}}">
+                                    <div class="input-group-addon" onclick="POST.upload_image(this)" >Upload</div>
+                                </div>
                             </div>
                         </div>                                            
                     </form>
