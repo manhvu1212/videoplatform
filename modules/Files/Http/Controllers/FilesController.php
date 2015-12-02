@@ -179,7 +179,7 @@ class FilesController extends BaseController {
         $request = Request::all();
         $objPhotos = new Files();
         //$photo = $objPhotos->where('_id','=',$request['id'])->where('uid','=',$user['id'])->first();
-        $photo = $objPhotos->where('id','=',$request['id'])->first();
+        $photo = $objPhotos->where('_id','=',new \MongoId($request['id']))->first();
         return Response::json($photo);
 	}
 
