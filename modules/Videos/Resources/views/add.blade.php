@@ -92,9 +92,7 @@
                                             <h1>Title</h1>
                                             <h3>http://linkyoutube.com</h3>
                                         </div>
-                                    </div>
-                                    <div class="div-img-dd"><img src="http://placehold.it/200x200"></div>
-                                    <div class="div-img-dd"><img src="http://placehold.it/200x200"></div>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>                                            

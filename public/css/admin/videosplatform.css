@@ -5,3 +5,8 @@
 .list-img{
 	padding: 0 15px;
 }
+.list-img .img-caption{
+	padding-left: 10px;
+}
+
+.list-img .img-caption h1{margin-top: 0;}
