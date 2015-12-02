@@ -43,11 +43,6 @@ class FrontendController extends Controller {
             "name"      =>"ypn",
             "company"   =>"freelancer"
         );
-
-
-        $obj2=array(
-            "obj2"      =>"chkjhdsakfjlhalkdsfu ten la gi thich an com ",
-        );
       /*  print_r($objVideos);die;
        $objVideos->obj2 = $obj2;*/
 
