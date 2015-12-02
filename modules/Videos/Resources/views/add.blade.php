@@ -7,7 +7,6 @@
     <script src="/js/tinymce/tinymce.min.js" ></script>
     <script src="/js/select2/select2.js"></script>
     <script src="/js/admin/videosplatform.js"></script>
-    <script src="/js/admin/posts.js" ></script>
     <script src="/js/jquery.tmpl.min.js" ></script>
     <script type="text/javascript" src="/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
     <script src="/assets/admin/pages/scripts/form-validation.js"></script>
