@@ -33,7 +33,7 @@ var VIDEOS ={
     reload_video:function(){
     	var url_vd = jQuery('#url_video').val();
     	console.log(url_vd);
-    	jQuery('#div_iframe').html('<iframe id="video-iframe" style="width:100%;" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>')
+    	jQuery('#div_iframe').html('<iframe id="video-iframe" style="width:100%;" height="315" src="'+url_vd+'" frameborder="0" allowfullscreen></iframe>')
     }
 }
 jQuery(document).ready(function(){
