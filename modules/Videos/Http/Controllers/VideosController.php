@@ -9,7 +9,7 @@ class VideosController extends Controller {
 		return view('videos::index');
 	}
 	public function add(){
-		return "npa";
+		return view('videos::add');
 	}
 	
 }
