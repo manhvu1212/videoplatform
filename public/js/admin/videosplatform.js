@@ -29,6 +29,10 @@ var VIDEOS ={
 
         });
     },
+
+    reload_video:function(){
+    	alert("Hello");
+    }
 }
 jQuery(document).ready(function(){
 	VIDEOS.tinymceconfig();

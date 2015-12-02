@@ -55,12 +55,12 @@
                                 <div class="form-group">
                                      <label class="col-md-3 control-label">Videos Url<span class="required"> *</span></label>
                                      <div class="col-md-8"><input type="text" name="url" id="url" class="form-control"></div>
-                                     <div class="col-md-1" style="text-align:right;"><button type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>
+                                     <div class="col-md-1" style="text-align:right;"><button onclick="VIDEOS.reload_video()" type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>
                                 </div> 
 
                                 <div class="form-group">                                    
                                     <div class="col-md-offset-3 col-md-9">
-                                        <iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
+                                        <iframe id="video-iframe" style="width:100%;" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div> 
 
