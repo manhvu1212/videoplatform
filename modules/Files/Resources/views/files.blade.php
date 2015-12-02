@@ -21,10 +21,12 @@
 	<?php
 	$setting=Utility::setting();
 	$setting1=Utility::setting('file_settings');
-	$setting1=json_decode($setting1->content);
+		if(isset($setting1->content)){
+			$setting1=json_decode($setting1->content);
+		}
 	?>
 	<script>
-		var SETTINGS = <?php echo $setting->content?>;
+		var SETTINGS = <?php echo isset($setting->content)?$setting->content:''?>;
 		var UPLOAD = { size:<?php echo $setting1->maximum_size*1024*1024 ;?>, ext:"<?php echo $setting1->extension ?>"}
 	</script>
 </head>

@@ -58,9 +58,8 @@
                                      <div class="col-md-1" style="text-align:right;"><button onclick="VIDEOS.reload_video()" type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>
                                 </div> 
 
-                                <div class="form-group">                                    
-                                    <div class="col-md-offset-3 col-md-9" id="div_iframe">
-                                        <iframe id="video-iframe" style="width:100%;" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
+                                <div class="form-group">                                  
+                                    <div class="col-md-offset-3 col-md-9" id="div_iframe">                                       
                                     </div>
                                 </div> 
 
