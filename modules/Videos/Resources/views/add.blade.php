@@ -73,15 +73,15 @@
                             <div class="col-md-3">
                                 <p>Ypn</p>
                             </div>
-                        </div>
-                        <div class="form-actions">
-                            <div class="row">
-                                <div class="col-md-offset-3 col-md-9">
-                                    <button type="submit" class="btn green" id="submit">Submit</button>
-                                    <button type="button" class="btn default">Cancel</button>
+                             <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button type="submit" class="btn green" id="submit">Submit</button>
+                                        <button type="button" class="btn default">Cancel</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>                      
+                        </div>   
+                        </div>                                          
                     </form>
                 </div>
             </div>
