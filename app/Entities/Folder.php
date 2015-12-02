@@ -2,10 +2,12 @@
 
 namespace App\Entities;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Model;
+
 class Folder extends Model
 {
     protected $fillable = [];
+    protected $connection = 'mongodb';
     protected $collection = 'Folder';
 
 }
