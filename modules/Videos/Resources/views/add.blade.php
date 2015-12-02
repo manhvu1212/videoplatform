@@ -2,6 +2,7 @@
 @section('style')
     <link rel="stylesheet" type="text/css" href="/js/select2/select2.css" />
     <link rel="stylesheet" type="text/css" href="/css/admin/home.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin/videosplatform.css">
 @stop
 @section('script')
     <script src="/js/tinymce/tinymce.min.js" ></script>
@@ -83,6 +84,17 @@
                                     <input type="hidden" id="imageid" name="imageid" >
                                     <input type="text" class="form-control" readonly id = "imageurl" name="imageurl" value="{{isset($img->url)?$img->url:''}}">
                                     <div class="input-group-addon" onclick="VIDEOS.upload_image(this)" >Upload</div>
+                                </div>
+                                <div class="list-img">
+                                    <div class="div-img-dd">
+                                        <img src="http://placehold.it/200x200">
+                                        <div class="img-caption">
+                                            <h1>Title</h1>
+                                            <h3>http://linkyoutube.com</h3>
+                                        </div>
+                                    </div>
+                                    <div class="div-img-dd"><img src="http://placehold.it/200x200"></div>
+                                    <div class="div-img-dd"><img src="http://placehold.it/200x200"></div>
                                 </div>
                             </div>
                         </div>                                            

@@ -30,7 +30,6 @@ var VIDEOS ={
         });
     },
 }
-
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	VIDEOS.tinymceconfig();
 });	
