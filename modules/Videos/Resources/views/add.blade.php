@@ -41,16 +41,16 @@
                     </div>
                 </div>
                 <div class="portlet-body form">
-                    <form>
+                    <form method="post" id="form-add" class="form-horizontal">
                         <input id="_token" type="hidden" name="_token" value="{{csrf_token()}}">
                         <input id="_id" name="_id" type="hidden">                        
                         <div class="form-group">
                             <div class="control-label col-md-3">{{trans('system.title')}}<span class="required">*</span></div>
-                            <div class="col-md-9"><input type="text" class="form-control" id="title" name="title" value=""/></div>
+                            <div class="col-md-4"><input type="text" class="form-control" id="title" name="title" value=""/></div>
                         </div>
                         <div class="form-group">
                            <label class="control-label col-md-3">Url Videos</label>
-                           <div class="col-md-9">
+                           <div class="col-md-4">
                                <input type="text" class="form-control" id="url_videos" value="">
                            </div>
                         </div>
