@@ -49,12 +49,19 @@
                             <div class="col-md-9">                              
                                 <div>
                                     <label class="col-md-3">Titles</label>
-                                    <div class="col-md-9"><input type="text" name="title" id="title" class="form-control"></div>
+                                    <div class="col-md-8"><input type="text" name="title" id="title" class="form-control"></div>
                                 </div>
                                 <div>
                                      <label class="col-md-3">Videos Url</label>
-                                     <div class="col-md-9"><input type="text" name="url" id="url" class="form-control"></div>
-                                </div>                               
+                                     <div class="col-md-8"><input type="text" name="url" id="url" class="form-control"></div>
+                                </div> 
+                                <div class="col-md-9">
+                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/p4ryw5vascY" frameborder="0" allowfullscreen></iframe>
+                                </div> 
+                                <div>
+                                    <label class="col-md-3">Description</label>
+                                    <div class="col-md-8"><textarea name="description" class="form-control content_post" style="height:300px;" id="description"></textarea></div>
+                                </div>                             
                             </div>
                             <div class="col-md-3">
                                 <p>Ypn</p>
