@@ -35,6 +35,11 @@ function initialize(){
     }, 1000)
 }
 
+jQuery('#btn-reload').click(function(){
+    console("click sucess");
+    player.videoId="Y2y0KjBJx7Q";
+});
+
 var VIDEOS ={
 	  tinymceconfig:function(){
         try{
@@ -65,13 +70,7 @@ var VIDEOS ={
             jQuery('.div_img-dd').html('<img src="'+SETTINGS.domain_image+'thumbs/200/200/'+data.url+'" class="img-dd" />');
 
         });
-    },
-
-    reload_video:function(){
-    	var url_vd = jQuery('#url_video').val();
-    	console.log(url_vd);
-    	jQuery('#div_iframe').html('<iframe id="video-iframe" style="width:100%;" height="315" src="'+url_vd+'" frameborder="0" allowfullscreen></iframe>')
-    }
+    },   
 }
 
 jQuery(document).ready(function(){
