@@ -56,7 +56,7 @@
                                 <div class="form-group">
                                      <label class="col-md-3 control-label">Videos Url<span class="required"> *</span></label>
                                      <div class="col-md-8"><input type="text" name="url" id="url_video" class="form-control"></div>
-                                     <div class="col-md-1" style="text-align:right;"><button id="btn-reload"  type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>
+                                     <div class="col-md-1" style="text-align:right;"><button id="btn-reload" onclick="VIDEOS.reload_iframe($('#url_video').val();)" type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>
                                 </div> 
 
                                 <div class="form-group">                                  

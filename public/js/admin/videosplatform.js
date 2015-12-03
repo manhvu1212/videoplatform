@@ -1,19 +1,3 @@
-jQuery('#btn-reload').click(function(){
-    player = new YT.Player('div_iframe', {
-        width: 600,
-        height: 400,
-        videoId: jQuery('#url_video').val(),
-        events: {           
-            onStateChange:function(event){
-                if (event.data == YT.PlayerState.PLAYING)
-                    {  alert("Playing.."); }
-                 else if (event.data == YT.PlayerState.PAUSED)
-                    { alert ("Paused.."); }
-            }
-        }     
-    }); 
-});
-
 var VIDEOS ={
 	  tinymceconfig:function(){
         try{
@@ -46,8 +30,20 @@ var VIDEOS ={
         });
     },   
 
-    reload_iframe:function(idVide){
-
+    reload_iframe:function(idVideo){
+        player = new YT.Player('div_iframe', {
+            width: 600,
+            height: 400,
+            videoId: idVideo,
+            events: {           
+                onStateChange:function(event){
+                    if (event.data == YT.PlayerState.PLAYING)
+                        {  alert("Playing.."); }
+                     else if (event.data == YT.PlayerState.PAUSED)
+                        { alert ("Paused.."); }
+                }
+            }     
+        }); 
     }
 }
 
