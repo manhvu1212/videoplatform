@@ -1,8 +1,7 @@
 jQuery('#btn-reload').click(function(){
     player = new YT.Player('div_iframe', {
         width: 600,
-        height: 400,
-        videoId: jQuery('#url_video').val(),
+        height: 400,        
         events: {           
             onStateChange:function(event){
                 if (event.data == YT.PlayerState.PLAYING)
@@ -12,6 +11,7 @@ jQuery('#btn-reload').click(function(){
             }
         }     
     }); 
+    player.loadVideoById(jQuery('#url_video').val());
 });
 
 var VIDEOS ={
@@ -45,6 +45,10 @@ var VIDEOS ={
 
         });
     },   
+
+    reload_iframe:function(idVideo){
+
+    }
 }
 
 jQuery(document).ready(function(){
