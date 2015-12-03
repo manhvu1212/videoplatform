@@ -2,7 +2,7 @@ jQuery('#btn-reload').click(function(){
     player = new YT.Player('div_iframe', {
         width: 600,
         height: 400,
-        videoUrl: jQuery('#url_video').val(),
+        videoId: jQuery('#url_video').val(),
         events: {           
             onStateChange:function(event){
                 if (event.data == YT.PlayerState.PLAYING)
