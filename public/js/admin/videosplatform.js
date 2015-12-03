@@ -36,7 +36,7 @@ function initialize(){
 }
 
 jQuery('#btn-reload').click(function(){
-    console("click sucess");
+    console.log("click sucess");
     player.videoId="Y2y0KjBJx7Q";
 });
 
