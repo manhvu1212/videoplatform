@@ -2,7 +2,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('div_iframe', {
         width: 600,
         height: 400,
-        videoId: 'NrF8NNvO6Zwss',
+        videoId: 'rKk9uJqi4hY',
         playerVars: {
             color: 'red',
             playlist: 'taJ60kskkns,FG0fTKAqZ5g'
@@ -22,7 +22,7 @@ function onYouTubeIframeAPIReady() {
 function initialize(){
     // Update the controls on load
     updateTimerDisplay();
-    updateProgressBar();
+    //updateProgressBar();
 
     // Clear any old interval.
     clearInterval(time_update_interval);
@@ -31,7 +31,7 @@ function initialize(){
     // the elapsed part of the progress bar every second.
     time_update_interval = setInterval(function () {
         updateTimerDisplay();
-        updateProgressBar();
+        //updateProgressBar();
     }, 1000)
 }
 
