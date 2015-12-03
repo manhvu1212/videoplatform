@@ -1,7 +1,13 @@
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('div_iframe', {
         width: 600,
-        height: 400,       
+        height: 400,
+        onStateChange:function(event){
+                if (event.data == YT.PlayerState.PLAYING)
+                    {  alert("Playing.."); }
+                 else if (event.data == YT.PlayerState.PAUSED)
+                    { alert ("Paused.."); }
+        }       
     });
 }
 
