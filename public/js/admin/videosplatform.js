@@ -38,9 +38,9 @@ var VIDEOS ={
             events: {           
                 onStateChange:function(event){
                     if (event.data == YT.PlayerState.PLAYING)
-                        {  alert("Playing.."); }
+                        {  alert("Playing ypn.."); }
                      else if (event.data == YT.PlayerState.PAUSED)
-                        { alert ("Paused.."); }
+                        { alert ("Paused ypn.."); }
                 }
             }     
         }); 
