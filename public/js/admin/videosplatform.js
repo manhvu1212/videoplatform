@@ -1,43 +1,13 @@
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('div_iframe', {
         width: 600,
-        height: 400,
-        videoId: 'FSu8GI0M_oA',
-        playerVars: {
-            color: 'red',
-            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
-        },
-        events: {
-            onReady: initialize,
-            onStateChange:function(event){
-                if (event.data == YT.PlayerState.PLAYING)
-                    {  alert("Playing.."); }
-                 else if (event.data == YT.PlayerState.PAUSED)
-                    { alert ("Paused.."); }
-            }
-        }
+        height: 400,       
     });
-}
-
-function initialize(){
-    // Update the controls on load
-    updateTimerDisplay();
-    //updateProgressBar();
-
-    // Clear any old interval.
-    clearInterval(time_update_interval);
-
-    // Start interval to update elapsed time display and
-    // the elapsed part of the progress bar every second.
-    time_update_interval = setInterval(function () {
-        updateTimerDisplay();
-        //updateProgressBar();
-    }, 1000)
 }
 
 jQuery('#btn-reload').click(function(){
     console.log("click sucess");
-    player.videoId="Y2y0KjBJx7Q";
+    player.loadVideoById("Y2y0KjBJx7Q");
 });
 
 var VIDEOS ={
