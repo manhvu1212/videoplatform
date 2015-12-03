@@ -1,20 +1,15 @@
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('div_iframe', {
         width: 600,
-        height: 400        
+        height: 400  
     });
 }
-
-player.onStateChange(function(event){
-          if (event.data == YT.PlayerState.PLAYING)
-            {  alert("Playing.."); }
-         else if (event.data == YT.PlayerState.PAUSED)
-            { alert ("Paused.."); }
-});
 
 jQuery('#btn-reload').click(function(){
     console.log("click sucess");
     player.loadVideoById(jQuery('#url_video').val());   
+    var state =  player.getPlayerState();
+    console.log(state);
 });
 
 var VIDEOS ={
