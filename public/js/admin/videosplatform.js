@@ -2,7 +2,7 @@ jQuery('#btn-reload').click(function(){
     player = new YT.Player('div_iframe', {
         width: 600,
         height: 400,
-        videoId: 'NrF8NNvO6Zwss'       
+        videoId: 'y6g_FdH68Uk'       
     }); 
 });
 
