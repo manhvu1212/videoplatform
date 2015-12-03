@@ -1,15 +1,22 @@
-function onYouTubeIframeAPIReady() {
+jQuery('#btn-reload').click(function(){
     player = new YT.Player('div_iframe', {
         width: 600,
-        height: 400  
-    });
-}
-
-jQuery('#btn-reload').click(function(){
-    console.log("click sucess");
-    player.loadVideoById(jQuery('#url_video').val());   
-    var state =  player.getPlayerState();
-    console.log(state);
+        height: 400,
+        videoId: 'NrF8NNvO6Zwss',
+        playerVars: {
+            color: 'red',
+            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+        },
+        events: {
+            onReady: initialize,
+            onStateChange:function(event){
+                if (event.data == YT.PlayerState.PLAYING)
+                    {  alert("Playing.."); }
+                 else if (event.data == YT.PlayerState.PAUSED)
+                    { alert ("Paused.."); }
+            }
+        }
+    }); 
 });
 
 var VIDEOS ={
