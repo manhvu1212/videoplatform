@@ -34,7 +34,7 @@ var VIDEOS ={
         player = new YT.Player('div_iframe', {
             width: 600,
             height: 400,
-            videoId: idVideos,
+            videoId: idVideo,
             events: {           
                 onStateChange:function(event){
                     if (event.data == YT.PlayerState.PLAYING)
