@@ -7,7 +7,7 @@ function onYouTubeIframeAPIReady() {
 
 jQuery('#btn-reload').click(function(){
     console.log("click sucess");
-    player.loadVideoById("Y2y0KjBJx7Q");
+    player.loadVideoById(jQuery('#url_video').val());
 });
 
 var VIDEOS ={
