@@ -11,7 +11,7 @@ jQuery('#btn-reload').click(function(){
             }
         }     
     }); 
-    player.loadVideoByUrl(jQuery('#url_video').val());
+    player.loadVideoById(jQuery('#url_video').val());
 });
 
 var VIDEOS ={
