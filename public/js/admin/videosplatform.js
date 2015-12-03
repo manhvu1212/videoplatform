@@ -5,15 +5,16 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-jQuery('#btn-reload').click(function(){
-    console.log("click sucess");
-    player.loadVideoById(jQuery('#url_video').val());
-    player.onStateChange(function(event){
+player.onStateChange(function(event){
           if (event.data == YT.PlayerState.PLAYING)
             {  alert("Playing.."); }
          else if (event.data == YT.PlayerState.PAUSED)
             { alert ("Paused.."); }
-    });
+});
+
+jQuery('#btn-reload').click(function(){
+    console.log("click sucess");
+    player.loadVideoById(jQuery('#url_video').val());   
 });
 
 var VIDEOS ={
