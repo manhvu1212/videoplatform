@@ -22,7 +22,7 @@
     ?>
     <script>
         var SETTINGS = <?php echo isset($setting->content)?$setting->content:''?>;
-        var UPLOAD = { size:<?php echo $setting1->maximum_size*1024*1024 ;?>, ext:"<?php echo $setting1->extension ?>"}
+        var UPLOAD = { size:<?php echo $setting1->maximum_size*1024*1024 ;?>, ext:"<?php echo $setting1->extension ?>"}       
     </script>
 @stop
 @section('content')
@@ -40,7 +40,7 @@
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-gift"></i> Videos
+                        <i class="fa fa-gift"></i> {{trans('system.videos')}}
                     </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse" data-original-title="" title="">
@@ -56,30 +56,26 @@
                 <div class="portlet-body form">
                     <form method="POST" id="form-add-video" class="form-horizontal">
                         <input id="_token" type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input id="_id" name="_id" type="hidden" value="">                        
+                        <input id="_id" name="_id" type="hidden" value="{{isset($video->_id)?$video->_id:''}}">                        
                         <div class="row"  style="padding-top:20px;">
                             <div class="col-md-9">                              
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Titles<span class="required"> *</span></label>
+                                    <label class="col-md-3 control-label">{{trans('system.title')}}<span class="required"> *</span></label>
                                     <div class="col-md-9"><input type="text" name="title_video" id="title_video" class="form-control" value="{{(isset($video)&&isset($video->title))?$video->title:''}}"></div>
                                 </div>
 
                                 <div class="form-group">
-                                     <label class="col-md-3 control-label">Videos Url<span class="required"> *</span></label>
+                                     <label class="col-md-3 control-label">{{trans('system.video_id')}}<span class="required"> *</span></label>
                                      <div class="col-md-8"><input type="text" name="url_video" id="url_video" class="form-control" value="{{(isset($video)&&isset($video->idVideo))?$video->idVideo:''}}"></div>
                                      <div class="col-md-1" style="text-align:right;"><button id="btn-reload" onclick="VIDEOS.reload_iframe($('#url_video').val())" type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button></div>
                                 </div> 
 
                                 <div class="form-group">                                  
-                                    <div class="col-md-offset-3 col-md-9" id="div_iframe">
-
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/eyFP5s403jY" frameborder="0" allowfullscreen></iframe>
-                                   
-                                    </div>
+                                    <div class="col-md-offset-3 col-md-9" id="div_iframe"></div>
                                 </div> 
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Description</label>
+                                    <label class="col-md-3 control-label">{{trans('system.description')}}</label>
                                     <div class="col-md-9"><textarea name="content" class="form-control content_post" style="height:300px;" id="content">{{(isset($video)&&isset($video->description))?$video->description:''}}</textarea></div>
                                 </div> 
 
@@ -100,7 +96,24 @@
                                     <div class="input-group-addon" onclick="VIDEOS.upload_image(this)" >Upload</div>
                                 </div>
                                 <div class="list-img" id="list-img">
-                                                                      
+                                    @if(isset($video->images)&&$video->images!='') 
+                                       @foreach($video->images  as $image)                                    
+                                            <div class="video-img-dd">                                               
+                                                <input type="hidden" name="image[{{$image->id}}][id]" value="{{$image->id}}">                                               
+                                                <input type="hidden" name="image[{{$image->id}}][minutes]" value="{{$image->minutes}}" >
+                                                <input type="hidden" name="image[{{$image->id}}][seconds]" value="{{$image->seconds}}">
+                                                <img src="/upload/{{$image->url}}" height="100px" width="100px" id="{{$image->id}}">
+                                                <div class='img-caption'>
+                                                    <h2>{{$image->title}}</h2>
+                                                    <h5>{{$image->url}}</h5>
+                                                    <span>Time: <b>{{isset($image->minutes)?$image->minutes:''}}:{{isset($image->seconds)?$image->seconds:''}}<b></span>                          
+                                                </div>
+                                                <div class="caption-action">
+                                                    <span class="delete-image"><i class="fa fa-trash-o"></i></span>
+                                                </div>
+                                            </div>  
+                                        @endforeach
+                                    @endif                               
                                 </div>
                             </div>
                         </div>                                            

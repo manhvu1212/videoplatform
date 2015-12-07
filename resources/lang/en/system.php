@@ -45,4 +45,6 @@ return [
     'update' => 'Update',
     'phone' => 'Phone',
     'Account_Id' => 'Account Id',
+    'videos'    =>'Videos',
+    'video_id'  => 'Video Id',
 ];

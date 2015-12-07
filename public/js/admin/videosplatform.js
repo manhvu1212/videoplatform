@@ -1,11 +1,30 @@
-var minutes =0;
-var seconds =0;
+var minutes =0,seconds=0;
+
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('div_iframe', {
-        width: 600,
-        height: 400,
-        onReady:initialize
-    });
+    if(jQuery('#url_video').val()!==''){
+        player = new YT.Player('div_iframe', {
+            width: 600,
+            height: 400,
+            videoId:jQuery('#url_video').val(),
+            events:{
+                onStateChange:function(event){               
+                    if (event.data == YT.PlayerState.PAUSED)
+                    {   
+                        current_time = Math.floor(player.getCurrentTime()); 
+                        minutes = Math.floor(current_time / 60);
+                        seconds = current_time % 60;  
+                    }
+                }
+            }
+        });       
+    }
+    else{
+        player = new YT.Player('div_iframe', {
+            width: 600,
+            height: 400
+          
+        });
+    }
 }
 
 function onPauseEvent(event){    
@@ -19,15 +38,9 @@ function onPauseEvent(event){
     }
 }
 
-function initialize(){
-    if(jQuery('#title_video')!==''){
-        jQuery('#btn-reload').click()
-    }
-}
-
 var VIDEOS ={
-     
-	  tinymceconfig:function(){
+
+	tinymceconfig:function(){
         try{
             tinymce.init({
                 mode: 'specific_textareas',
@@ -47,6 +60,82 @@ var VIDEOS ={
             });
         }catch (e){}
     },
+
+    change_status:function(){
+        try{
+            jQuery(".switch-mini").bootstrapSwitch().on("switchChange.bootstrapSwitch", function (event, state) {
+                var id = jQuery(this).attr('data-id');
+                if(state == true){
+                    state = 1;
+                }else{
+                    state = 0;
+                }
+                jQuery.ajax({
+                    url:getBaseURL()+'/manager/videos/change_status',
+                    type:'post',
+                    dataType:'json',
+                    data:{activated:state,_token:jQuery('#_token').val(),id:id},
+                    success:function(data){
+                    }
+
+                })
+            });
+        }catch (e){}
+
+    },
+
+    delete: function () {
+        jQuery('.delete-item').click(function () {
+            var name = jQuery(this).attr('data-name');
+            var aids = new Array();
+            aids[0] = jQuery(this).attr('data-id');
+            var _token = jQuery('#_token').val();
+            Confirm('Are you want to delete "'+name+'"','Message', function (r) {
+                if(r){
+                    jQuery.ajax({
+                        url:getBaseURL()+'/manager/videos/destroy',
+                        type:'post',
+                        data:{aids:aids,_token:_token},
+                        success: function (data) {
+                           window.location.reload()
+                        }
+                    })
+                }
+            })
+        })
+    },
+
+     deletemulti: function () {
+        jQuery('.product-delete-multi').click(function(){
+            var count = jQuery('.checkone:checked').length;
+            var aids = {};
+            if(count == 0){
+                Alert('Please select item for delete','');
+                return false;
+            }else{
+                var i = 0;
+                jQuery('.checkone:checked').each(function(){
+                    aids[i] = jQuery(this).val();
+                    i++;
+                })
+                Confirm('Are you sure you want to delete?','',function(r){
+                    if(r){
+                        jQuery.ajax({
+                            url: getBaseURL()+'/manager/videos/destroy',
+                            data:{_token:jQuery('#_token').val(), aids:aids},
+                            type:'POST',
+                            dataType:'json',
+                            success:function(data){
+                               window.location.reload();
+                            }
+                        })
+                    }
+
+                });
+            }
+        });
+    },
+
 
      validation_form:function(){
         jQuery("#form-add-video").submit(function(e) {
@@ -77,7 +166,7 @@ var VIDEOS ={
                     data:data,
                     dataType:'json',
                     success:function(data){
-                        //window.location.href=getBaseURL()+'/manager/videos/';
+                        window.location.href=getBaseURL()+'/manager/videos/';
                     }
                 });
                 return false;
@@ -87,22 +176,22 @@ var VIDEOS ={
     },
 
     upload_image:function(obj){     
-    	POPUPFILE.open(function(data){
-            /*jQuery('#imageurl').val(data.url);
-            jQuery('#imageid').val(data._id);
-            jQuery('#div_img-dd').show();*/
+    	POPUPFILE.open(function(data){     
 
-            jQuery('#list-img').append('<div class="video-img-dd '+data.id+'">'
-                +'<input type="hidden" name="image['+data.id+'][title]" value="'+data.title+'">'
-                +'<input type="hidden" name="image['+data.id+'][id]" value="'+data.id+'">'
-                +'<input type="hidden" name="image['+data.id+'][url]" value="'+data.url+'">'
-                +'<input type="hidden" name="image['+data.id+'][time]" value="'+15+'">'
+            jQuery('#list-img').append('<div class="video-img-dd '+data.id+'">'               
+                +'<input type="hidden" name="image['+data.id+'][id]" value="'+data.id+'">'             
+                +'<input type="hidden" name="image['+data.id+'][minutes]" value="'+minutes+'">'
+                +'<input type="hidden" name="image['+data.id+'][seconds]" value="'+seconds+'">'
                 +'<img src="'+SETTINGS.domain_image+'thumbs/200/200/'+data.url+'" height="100px" width="100px"><div class="img-caption"><h2>'
                 +data.title+'</h2><h5>'
                 +data.url+'</h5><span>Time: <b>'
                 +minutes+'</b>:<b>'+seconds                
-                +'</b></span></div></div>'             
-                );
+                +'</b></span></div>'
+                +'<div class="caption-action"><span class="delete-image"><i class="fa fa-trash-o"></i></span></div>'
+                +'</div>'             
+            );
+
+            VIDEOS.delete_image();
         });
     },   
 
@@ -122,11 +211,22 @@ var VIDEOS ={
                   alert (textStatus, + ' | ' + errorThrown);
               }
         });
+    },
+
+    delete_image:function(){
+        jQuery('.delete-image').click(function(){
+            wrapper = jQuery(this).parents('.video-img-dd');
+            wrapper.remove();
+        });
     }
 
 }
 
-jQuery(document).ready(function(){   
-	VIDEOS.tinymceconfig();    
+jQuery(document).ready(function(){  
+	VIDEOS.tinymceconfig();   
+    VIDEOS.change_status(); 
     VIDEOS.validation_form();
+    VIDEOS.delete();
+    VIDEOS.deletemulti();
+    VIDEOS.delete_image();
 });	
