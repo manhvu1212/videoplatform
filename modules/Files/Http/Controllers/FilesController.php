@@ -2,14 +2,12 @@
 
 use App\Entities\Files;
 use App\Entities\Folder;
-use App\Entities\Settings;
 use App\Http\Controllers\BaseController;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Intervention\Image\Facades\Image;
 
 class FilesController extends BaseController {
 
@@ -186,7 +184,7 @@ class FilesController extends BaseController {
 	public  function  update(){
 
         $user = $this->getUser();
-        $request = Request::all();
+        $request = Request::all();      
         $objPhotos = new Files();
         $photo = $objPhotos->where('_id','=',new \MongoId($request['id']))->where('uid','=',$user['id'])->first();
         $photo->name = $request['name'];

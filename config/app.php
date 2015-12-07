@@ -27,7 +27,7 @@ return [
     */
 
     'url' => 'http://localhost',
-    'domain' => 'http://mainstar.makedigitalgroup.com/',
+    'domain' => 'http://videoplatform.dev/',
 //    'url' => 'http://localhost/vietpride/mainstar/public/',
 
     /*

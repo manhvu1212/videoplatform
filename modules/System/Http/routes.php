@@ -1,7 +1,6 @@
 <?php
 
 use Cartalyst\Sentry\Facades\Laravel\Sentry;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 Route::group(['prefix' => 'manager/system', 'namespace' => 'Modules\System\Http\Controllers'], function()
@@ -39,8 +38,6 @@ Route::filter('auth', function()
     }
 
 });
-
-
 
 Route::filter('cache.html', function($route, $request, $response = null)
 {

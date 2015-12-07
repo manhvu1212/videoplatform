@@ -143,12 +143,12 @@ var POST = {
     },
 
     upload_image: function (obj) {
-        POPUPFILE.open(function(data){           
+        POPUPFILE.open(function(data){      
+            console.log("upload file");       
             jQuery('#imageurl').val(data.url);
             jQuery('#imageid').val(data._id);
             jQuery('#div_img-dd').show();
             jQuery('.div_img-dd').html('<img src="'+SETTINGS.domain_image+'thumbs/200/200/'+data.url+'" class="img-dd" />');
-
         });
     },
 
@@ -213,6 +213,7 @@ var POST = {
                     type:"post",
                     dataType:'json',
                     success:function(data){
+                       // alert("success post data");
                         window.location.href=getBaseURL()+'/manager/'+data;
                     }
                 });

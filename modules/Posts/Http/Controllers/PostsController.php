@@ -3,10 +3,10 @@
 use App\Entities\Files;
 use App\Entities\Posts;
 use App\Entities\Taxonomyitem;
+use App\Http\Controllers\BaseController;
 use Cartalyst\Sentry\Facades\Laravel\Sentry;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
-use App\Http\Controllers\BaseController;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -110,9 +110,6 @@ class PostsController extends BaseController {
 		$title='List FAQ';
 		return view('posts::index',array('paging' => $paging, 'listdata' => $list,'start' => $start,'request' => $request,'title'=>$title,'type'=>'faq'));
 	}
-
-
-
 
 	public function getUser(){
 		return Sentry::getUser();

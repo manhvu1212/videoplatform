@@ -94,20 +94,20 @@ var FILES = {
                                 break;
                         }
                         jQuery('#image_preview').attr('src',url);
-                    }
+                    }                    
                     jQuery('#input-photo-filename').val(data.name);
                     jQuery('#input-photo-title').val(data.title);
                     jQuery('#input-photo-link').val(data.url);
                     jQuery('#input-photo-server').val(data.server);
                     jQuery('#input-extension').val(data.extension);
-                    jQuery('#input-photo-id').val(data.id);
+                    jQuery('#input-photo-id').val(data._id);
                     jQuery('#photo-filename').text(data.name);
                     jQuery('#file-type').text(data.extension);
                 }
             })
         });
     },
-    update_media:function(){
+    update_media:function(){        
         jQuery('#update-media').click(function(){
             jQuery('#photo-detail').modal('hide');
             jQuery.ajax({
@@ -116,6 +116,8 @@ var FILES = {
                 type:'post',
                 dataType:'json',
                 success: function (data) {
+                    console.log(data);
+                    jQuery('#list-img').append('<div class="video-img-dd"><img src="http://placehold.it/100x100"></div>');
                     window.location.reload()
                 }
             })
@@ -131,7 +133,7 @@ var FILES = {
                     data:jQuery('#form-edit-file').serialize(),
                     type:'post',
                     dataType:'json',
-                    success: function (data) {
+                    success: function (data) {                        
                         window.location.reload()
                     }
                 })
@@ -140,7 +142,7 @@ var FILES = {
     },
 
     slect_file: function () {
-        jQuery('#select-media').click(function(){
+        jQuery('#select-media').click(function(){            
             parent.FILESELECTED.id = jQuery('#input-photo-id').val();
             parent.FILESELECTED.name = jQuery('#input-photo-filename').val();
             parent.FILESELECTED.title = jQuery('#input-photo-title').val();
@@ -148,8 +150,8 @@ var FILES = {
             parent.FILESELECTED.url = jQuery('#input-photo-link').val();
             parent.FILESELECTED.extension = jQuery('#input-extension').val();
             parent.POPUPFILE.close();
-            jQuery('#photo-detail').modal('hide');
-
+            jQuery('#photo-detail').modal('hide');           
+           
         })
     },
     newfolder:function(){
