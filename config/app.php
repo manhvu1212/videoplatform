@@ -27,8 +27,7 @@ return [
     */
 
     'url' => 'http://localhost',
-    'domain' => 'http://videoplatform.dev/',
-//    'url' => 'http://localhost/vietpride/mainstar/public/',
+    'domain' => 'http://videoplatform.novario.net/',
 
     /*
     |--------------------------------------------------------------------------
