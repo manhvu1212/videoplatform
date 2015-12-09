@@ -183,8 +183,7 @@
             @if($k<3)           
             <figure class="video-container">
 
-                <a href="/video-detail><img src="{{$video->snippet->thumbnails->high->url}}" alt=""></a>
-
+                <a href="/video-detail"><img src="{{$video->snippet->thumbnails->high->url}}" alt=""></a>
                 <figcaption>
 
                     <h2>PRO AWARDS</h2>
@@ -272,21 +271,32 @@
 
                 <article>
 
+                    <header class="header-style">
+
+                        <h2 class="h-style">{{$cate_videos['name']}}</h2>
+
+                    </header>
+
+
                     <div class="widget-bg">
 
                     <div class="small-thumbs">
 
                     <ul>
 
-                         <!--LIST ITEMS START-->
-
+                         <!--LIST ITEMS START-->                        
+                         @foreach($cate_videos['list_videos'] as $video)
+                         <?php 
+                            $title = $video->snippet->title;
+                            $thumb = $video->snippet->thumbnails->default->url;
+                          ?>
                         <li>
 
                             <figure>
 
                                 <div class="thumb">
 
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb.png" alt=""></a>
+                                    <a href="/video-detail"><img src="{{$thumb}}"></a>
 
                                     <div class="play">
 
@@ -300,7 +310,7 @@
 
                                 <figcaption>
 
-                                    <p>Sound card has a built in one amp..</p>
+                                    <p>{{strlen($title)<30?$title:substr($title,0,30).' ...'}}</p>
 
                                     <p class="color">27 may 2013</p>
 
@@ -309,264 +319,7 @@
                             </figure>
 
                         </li>
-
-                        <!--LIST ITEMS END-->
-
-                        <!--LIST ITEMS START-->
-
-                        <li>
-
-                            <figure>
-
-                                <div class="thumb">
-
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb2.png" alt=""></a>
-
-                                    <div class="play">
-
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                    </div>
-
-                                </div>
-
-                                <figcaption>
-
-                                    <p>Sound card has a built in one amp..</p>
-
-                                    <p class="color">27 may 2013</p>
-
-                                </figcaption>
-
-                            </figure>
-
-                        </li>
-
-                        <!--LIST ITEMS END-->
-
-                        <!--LIST ITEMS START-->
-
-                        <li>
-
-                            <figure>
-
-                                <div class="thumb">
-
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb3.png" alt=""></a>
-
-                                    <div class="play">
-
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                    </div>
-
-                                </div>
-
-                                <figcaption>
-
-                                    <p>Sound card has a built in one amp..</p>
-
-                                    <p class="color">27 may 2013</p>
-
-                                </figcaption>
-
-                            </figure>
-
-                        </li>
-
-                        <!--LIST ITEMS END-->
-
-                        <!--LIST ITEMS START-->
-
-                        <li>
-
-                            <figure>
-
-                                <div class="thumb">
-
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb4.png" alt=""></a>
-
-                                    <div class="play">
-
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                    </div>
-
-                                </div>
-
-                                <figcaption>
-
-                                    <p>Sound card has a built in one amp..</p>
-
-                                    <p class="color">27 may 2013</p>
-
-                                </figcaption>
-
-                            </figure>
-
-                        </li>
-
-                        <!--LIST ITEMS END-->
-
-                        <!--LIST ITEMS START-->
-
-                        <li>
-
-                            <figure>
-
-                                <div class="thumb">
-
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb5.png" alt=""></a>
-
-                                    <div class="play">
-
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                    </div>
-
-                                </div>
-
-                                <figcaption>
-
-                                    <p>Sound card has a built in one amp..</p>
-
-                                    <p class="color">27 may 2013</p>
-
-                                </figcaption>
-
-                            </figure>
-
-                        </li>
-
-                        <!--LIST ITEMS END-->
-
-                         <!--LIST ITEMS START-->
-
-                        <li>
-
-                            <figure>
-
-                                <div class="thumb">
-
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb.png" alt=""></a>
-
-                                    <div class="play">
-
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                    </div>
-
-                                </div>
-
-                                <figcaption>
-
-                                    <p>Sound card has a built in one amp..</p>
-
-                                    <p class="color">27 may 2013</p>
-
-                                </figcaption>
-
-                            </figure>
-
-                        </li>
-
-                        <!--LIST ITEMS END-->
-
-                        <!--LIST ITEMS START-->
-
-                        <li>
-
-                            <figure>
-
-                                <div class="thumb">
-
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb2.png" alt=""></a>
-
-                                    <div class="play">
-
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                    </div>
-
-                                </div>
-
-                                <figcaption>
-
-                                    <p>Sound card has a built in one amp..</p>
-
-                                    <p class="color">27 may 2013</p>
-
-                                </figcaption>
-
-                            </figure>
-
-                        </li>
-
-                        <!--LIST ITEMS END-->
-
-                        <!--LIST ITEMS START-->
-
-                        <li>
-
-                            <figure>
-
-                                <div class="thumb">
-
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb3.png" alt=""></a>
-
-                                    <div class="play">
-
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                    </div>
-
-                                </div>
-
-                                <figcaption>
-
-                                    <p>Sound card has a built in one amp..</p>
-
-                                    <p class="color">27 may 2013</p>
-
-                                </figcaption>
-
-                            </figure>
-
-                        </li>
-
-                        <!--LIST ITEMS END-->
-
-                        <!--LIST ITEMS START-->
-
-                        <li>
-
-                            <figure>
-
-                                <div class="thumb">
-
-                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb4.png" alt=""></a>
-
-                                    <div class="play">
-
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                    </div>
-
-                                </div>
-
-                                <figcaption>
-
-                                    <p>Sound card has a built in one amp..</p>
-
-                                    <p class="color">27 may 2013</p>
-
-                                </figcaption>
-
-                            </figure>
-
-                        </li>
-
-                        <!--LIST ITEMS END-->
+                        @endforeach
 
                     </ul>
 

@@ -3,6 +3,7 @@
 use App\Entities\Posts;
 use App\Entities\Registers;
 use App\Entities\Settings;
+use App\Entities\Taxonomy;
 use App\Entities\Taxonomyitem;
 use DocuSign_Client;
 use DocuSign_Document;
@@ -24,16 +25,31 @@ class FrontendController extends Controller {
 
     public function home(){   
 
-        $videoList = Youtube::getPopularVideos('us');       
-/*
-        echo '<pre>';
-        pr($videoList);die;*/
+        $videoList = Youtube::getPopularVideos('US');       
+        $objtaxo  = new Taxonomy();
+        $objSetting = new Settings();     
 
-        $objSetting = new Settings();
+        $taxo = $objtaxo->first();        
+
+        $params =array(  
+            'q'=>'',      
+            'part'=>'id,snippet',           
+            'type'  =>'video',    
+             'maxResults' => 8,
+             'regionCode'=>'VN',
+             'videoCategoryId' =>$taxo->description
+        );
+        $search = Youtube::searchAdvanced($params, true);    
+
+        $video_by_cate=array(
+            'name' => $taxo->name,
+            'list_videos'=>$search['results']
+            );              
         $objSetting = $objSetting->where('type','=','site_settings')->first();
         $setting = json_decode($objSetting->content);
-        return view('frontend::home',array('setting'=>$setting,'ft_videos'=>$videoList));
+        return view('frontend::home',array('setting'=>$setting,'ft_videos'=>$videoList,'cate_videos'=>$video_by_cate));
     }
+
     public function page($alias=null){        
         $objPost= new Posts();       
         $page = $objPost->where('alias','=',$alias)->first();        
