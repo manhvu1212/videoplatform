@@ -91,7 +91,7 @@ return [
             'host'     => 'localhost',
             'port'     => 27017,
             'username' => 'admin',
-            'password' => 'admin',
+            'password' => '',
             'database' => 'videoplatform',
             'options' => array(
                 'db' => 'admin' // sets the authentication database required by mongo 3
