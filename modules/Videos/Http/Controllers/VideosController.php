@@ -81,7 +81,7 @@ class VideosController extends BaseController {
 		$input= Input::all();		
 		if(isset($input['id'])&&$input['id']!=''){		
 			$video = Videos::where('_id',$input['id'])->first();
-			$video->status=$input['activated'];
+			$video->status=(int)$input['activated'];
 			$video->save();
 		}
 		Response::json('1');

@@ -1,10 +1,9 @@
 <?php
+use App\Entities\Slideshow;
 use Cartalyst\Sentry\Facades\Laravel\Sentry;
 use Illuminate\Support\Facades\View;
-use App\Entities\Slideshow;
-use App\Entities\Taxonomy;
-use App\Entities\Taxonomyitem;
 use Intervention\Image\Facades\Image;
+use Youtube;
 
 /**
  * Created by PhpStorm.
@@ -62,5 +61,4 @@ class Utility {
     {
         return \App\Entities\Taxonomyitem::where('id','=',$id)->first();
     }
-
 }

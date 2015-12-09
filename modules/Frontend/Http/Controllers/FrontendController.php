@@ -1,10 +1,10 @@
 <?php namespace Modules\Frontend\Http\Controllers;
 
-use App\Entities\Posts;
 use App\Entities\Registers;
 use App\Entities\Settings;
 use App\Entities\Taxonomy;
 use App\Entities\Taxonomyitem;
+use App\Entities\Videos;
 use DocuSign_Client;
 use DocuSign_Document;
 use DocuSign_Recipient;
@@ -27,19 +27,32 @@ class FrontendController extends Controller {
 
         $videoList = Youtube::getPopularVideos('US');       
         $objtaxo  = new Taxonomy();
-        $objSetting = new Settings();     
+        $objSetting = new Settings();  
+        $objVideos = new Videos();
 
-        $taxo = $objtaxo->first();        
+        //get personal videos
+        $personal_videos = $objVideos->select('idVideo')->where('status','=',1)->orderBy('updated_at','desc')->limit(5)->get();         
+        $list_id = array();
+        foreach ($personal_videos as $video) {
+            array_push($list_id, $video->idVideo);
+        }
+        $list_personal_videos= Youtube::getVideoInfo($list_id);      
+        //end
+
+        //get videos by category
+        $taxo = $objtaxo->first();   
 
         $params =array(  
             'q'=>'',      
             'part'=>'id,snippet',           
             'type'  =>'video',    
-             'maxResults' => 8,
-             'regionCode'=>'VN',
-             'videoCategoryId' =>$taxo->description
+            'maxResults' => 12,
+            'regionCode'=>'VN',
+            'videoCategoryId' =>$taxo->description,
         );
         $search = Youtube::searchAdvanced($params, true);    
+        //end
+
 
         $video_by_cate=array(
             'name' => $taxo->name,
@@ -47,7 +60,13 @@ class FrontendController extends Controller {
             );              
         $objSetting = $objSetting->where('type','=','site_settings')->first();
         $setting = json_decode($objSetting->content);
-        return view('frontend::home',array('setting'=>$setting,'ft_videos'=>$videoList,'cate_videos'=>$video_by_cate));
+
+        return view('frontend::home',array(
+            'setting'=>$setting,
+            'ft_videos'=>$videoList,
+            'cate_videos'=>$video_by_cate,
+            'personal_videos'=>$list_personal_videos
+            ));
     }
 
     public function page($alias=null){        
