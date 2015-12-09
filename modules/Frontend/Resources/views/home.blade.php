@@ -1,473 +1,145 @@
 @extends('layouts.frontend.master')
 @section('content')
  <section class="banner">
+
         <div class="container">
             <div class="banner-inner">
                 <ul id="imageGallery">
-                    <li data-thumb="/assets/frontend/images/banner2.png">
-                    <img src="/assets/frontend/images/banner2.png" alt=""> 
+                    <li data-thumb="/assets/frontend/images/banner3.jpg">
+                    <img src="/assets/frontend/images/banner3.jpg" alt=""> 
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner3.png">
-                        <img src="/assets/frontend/images/banner3.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner2.jpg">
+                        <img src="/assets/frontend/images/banner2.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner4.png">
-                        <img src="/assets/frontend/images/banner4.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner4.jpg">
+                        <img src="/assets/frontend/images/banner4.jpg" alt="">
                         <div class="caption">
                             <h2>Consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner1.png">
-                        <img src="/assets/frontend/images/banner1.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner1.jpg">
+                        <img src="/assets/frontend/images/banner1.jpg" alt="">
                         <div class="caption">
                             <h2>Dolor sit amet consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                    <li data-thumb="/assets/frontend/images/banner2.png">
-                        <img src="/assets/frontend/images/banner2.png" alt="">
+                    <li data-thumb="/assets/frontend/images/banner3.jpg">
+                        <img src="/assets/frontend/images/banner3.jpg" alt="">
                         <div class="caption">
                             <h2>Ipsum dolor sit sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner3.png">
-                        <img src="/assets/frontend/images/banner3.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner2.jpg">
+                        <img src="/assets/frontend/images/banner2.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner4.png">
-                        <img src="/assets/frontend/images/banner4.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner4.jpg">
+                        <img src="/assets/frontend/images/banner4.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum dolor sit sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner1.png">
-                        <img src="/assets/frontend/images/banner1.png"alt="" >
+                     <li data-thumb="/assets/frontend/images/banner1.jpg">
+                        <img src="/assets/frontend/images/banner1.jpg"alt="" >
                         <div class="caption">
                             <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                    <li data-thumb="/assets/frontend/images/banner2.png">
-                        <img src="/assets/frontend/images/banner2.png" alt="">
+                    <li data-thumb="/assets/frontend/images/banner3.jpg">
+                        <img src="/assets/frontend/images/banner3.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner3.png">
-                        <img src="/assets/frontend/images/banner3.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner2.jpg">
+                        <img src="/assets/frontend/images/banner2.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner2.png">
+                     <li data-thumb="/assets/frontend/images/banner3.jpg">
                     <iframe src="https://player.vimeo.com/video/68513262" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner3.png">
-                        <img src="/assets/frontend/images/banner3.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner2.jpg">
+                        <img src="/assets/frontend/images/banner2.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner4.png">
-                        <img src="/assets/frontend/images/banner4.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner4.jpg">
+                        <img src="/assets/frontend/images/banner4.jpg" alt="">
                         <div class="caption">
                             <h2>Consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner1.png">
-                        <img src="/assets/frontend/images/banner1.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner1.jpg">
+                        <img src="/assets/frontend/images/banner1.jpg" alt="">
                         <div class="caption">
                             <h2>Dolor sit amet consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                    <li data-thumb="/assets/frontend/images/banner2.png">
-                        <img src="/assets/frontend/images/banner2.png" alt="">
+                    <li data-thumb="/assets/frontend/images/banner3.jpg">
+                        <img src="/assets/frontend/images/banner3.jpg" alt="">
                         <div class="caption">
                             <h2>Ipsum dolor sit sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner3.png">
-                        <img src="/assets/frontend/images/banner3.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner2.jpg">
+                        <img src="/assets/frontend/images/banner2.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner4.png">
-                        <img src="/assets/frontend/images/banner4.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner4.jpg">
+                        <img src="/assets/frontend/images/banner4.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum dolor sit sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner1.png">
-                        <img src="/assets/frontend/images/banner1.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner1.jpg">
+                        <img src="/assets/frontend/images/banner1.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                    <li data-thumb="/assets/frontend/images/banner2.png">
-                        <img src="/assets/frontend/images/banner2.png" alt="">
+                    <li data-thumb="/assets/frontend/images/banner3.jpg">
+                        <img src="/assets/frontend/images/banner3.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem ipsum consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
-                     <li data-thumb="/assets/frontend/images/banner3.png">
-                        <img src="/assets/frontend/images/banner3.png" alt="">
+                     <li data-thumb="/assets/frontend/images/banner2.jpg">
+                        <img src="/assets/frontend/images/banner2.jpg" alt="">
                         <div class="caption">
                             <h2>Lorem consetetur sadipscing elitr</h2>
                             <h4>behind the scenes</h4>
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div>       
         
-            <!--FLEX SLIDER START-->
-            <!--<div id="slider" class="flexslider">
-
-              <ul class="slides">
-
-                <li>
-
-                    <img src="/assets/frontend/images/banner1.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>Lorem ipsum dolor</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner2.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>sadipscing elitr</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner3.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>justo duo</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner4.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>dolores et ea</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                <li>
-
-                    <img src="/assets/frontend/images/banner1.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>invidunt ut</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner2.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>Lorem ipsum dolor</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner3.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>labore et</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner4.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>Stet clita kasd</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                <li>
-
-                    <img src="/assets/frontend/images/banner1.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>accusam et justo</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner2.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>Stet clita kasd</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner3.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>magna aliquyam</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner4.png" alt="">
-
-                    <div class="caption resize">
-
-                        <h2>sed diam voluptua</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-              </ul>
-
-        </div>
-
-        <div id="carousel" class="flexslider">
-
-          <ul class="slides">
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Diam voluptua</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb2.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Sed diam</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb3.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Sadipscing elitr</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb4.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Lorem ipsum</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Dolor sit amet</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb2.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Takimata sanctus</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb3.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Accusam et</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb4.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Diam voluptua</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">At vero eoset</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb2.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Takimata sanctus</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb3.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Lorem ipsum</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/banner-thumb4.png" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Ipsum dolor</a>
-
-                </div>
-
-                </li>
-
-          </ul>
-
-        </div>-->
-
         </div>
 
     </section>
@@ -506,11 +178,12 @@
 
         <div class="latest-vidios">
 
-            <!--VIDEO FIGURE START-->
-
+            <!--VIDEO FIGURE START-->           
+            @foreach($ft_videos as $k=>$video)
+            @if($k<3)           
             <figure class="video-container">
 
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video.png" alt=""></a>
+                <a href="/video-detail><img src="{{$video->snippet->thumbnails->high->url}}" alt=""></a>
 
                 <figcaption>
 
@@ -519,207 +192,10 @@
                     <h3>Steve &amp; Alana for X-Men</h3>
 
                 </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video2.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>SMART TECH</h2>
-
-                    <h3>New Year Activities 2014</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>PRO AWARDS</h2>
-
-                    <h3>Steve &amp; Alana for X-Men</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video2.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>SMART TECH</h2>
-
-                    <h3>New Year Activities 2014</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>PRO AWARDS</h2>
-
-                    <h3>Steve &amp; Alana for X-Men</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video2.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>SMART TECH</h2>
-
-                    <h3>New Year Activities 2014</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>PRO AWARDS</h2>
-
-                    <h3>Steve &amp; Alana for X-Men</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video2.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>SMART TECH</h2>
-
-                    <h3>New Year Activities 2014</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>PRO AWARDS</h2>
-
-                    <h3>Steve &amp; Alana for X-Men</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video2.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>SMART TECH</h2>
-
-                    <h3>New Year Activities 2014</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>PRO AWARDS</h2>
-
-                    <h3>Steve &amp; Alana for X-Men</h3>
-
-                </figcaption>
-
-            </figure>
-
-            <!--VIDEO FIGURE END-->
-
-            <!--VIDEO FIGURE START-->
-
-            <figure class="video-container">
-
-                <a href="video-detail.html"><img src="/assets/frontend/images/latest-video2.png" alt=""></a>
-
-                <figcaption>
-
-                    <h2>SMART TECH</h2>
-
-                    <h3>New Year Activities 2014</h3>
-
-                </figcaption>
-
-            </figure>
-
+            </figure>  
+            @else <?php break; ?>                 
+            @endif   
+            @endforeach
             <!--VIDEO FIGURE END-->
 
         </div>
@@ -749,14 +225,15 @@
                 <ul class="mycarousel jcarousel-skin-tango videos">
 
                     <!--LIST ITEMS START-->
-
+                    @foreach($ft_videos as $video)
+                    <?php $title=$video->snippet->title;  ?>
                     <li>
 
                         <figure>
 
                             <div class="thumb">
 
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid.png" alt=""></a>
+                                <a href="/video-detail"><img src="{{$video->snippet->thumbnails->medium->url}}" alt=""></a>
 
                                 <div class="play">
 
@@ -768,7 +245,7 @@
 
                             <figcaption>
 
-                                <h5>Lorem ipsum dolor sit</h5>
+                                <h5>{{strlen($title)<30?$title:substr($title,0,29).' ...'}}</h5>
 
                                 <ul class="views">
 
@@ -785,328 +262,7 @@
                         </figure>
 
                     </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li>
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid2.png" alt=""></a>
-
-                                <div class="play">
-
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
-
-                                </div>
-
-                            </div>
-
-                            <figcaption>
-
-                                <h5>Ipsum dolorsit</h5>
-
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
-
-                                    <li><i class="fa fa-comments"></i>23</li>
-
-                                    <li><i class="fa fa-eye"></i>875</li>
-
-                                </ul>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li>
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid3.png" alt=""></a>
-
-                                <div class="play">
-
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
-
-                                </div>
-
-                            </div>
-
-                            <figcaption>
-
-                                <h5>dolor sit amet</h5>
-
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
-
-                                    <li><i class="fa fa-comments"></i>23</li>
-
-                                    <li><i class="fa fa-eye"></i>875</li>
-
-                                </ul>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li>
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid.png" alt=""></a>
-
-                                <div class="play">
-
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
-
-                                </div>
-
-                            </div>
-
-                            <figcaption>
-
-                                <h5>At vero eos et</h5>
-
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
-
-                                    <li><i class="fa fa-comments"></i>23</li>
-
-                                    <li><i class="fa fa-eye"></i>875</li>
-
-                                </ul>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li>
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid2.png" alt=""></a>
-
-                                <div class="play">
-
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
-
-                                </div>
-
-                            </div>
-
-                            <figcaption>
-
-                                <h5>Kasd gubergren</h5>
-
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
-
-                                    <li><i class="fa fa-comments"></i>23</li>
-
-                                    <li><i class="fa fa-eye"></i>875</li>
-
-                                </ul>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li>
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid3.png" alt=""></a>
-
-                                <div class="play">
-
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
-
-                                </div>
-
-                            </div>
-
-                            <figcaption>
-
-                                <h5>At vero eos et</h5>
-
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
-
-                                    <li><i class="fa fa-comments"></i>23</li>
-
-                                    <li><i class="fa fa-eye"></i>875</li>
-
-                                </ul>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li>
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid.png" alt=""></a>
-
-                                <div class="play">
-
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
-
-                                </div>
-
-                            </div>
-
-                            <figcaption>
-
-                                <h5>Accusam et justo</h5>
-
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
-
-                                    <li><i class="fa fa-comments"></i>23</li>
-
-                                    <li><i class="fa fa-eye"></i>875</li>
-
-                                </ul>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li>
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid2.png" alt=""></a>
-
-                                <div class="play">
-
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
-
-                                </div>
-
-                            </div>
-
-                            <figcaption>
-
-                                <h5>Lorem ipsum sed auet</h5>
-
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
-
-                                    <li><i class="fa fa-comments"></i>23</li>
-
-                                    <li><i class="fa fa-eye"></i>875</li>
-
-                                </ul>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li>
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="video-detail.html"><img src="/assets/frontend/images/featured-vid.png" alt=""></a>
-
-                                <div class="play">
-
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
-
-                                </div>
-
-                            </div>
-
-                            <figcaption>
-
-                                <h5>Accusam et justo</h5>
-
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
-
-                                    <li><i class="fa fa-comments"></i>23</li>
-
-                                    <li><i class="fa fa-eye"></i>875</li>
-
-                                </ul>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
+                    @endforeach
 
                 </ul>
 
@@ -2106,7 +1262,7 @@
 
                                 <a href="#">
 
-                                    <img src="/assets/frontend/images/blog-banner3.png" alt="">
+                                    <img src="/assets/frontend/images/blog-banner2.jpg" alt="">
 
                                 </a>
 

@@ -24,7 +24,7 @@ class FrontendController extends Controller {
 
     public function home(){   
 
-        $videoList = Youtube::getPopularVideos('us');
+        $videoList = Youtube::getPopularVideos('us');       
 /*
         echo '<pre>';
         pr($videoList);die;*/
@@ -34,14 +34,17 @@ class FrontendController extends Controller {
         $setting = json_decode($objSetting->content);
         return view('frontend::home',array('setting'=>$setting,'ft_videos'=>$videoList));
     }
-    public function page($alias=null){
-        $objPost= new Posts();
-        $page = $objPost->where('alias','=',$alias)->first();
+    public function page($alias=null){        
+        $objPost= new Posts();       
+        $page = $objPost->where('alias','=',$alias)->first();        
         $posts = $objPost->where('type','=','posts')->where('cat_id','=',2)->where('status','=',1)->orderBy('updated_at','DESC')->get();
 
         if(isset($page['template']) && $page['template']!='')
         return view('frontend::templates.'.$page['template'],array('data'=>$page,'posts'=>$posts));
         else  return view('frontend::templates.template_ira');
+    }
+    public function videoDetail($video_id=null){
+        return view('frontend::templates.video_detail');
     }
     public function post($alias=null){
         $objPost= new Posts();

@@ -9,6 +9,7 @@ Route::group(['namespace' => 'Modules\Frontend\Http\Controllers'], function()
 {
     Route::get('/', 'FrontendController@home');
     Route::get('/home', 'FrontendController@home');
+    Route::get('/video-detail','FrontendController@videoDetail');
     Route::get('/about', 'FrontendController@about');
     Route::get('/page-{alias}', 'FrontendController@page');
     Route::get('/post-{alias}', 'FrontendController@post');
