@@ -11,17 +11,17 @@
     <title>@yield('title')</title>
 
     <!--Core CSS -->
-    <link href="<?php echo Config::get('app.domain'); ?>/bs3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo Config::get('app.domain'); ?>/css/bootstrap-reset.css" rel="stylesheet">
-    <link href="<?php echo Config::get('app.domain'); ?>/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="<?php echo Config::get('app.domain'); ?>/css/style.css" rel="stylesheet">
-    <link href="<?php echo Config::get('app.domain'); ?>/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]>
-    <script src="<?php echo Config::get('app.domain'); ?>/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -93,8 +93,8 @@
 <!-- Placed js at the end of the document so the pages load faster -->
 
 <!--Core js-->
-<script src="<?php echo Config::get('app.domain'); ?>/js/jquery.js"></script>
-<script src="<?php echo Config::get('app.domain'); ?>/bs3/js/bootstrap.min.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/bs3/js/bootstrap.min.js"></script>
 <!--<script src="--><?php //echo Config::get('app.domain'); ?><!--/js/alerts.js"></script>-->
 
 </body>
