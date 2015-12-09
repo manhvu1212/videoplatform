@@ -1,7 +1,6 @@
 <?php namespace Modules\Frontend\Http\Controllers;
 
 use App\Entities\Posts;
-use App\Entities\Videos;
 use App\Entities\Registers;
 use App\Entities\Settings;
 use App\Entities\Taxonomyitem;
@@ -14,47 +13,26 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use mikehaertl\wkhtmlto\Pdf;
 use Pingpong\Modules\Routing\Controller;
+use Youtube;
 
 class FrontendController extends Controller {
 
-    public function getVideos(){
-        $objVideos  = new Videos();
-        //$objVideos = $objVideos->where(array('obj2.name' =>  'hna cogn'))->first();
-      // $videos = $objVideos->where('idthuong','=',2)->get();
-        $obj1= array(
-            "id"        =>1,
-            "name"      =>"Phamnhuy",
-            "company"   =>"vptech"
-        );
-        $obj2=array(
-            "id"        => 2,
-            "name"      =>"hna cogn",
-            "company"   =>"topica",
-            "hobbit"    =>array("1"=>"football","2"=>"videgame","3"=>"program")
-        );
-        $obj3=array(
-            "id"        => 3,
-            "name"      =>"ypn",
-            "company"   =>"freelancer"
-        );
-      /*  print_r($objVideos);die;
-       $objVideos->obj2 = $obj2;*/
+    public function home(){   
 
-        $objVideos->obj2 = $obj2;
+        $videoList = Youtube::getPopularVideos('us');
+/*
+        echo '<pre>';
+        pr($videoList);die;*/
 
-        $objVideos->save();
-    }
-    public function home(){
         $objSetting = new Settings();
         $objSetting = $objSetting->where('type','=','site_settings')->first();
         $setting = json_decode($objSetting->content);
-        return view('frontend::home',array('setting'=>$setting));
+        return view('frontend::home',array('setting'=>$setting,'ft_videos'=>$videoList));
     }
     public function page($alias=null){
         $objPost= new Posts();

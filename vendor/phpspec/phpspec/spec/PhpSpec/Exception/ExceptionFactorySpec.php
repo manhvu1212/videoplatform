@@ -2,10 +2,9 @@
 
 namespace spec\PhpSpec\Exception;
 
+use PhpSpec\Formatter\Presenter\PresenterInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-
-use PhpSpec\Formatter\Presenter\PresenterInterface;
 
 class ExceptionFactorySpec extends ObjectBehavior
 {

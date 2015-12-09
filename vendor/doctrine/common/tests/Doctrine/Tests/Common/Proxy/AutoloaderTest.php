@@ -19,8 +19,8 @@
 
 namespace Doctrine\Tests\Common\Proxy;
 
-use PHPUnit_Framework_TestCase;
 use Doctrine\Common\Proxy\Autoloader;
+use PHPUnit_Framework_TestCase;
 
 /**
  * @group DDC-1698

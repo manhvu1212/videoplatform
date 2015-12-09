@@ -13,10 +13,10 @@
 
 namespace PhpSpec\Console;
 
+use PhpSpec\Config\OptionsConfig;
 use PhpSpec\IO\IOInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use PhpSpec\Config\OptionsConfig;
 
 /**
  * Class IO deals with input and output from command line interaction

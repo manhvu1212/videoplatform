@@ -11,11 +11,11 @@
 
 namespace Symfony\Component\EventDispatcher\Debug;
 
+use Psr\Log\LoggerInterface;
+use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\Stopwatch\Stopwatch;
-use Psr\Log\LoggerInterface;
 
 /**
  * Collects some data about event listeners.
@@ -97,6 +97,14 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
     public function getListeners($eventName = null)
     {
         return $this->dispatcher->getListeners($eventName);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getListenerPriority($eventName, $listener)
+    {
+        return $this->dispatcher->getListenerPriority($eventName, $listener);
     }
 
     /**
@@ -185,6 +193,8 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
                 }
             }
         }
+
+        uasort($notCalled, array($this, 'sortListenersByPriority'));
 
         return $notCalled;
     }
@@ -285,6 +295,7 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
     {
         $info = array(
             'event' => $eventName,
+            'priority' => $this->getListenerPriority($eventName, $listener),
         );
         if ($listener instanceof \Closure) {
             $info += array(
@@ -331,5 +342,26 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
         }
 
         return $info;
+    }
+
+    private function sortListenersByPriority($a, $b)
+    {
+        if (is_int($a['priority']) && !is_int($b['priority'])) {
+            return 1;
+        }
+
+        if (!is_int($a['priority']) && is_int($b['priority'])) {
+            return -1;
+        }
+
+        if ($a['priority'] === $b['priority']) {
+            return 0;
+        }
+
+        if ($a['priority'] > $b['priority']) {
+            return -1;
+        }
+
+        return 1;
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Illuminate\Queue;
 
+use Illuminate\Contracts\Database\ModelIdentifier;
+use Illuminate\Contracts\Queue\QueueableEntity;
 use ReflectionClass;
 use ReflectionProperty;
-use Illuminate\Contracts\Queue\QueueableEntity;
-use Illuminate\Contracts\Database\ModelIdentifier;
 
 trait SerializesModels
 {
@@ -24,7 +24,9 @@ trait SerializesModels
             ));
         }
 
-        return array_map(function ($p) { return $p->getName(); }, $properties);
+        return array_map(function ($p) {
+            return $p->getName();
+        }, $properties);
     }
 
     /**

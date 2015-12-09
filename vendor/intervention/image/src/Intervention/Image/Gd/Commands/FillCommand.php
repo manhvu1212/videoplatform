@@ -2,8 +2,8 @@
 
 namespace Intervention\Image\Gd\Commands;
 
-use Intervention\Image\Gd\Decoder;
 use Intervention\Image\Gd\Color;
+use Intervention\Image\Gd\Decoder;
 
 class FillCommand extends \Intervention\Image\Commands\AbstractCommand
 {

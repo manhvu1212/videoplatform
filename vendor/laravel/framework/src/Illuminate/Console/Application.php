@@ -2,14 +2,14 @@
 
 namespace Illuminate\Console;
 
-use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Contracts\Console\Application as ApplicationContract;
 use Illuminate\Contracts\Container\Container;
+use Illuminate\Contracts\Events\Dispatcher;
+use Symfony\Component\Console\Application as SymfonyApplication;
+use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\Console\Application as SymfonyApplication;
-use Symfony\Component\Console\Command\Command as SymfonyCommand;
-use Illuminate\Contracts\Console\Application as ApplicationContract;
 
 class Application extends SymfonyApplication implements ApplicationContract
 {
@@ -55,11 +55,17 @@ class Application extends SymfonyApplication implements ApplicationContract
      */
     public function call($command, array $parameters = [])
     {
-        $parameters['command'] = $command;
+        $parameters = collect($parameters)->prepend($command);
 
         $this->lastOutput = new BufferedOutput;
 
-        return $this->find($command)->run(new ArrayInput($parameters), $this->lastOutput);
+        $this->setCatchExceptions(false);
+
+        $result = $this->run(new ArrayInput($parameters->toArray()), $this->lastOutput);
+
+        $this->setCatchExceptions(true);
+
+        return $result;
     }
 
     /**

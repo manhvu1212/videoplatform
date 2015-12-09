@@ -2,9 +2,9 @@
 
 namespace Doctrine\Tests\Common\Reflection;
 
-use Doctrine\Tests\DoctrineTestCase;
-use Doctrine\Common\Reflection\StaticReflectionParser;
 use Doctrine\Common\Reflection\Psr0FindFile;
+use Doctrine\Common\Reflection\StaticReflectionParser;
+use Doctrine\Tests\DoctrineTestCase;
 
 class StaticReflectionParserTest extends DoctrineTestCase
 {

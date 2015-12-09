@@ -2,14 +2,14 @@
 
 namespace Illuminate\Broadcasting;
 
-use Pusher;
 use Closure;
+use Illuminate\Broadcasting\Broadcasters\LogBroadcaster;
+use Illuminate\Broadcasting\Broadcasters\PusherBroadcaster;
+use Illuminate\Broadcasting\Broadcasters\RedisBroadcaster;
+use Illuminate\Contracts\Broadcasting\Factory as FactoryContract;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
-use Illuminate\Broadcasting\Broadcasters\LogBroadcaster;
-use Illuminate\Broadcasting\Broadcasters\RedisBroadcaster;
-use Illuminate\Broadcasting\Broadcasters\PusherBroadcaster;
-use Illuminate\Contracts\Broadcasting\Factory as FactoryContract;
+use Pusher;
 
 class BroadcastManager implements FactoryContract
 {
@@ -85,6 +85,8 @@ class BroadcastManager implements FactoryContract
      *
      * @param  string  $name
      * @return \Illuminate\Contracts\Broadcasting\Broadcaster
+     *
+     * @throws \InvalidArgumentException
      */
     protected function resolve($name)
     {
@@ -121,7 +123,7 @@ class BroadcastManager implements FactoryContract
     protected function createPusherDriver(array $config)
     {
         return new PusherBroadcaster(
-            new Pusher($config['key'], $config['secret'], $config['app_id'], array_get($config, 'options', []))
+            new Pusher($config['key'], $config['secret'], $config['app_id'], Arr::get($config, 'options', []))
         );
     }
 

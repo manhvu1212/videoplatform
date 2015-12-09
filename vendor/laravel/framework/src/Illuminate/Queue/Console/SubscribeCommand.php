@@ -3,12 +3,12 @@
 namespace Illuminate\Queue\Console;
 
 use Exception;
-use RuntimeException;
-use Illuminate\Support\Str;
-use Illuminate\Queue\IronQueue;
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Queue\IronQueue;
+use Illuminate\Support\Str;
+use RuntimeException;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 /**
  * @deprecated since version 5.1

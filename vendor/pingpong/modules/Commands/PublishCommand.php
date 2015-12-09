@@ -5,7 +5,6 @@ namespace Pingpong\Modules\Commands;
 use Illuminate\Console\Command;
 use Pingpong\Modules\Module;
 use Pingpong\Modules\Publishing\AssetPublisher;
-use Pingpong\Modules\Publishing\LangPublisher;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

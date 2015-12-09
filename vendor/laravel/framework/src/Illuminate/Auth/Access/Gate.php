@@ -2,10 +2,10 @@
 
 namespace Illuminate\Auth\Access;
 
+use Illuminate\Contracts\Auth\Access\Gate as GateContract;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 
 class Gate implements GateContract
 {
@@ -321,7 +321,9 @@ class Gate implements GateContract
         } elseif (isset($this->abilities[$ability])) {
             return $this->abilities[$ability];
         } else {
-            return function () { return false; };
+            return function () {
+                return false;
+            };
         }
     }
 
@@ -429,8 +431,12 @@ class Gate implements GateContract
      */
     public function forUser($user)
     {
+        $callback = function () use ($user) {
+            return $user;
+        };
+
         return new static(
-            $this->container, function () use ($user) { return $user; }, $this->abilities,
+            $this->container, $callback, $this->abilities,
             $this->policies, $this->beforeCallbacks, $this->afterCallbacks
         );
     }

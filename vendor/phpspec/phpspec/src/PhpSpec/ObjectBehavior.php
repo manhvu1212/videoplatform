@@ -13,11 +13,11 @@
 
 namespace PhpSpec;
 
-use PhpSpec\Matcher\MatchersProviderInterface;
-use PhpSpec\Wrapper\WrapperInterface;
-use PhpSpec\Wrapper\SubjectContainerInterface;
-use PhpSpec\Wrapper\Subject;
 use ArrayAccess;
+use PhpSpec\Matcher\MatchersProviderInterface;
+use PhpSpec\Wrapper\Subject;
+use PhpSpec\Wrapper\SubjectContainerInterface;
+use PhpSpec\Wrapper\WrapperInterface;
 
 /**
  * The object behaviour is the default base class for specification.
@@ -28,8 +28,8 @@ use ArrayAccess;
  * wrap the results into PhpSpec subjects. This results will then be able to
  * be matched against expectations.
  *
- * @method void beConstructedWith()
- * @method void beConstructedThrough($factoryMethod, array $constructorArguments)
+ * @method void beConstructedWith(...$arguments)
+ * @method void beConstructedThrough($factoryMethod, array $constructorArguments = array())
  * @method void beAnInstanceOf($class)
  * @method void shouldHaveType($type)
  * @method Subject\Expectation\DuringCall shouldThrow($exception = null)

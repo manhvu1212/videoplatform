@@ -13,18 +13,18 @@
 
 namespace PhpSpec\Wrapper\Subject;
 
+use PhpSpec\CodeAnalysis\AccessInspectorInterface;
 use PhpSpec\CodeAnalysis\MagicAwareAccessInspector;
-use Phpspec\CodeAnalysis\AccessInspectorInterface;
 use PhpSpec\CodeAnalysis\VisibilityAccessInspector;
+use PhpSpec\Event\MethodCallEvent;
 use PhpSpec\Exception\ExceptionFactory;
 use PhpSpec\Loader\Node\ExampleNode;
 use PhpSpec\Wrapper\Subject;
-use PhpSpec\Wrapper\Wrapper;
 use PhpSpec\Wrapper\Unwrapper;
-use PhpSpec\Event\MethodCallEvent;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface as Dispatcher;
+use PhpSpec\Wrapper\Wrapper;
 use ReflectionClass;
 use ReflectionException;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface as Dispatcher;
 
 class Caller
 {

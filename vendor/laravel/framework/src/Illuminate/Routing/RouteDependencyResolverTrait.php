@@ -2,12 +2,12 @@
 
 namespace Illuminate\Routing;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 use ReflectionClass;
+use ReflectionFunctionAbstract;
 use ReflectionMethod;
 use ReflectionParameter;
-use Illuminate\Support\Arr;
-use ReflectionFunctionAbstract;
-use Illuminate\Database\Eloquent\Model;
 
 trait RouteDependencyResolverTrait
 {

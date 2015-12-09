@@ -11,7 +11,8 @@
         "pingpong/modules": "~2.0",
         "jenssegers/mongodb": "^2.1",
         "barryvdh/laravel-dompdf": "^0.6.0",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "alaouy/youtube": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

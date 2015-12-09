@@ -3,14 +3,14 @@
 namespace Illuminate\View;
 
 use Closure;
+use Illuminate\Contracts\Container\Container;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\View\Factory as FactoryContract;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use InvalidArgumentException;
-use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\View\Engines\EngineResolver;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\View\Factory as FactoryContract;
+use InvalidArgumentException;
 
 class Factory implements FactoryContract
 {
@@ -544,6 +544,10 @@ class Factory implements FactoryContract
      */
     public function yieldSection()
     {
+        if (empty($this->sectionStack)) {
+            return '';
+        }
+
         return $this->yieldContent($this->stopSection());
     }
 
@@ -552,9 +556,14 @@ class Factory implements FactoryContract
      *
      * @param  bool  $overwrite
      * @return string
+     * @throws \InvalidArgumentException
      */
     public function stopSection($overwrite = false)
     {
+        if (empty($this->sectionStack)) {
+            throw new InvalidArgumentException('Cannot end a section without first starting one.');
+        }
+
         $last = array_pop($this->sectionStack);
 
         if ($overwrite) {
@@ -570,9 +579,14 @@ class Factory implements FactoryContract
      * Stop injecting content into a section and append it.
      *
      * @return string
+     * @throws \InvalidArgumentException
      */
     public function appendSection()
     {
+        if (empty($this->sectionStack)) {
+            throw new InvalidArgumentException('Cannot end a section without first starting one.');
+        }
+
         $last = array_pop($this->sectionStack);
 
         if (isset($this->sections[$last])) {

@@ -2,11 +2,11 @@
 
 namespace Illuminate\Queue;
 
-use IronMQ\IronMQ;
+use Illuminate\Contracts\Queue\Queue as QueueContract;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Queue\Jobs\IronJob;
-use Illuminate\Contracts\Queue\Queue as QueueContract;
+use IronMQ\IronMQ;
 
 class IronQueue extends Queue implements QueueContract
 {

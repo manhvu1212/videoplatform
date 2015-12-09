@@ -3,8 +3,8 @@
 namespace Illuminate\Support\Facades;
 
 use Mockery;
-use RuntimeException;
 use Mockery\MockInterface;
+use RuntimeException;
 
 abstract class Facade
 {
@@ -63,6 +63,8 @@ abstract class Facade
     protected static function createFreshMockInstance($name)
     {
         static::$resolvedInstance[$name] = $mock = static::createMockByName($name);
+
+        $mock->shouldAllowMockingProtectedMethods();
 
         if (isset(static::$app)) {
             static::$app->instance($name, $mock);

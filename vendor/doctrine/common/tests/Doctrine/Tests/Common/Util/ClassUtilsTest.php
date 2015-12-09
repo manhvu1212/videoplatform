@@ -2,8 +2,9 @@
 
 namespace Doctrine\Tests\Common\Util
 {
-    use Doctrine\Tests\DoctrineTestCase;
+
     use Doctrine\Common\Util\ClassUtils;
+    use Doctrine\Tests\DoctrineTestCase;
 
     class ClassUtilsTest extends DoctrineTestCase
     {

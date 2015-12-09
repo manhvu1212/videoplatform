@@ -2,8 +2,8 @@
 
 namespace Illuminate\Foundation\Testing;
 
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 trait CrawlerTrait
 {

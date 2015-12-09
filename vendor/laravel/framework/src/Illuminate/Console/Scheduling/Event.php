@@ -2,15 +2,15 @@
 
 namespace Illuminate\Console\Scheduling;
 
-use Closure;
 use Carbon\Carbon;
-use LogicException;
+use Closure;
 use Cron\CronExpression;
 use GuzzleHttp\Client as HttpClient;
-use Illuminate\Contracts\Mail\Mailer;
-use Symfony\Component\Process\Process;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Mail\Mailer;
+use LogicException;
+use Symfony\Component\Process\Process;
 
 class Event
 {
@@ -731,7 +731,9 @@ class Event
      */
     public function pingBefore($url)
     {
-        return $this->before(function () use ($url) { (new HttpClient)->get($url); });
+        return $this->before(function () use ($url) {
+            (new HttpClient)->get($url);
+        });
     }
 
     /**
@@ -755,7 +757,9 @@ class Event
      */
     public function thenPing($url)
     {
-        return $this->then(function () use ($url) { (new HttpClient)->get($url); });
+        return $this->then(function () use ($url) {
+            (new HttpClient)->get($url);
+        });
     }
 
     /**

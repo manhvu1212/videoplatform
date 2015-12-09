@@ -13,12 +13,12 @@
 
 namespace PhpSpec\Runner\Maintainer;
 
-use Phpspec\CodeAnalysis\AccessInspectorInterface;
-use PhpSpec\Loader\Node\ExampleNode;
-use PhpSpec\SpecificationInterface;
-use PhpSpec\Runner\MatcherManager;
-use PhpSpec\Runner\CollaboratorManager;
+use PhpSpec\CodeAnalysis\AccessInspectorInterface;
 use PhpSpec\Formatter\Presenter\PresenterInterface;
+use PhpSpec\Loader\Node\ExampleNode;
+use PhpSpec\Runner\CollaboratorManager;
+use PhpSpec\Runner\MatcherManager;
+use PhpSpec\SpecificationInterface;
 use PhpSpec\Wrapper\Unwrapper;
 use PhpSpec\Wrapper\Wrapper;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

@@ -21,9 +21,9 @@
 namespace Doctrine\Tests\Common\Proxy;
 
 use Doctrine\Common\Proxy\ProxyGenerator;
+use PHPUnit_Framework_TestCase;
 use ReflectionClass;
 use ReflectionMethod;
-use PHPUnit_Framework_TestCase;
 
 /**
  * Test the proxy generator. Its work is generating on-the-fly subclasses of a given model, which implement the Proxy

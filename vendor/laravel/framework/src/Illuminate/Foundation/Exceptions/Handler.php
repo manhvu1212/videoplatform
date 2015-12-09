@@ -3,13 +3,13 @@
 namespace Illuminate\Foundation\Exceptions;
 
 use Exception;
-use Psr\Log\LoggerInterface;
-use Illuminate\Http\Response;
 use Illuminate\Auth\Access\UnauthorizedException;
-use Symfony\Component\HttpKernel\Exception\HttpException;
+use Illuminate\Contracts\Debug\ExceptionHandler as ExceptionHandlerContract;
+use Illuminate\Http\Response;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Application as ConsoleApplication;
 use Symfony\Component\Debug\ExceptionHandler as SymfonyDisplayer;
-use Illuminate\Contracts\Debug\ExceptionHandler as ExceptionHandlerContract;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler implements ExceptionHandlerContract
 {

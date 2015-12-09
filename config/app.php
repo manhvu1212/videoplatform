@@ -150,6 +150,7 @@ return [
         Cartalyst\Sentry\SentryServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Alaouy\Youtube\YoutubeServiceProvider::class,
     ],
 
     /*
@@ -201,5 +202,4 @@ return [
         'Image'     => Intervention\Image\Facades\Image::class,
         'PDF'       => Barryvdh\DomPDF\Facade::class,
     ],
-
 ];

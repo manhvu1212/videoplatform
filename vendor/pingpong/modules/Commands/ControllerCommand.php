@@ -2,8 +2,8 @@
 
 namespace Pingpong\Modules\Commands;
 
-use Pingpong\Support\Stub;
 use Pingpong\Modules\Traits\ModuleCommandTrait;
+use Pingpong\Support\Stub;
 use Symfony\Component\Console\Input\InputArgument;
 
 class ControllerCommand extends GeneratorCommand
@@ -53,12 +53,16 @@ class ControllerCommand extends GeneratorCommand
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
         return (new Stub('/controller.stub', [
-            'MODULENAME' => $module->getStudlyName(),
-            'CONTROLLERNAME' => $this->getControllerName(),
-            'CLASS' => $this->getClass(),
-            'NAMESPACE' => $module->getLowername(),
-            'MODULE_NAMESPACE' => $this->laravel['modules']->config('namespace'),
-            'CLASS_NAMESPACE' => $this->getClassNamespace($module),
+            'MODULENAME'        => $module->getStudlyName(),
+            'CONTROLLERNAME'    => $this->getControllerName(),
+            'NAMESPACE'         => $module->getLowername(),
+            'CLASS_NAMESPACE'   => $this->getClassNamespace($module),
+            'CLASS'             => $this->getClass(),
+            'LOWER_NAME'        => $module->getLowerName(),
+            'MODULE'            => $this->getModuleName(),
+            'NAME'              => $this->getModuleName(),
+            'STUDLY_NAME'       => $module->getStudlyName(),
+            'MODULE_NAMESPACE'  => $this->laravel['modules']->config('namespace'),
         ]))->render();
     }
 

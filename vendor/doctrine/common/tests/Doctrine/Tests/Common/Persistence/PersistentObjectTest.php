@@ -2,9 +2,9 @@
 
 namespace Doctrine\Tests\Common\Persistence;
 
-use Doctrine\Common\Persistence\PersistentObject;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\Common\Persistence\Mapping\ReflectionService;
+use Doctrine\Common\Persistence\PersistentObject;
 
 /**
  * @group DDC-1448

@@ -2,9 +2,9 @@
 
 namespace Doctrine\Tests\Common\Persistence\Mapping;
 
-use Doctrine\Tests\DoctrineTestCase;
-use Doctrine\Common\Persistence\Mapping\Driver\FileDriver;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use Doctrine\Common\Persistence\Mapping\Driver\FileDriver;
+use Doctrine\Tests\DoctrineTestCase;
 
 class FileDriverTest extends DoctrineTestCase
 {

@@ -6,8 +6,8 @@ use Illuminate\Config\Repository as Config;
 use Illuminate\Console\Command as Console;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
-use Pingpong\Support\Stub;
 use Pingpong\Modules\Repository;
+use Pingpong\Support\Stub;
 
 class ModuleGenerator extends Generator
 {

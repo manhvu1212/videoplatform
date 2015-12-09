@@ -2,8 +2,8 @@
 
 namespace Doctrine\Tests\Common\Proxy;
 
-use Doctrine\Tests\DoctrineTestCase;
 use Doctrine\Common\Proxy\ProxyDefinition;
+use Doctrine\Tests\DoctrineTestCase;
 
 class AbstractProxyFactoryTest extends DoctrineTestCase
 {

@@ -4,12 +4,12 @@ namespace Illuminate\Queue;
 
 use Closure;
 use DateTime;
-use RuntimeException;
-use Illuminate\Support\Arr;
-use SuperClosure\Serializer;
 use Illuminate\Container\Container;
-use Illuminate\Contracts\Queue\QueueableEntity;
 use Illuminate\Contracts\Encryption\Encrypter as EncrypterContract;
+use Illuminate\Contracts\Queue\QueueableEntity;
+use Illuminate\Support\Arr;
+use RuntimeException;
+use SuperClosure\Serializer;
 
 abstract class Queue
 {

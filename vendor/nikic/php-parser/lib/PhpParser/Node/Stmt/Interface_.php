@@ -2,8 +2,8 @@
 
 namespace PhpParser\Node\Stmt;
 
-use PhpParser\Node;
 use PhpParser\Error;
+use PhpParser\Node;
 
 class Interface_ extends ClassLike
 {
@@ -26,7 +26,7 @@ class Interface_ extends ClassLike
      * @param array  $attributes Additional attributes
      */
     public function __construct($name, array $subNodes = array(), array $attributes = array()) {
-        parent::__construct(null, $attributes);
+        parent::__construct($attributes);
         $this->name = $name;
         $this->extends = isset($subNodes['extends']) ? $subNodes['extends'] : array();
         $this->stmts = isset($subNodes['stmts']) ? $subNodes['stmts'] : array();

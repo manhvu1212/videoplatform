@@ -3,19 +3,19 @@
 namespace Illuminate\Mail;
 
 use Closure;
-use Swift_Mailer;
-use Swift_Message;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use SuperClosure\Serializer;
-use Psr\Log\LoggerInterface;
-use InvalidArgumentException;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Queue\Queue as QueueContract;
+use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Mail\Mailer as MailerContract;
 use Illuminate\Contracts\Mail\MailQueue as MailQueueContract;
+use Illuminate\Contracts\Queue\Queue as QueueContract;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
+use SuperClosure\Serializer;
+use Swift_Mailer;
+use Swift_Message;
 
 class Mailer implements MailerContract, MailQueueContract
 {

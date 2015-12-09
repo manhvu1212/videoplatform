@@ -2,8 +2,8 @@
 
 namespace Doctrine\Tests\Common\Persistence;
 
-use Doctrine\Common\Persistence\ObjectManagerDecorator;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\Persistence\ObjectManagerDecorator;
 
 class NullObjectManagerDecorator extends ObjectManagerDecorator
 {

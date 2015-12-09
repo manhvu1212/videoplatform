@@ -2,17 +2,19 @@
 
 namespace Illuminate\Foundation\Console;
 
-use PhpParser\Lexer;
-use PhpParser\Parser;
-use Illuminate\Console\Command;
 use ClassPreloader\ClassPreloader;
-use Illuminate\Foundation\Composer;
+use ClassPreloader\Exceptions\SkipFileException;
+use ClassPreloader\Exceptions\VisitorExceptionInterface;
+use ClassPreloader\Factory;
 use ClassPreloader\Parser\DirVisitor;
 use ClassPreloader\Parser\FileVisitor;
 use ClassPreloader\Parser\NodeTraverser;
-use ClassPreloader\Exceptions\SkipFileException;
-use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Console\Command;
+use Illuminate\Foundation\Composer;
+use PhpParser\Lexer;
+use PhpParser\Parser;
 use PhpParser\PrettyPrinter\Standard as PrettyPrinter;
+use Symfony\Component\Console\Input\InputOption;
 
 class OptimizeCommand extends Command
 {
@@ -80,7 +82,7 @@ class OptimizeCommand extends Command
      */
     protected function compileClasses()
     {
-        $preloader = new ClassPreloader(new PrettyPrinter, new Parser(new Lexer), $this->getTraverser());
+        $preloader = $this->getClassPreloader();
 
         $handle = $preloader->prepareOutput($this->laravel->getCachedCompilePath());
 
@@ -88,7 +90,9 @@ class OptimizeCommand extends Command
             try {
                 fwrite($handle, $preloader->getCode($file, false)."\n");
             } catch (SkipFileException $ex) {
-                //
+                // Class Preloader 2.x
+            } catch (VisitorExceptionInterface $e) {
+                // Class Preloader 3.x
             }
         }
 
@@ -96,13 +100,31 @@ class OptimizeCommand extends Command
     }
 
     /**
+     * Get the class preloader used by the command.
+     *
+     * @return \ClassPreloader\ClassPreloader
+     */
+    protected function getClassPreloader()
+    {
+        // Class Preloader 3.x
+        if (class_exists(Factory::class)) {
+            return (new Factory)->create(['skip' => true]);
+        }
+
+        // Class Preloader 2.x
+        return new ClassPreloader(new PrettyPrinter, new Parser(new Lexer), $this->getTraverser());
+    }
+
+    /**
      * Get the node traverser used by the command.
+     *
+     * Note that this method is only called if we're using Class Preloader 2.x.
      *
      * @return \ClassPreloader\Parser\NodeTraverser
      */
     protected function getTraverser()
     {
-        $traverser = new NodeTraverser();
+        $traverser = new NodeTraverser;
 
         $traverser->addVisitor(new DirVisitor(true));
 

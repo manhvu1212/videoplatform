@@ -11,9 +11,9 @@
 
 namespace Symfony\Component\DomCrawler\Tests;
 
+use Symfony\Component\DomCrawler\Field;
 use Symfony\Component\DomCrawler\Form;
 use Symfony\Component\DomCrawler\FormFieldRegistry;
-use Symfony\Component\DomCrawler\Field;
 
 class FormTest extends \PHPUnit_Framework_TestCase
 {

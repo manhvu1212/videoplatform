@@ -2,7 +2,6 @@
 
 namespace Doctrine\Tests\Common\Cache;
 
-use Doctrine\Common\Cache\ApcCache;
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Cache\ChainCache;
 
@@ -11,6 +10,11 @@ class ChainCacheTest extends CacheTest
     protected function _getCacheDriver()
     {
         return new ChainCache(array(new ArrayCache()));
+    }
+
+    public function testLifetime()
+    {
+        $this->markTestSkipped('The ChainCache test uses ArrayCache which does not implement TTL currently.');
     }
 
     public function testGetStats()

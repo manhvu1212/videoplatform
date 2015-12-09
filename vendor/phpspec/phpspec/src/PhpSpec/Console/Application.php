@@ -14,15 +14,16 @@
 namespace PhpSpec\Console;
 
 use PhpSpec\Console\Prompter\Factory;
+use PhpSpec\Extension;
+use PhpSpec\Loader\StreamWrapper;
 use PhpSpec\Process\Context\JsonExecutionContext;
+use PhpSpec\ServiceContainer;
+use RuntimeException;
 use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Yaml;
-use PhpSpec\ServiceContainer;
-use PhpSpec\Extension;
-use RuntimeException;
 
 /**
  * The command line application entry point
@@ -86,6 +87,12 @@ class Application extends BaseApplication
         $this->setDispatcher($this->container->get('console_event_dispatcher'));
 
         $this->container->get('console.io')->setConsoleWidth($this->getTerminalWidth());
+
+        StreamWrapper::reset();
+        foreach ($this->container->getByPrefix('loader.resource_loader.spec_transformer') as $transformer) {
+            StreamWrapper::addTransformer($transformer);
+        }
+        StreamWrapper::register();
 
         return parent::doRun($input, $output);
     }

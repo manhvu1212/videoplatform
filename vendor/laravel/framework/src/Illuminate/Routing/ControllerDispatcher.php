@@ -3,10 +3,10 @@
 namespace Illuminate\Routing;
 
 use Closure;
-use Illuminate\Support\Arr;
+use Illuminate\Container\Container;
 use Illuminate\Http\Request;
 use Illuminate\Pipeline\Pipeline;
-use Illuminate\Container\Container;
+use Illuminate\Support\Arr;
 
 class ControllerDispatcher
 {
@@ -143,7 +143,7 @@ class ControllerDispatcher
      */
     public function methodExcludedByOptions($method, array $options)
     {
-        return (! empty($options['only']) && ! in_array($method, (array) $options['only'])) ||
+        return (isset($options['only']) && ! in_array($method, (array) $options['only'])) ||
             (! empty($options['except']) && in_array($method, (array) $options['except']));
     }
 

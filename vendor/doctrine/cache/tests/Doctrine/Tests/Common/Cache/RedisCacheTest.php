@@ -2,8 +2,8 @@
 
 namespace Doctrine\Tests\Common\Cache;
 
-use Doctrine\Common\Cache\RedisCache;
 use Doctrine\Common\Cache\Cache;
+use Doctrine\Common\Cache\RedisCache;
 
 /**
  * @requires extension redis

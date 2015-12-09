@@ -3,80 +3,116 @@ $user = Utility::getUser();
 $setting = Utility::setting();
 $setting=json_decode($setting->content);
 ?>
-<div class="register-log">
-    <div class="container">
-        <div class="log-re">
+<?php
+$user = Utility::getUser();
+$setting = Utility::setting();
+$setting=json_decode($setting->content);
 
-            <div class="re-lg">
-                <a class="log-a" href="<?php echo url("/Log-in-Sign-Up") ?>">Log in</a>
-                <a class="reg-a" href="<?php echo url("/Log-in-Sign-Up") ?>">Open New Account</a>
-            </div>
+?>
+<header class="border-color">
 
-        </div>
-    </div>
-</div>
-<div class="menu-mobile" style="display: none;">
-    <a href="javascript:void(0)" id="cb-mob-close" class="cb-link">x</a>
-    <nav class="main-nav">
-        <ul id="menu-home-1" class="nav navbar-nav menuTopcus">
-            <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-self-directed-ira") ?>">Self-Directed IRA ypn</a>
+        <div class="container">
 
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/page-services") ?>">Services</a>
-                <ul class="sub-menu-mkchds">
-                    <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-account-options") ?>">Account Options</a></li>
-                    <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-asset-types") ?>">Asset Types</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/page-news-and-updates") ?>">Resources</a>
-                <ul class="sub-menu-mkchds">
-                    <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-news-and-updates") ?>">News</a></li>
-                    <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-investor-education") ?>">Investor Education</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/Faq") ?>">Working With Us</a></li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/Contact") ?>">Contact</a></li>
-        </ul>
-    </nav>
-</div>
-<div class="logo-menu-center">
-    <div class="container">
-        <div class="wap-lo-me">
             <div class="logo">
-                <a href="/">
-                    <img src="<?php echo Config::get('app.domain'); ?>upload/<?php echo $setting->logo?>" />
-                </a>
-                <a href="javascript:void(0)" class="cate-show-pa">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-            </div>
-            <div class="menu-center">
-                <nav id="main-navigation" class="main-nav">
-                    <ul id="menu-menu-top-1" class="nav navbar-nav menuTopcus">
-                        <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-self-directed-ira") ?>">Self-Directed IRA</a>
 
-                        </li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/page-services") ?>">Services</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-account-options") ?>">Account Options</a></li>
-                                <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-asset-types") ?>">Asset Types</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/page-news-and-updates") ?>">Resources</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-news-and-updates") ?>">News</a></li>
-                                <li class="menu-item menu-item-type-custom"><a href="<?php echo url("/page-investor-education") ?>">Investor Education</a></li>
-5                            </ul>
-                        </li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/Faq") ?>">Working With Us</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/Contact") ?>">Contact</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo url("/videos") ?>">Videos</a></li>
-                    </ul>
-                </nav>
+            <img src="/assets/frontend/images/logo.png" alt="VIDEO MAGAZINE">
+
             </div>
+
+                <div class="navbar main-navigation">
+
+                    <div class="sigin">
+
+                        <a href="#signin" role="button" data-toggle="modal">Sign In</a>
+
+                        <a  href="#signup" role="button" data-toggle="modal">Sign Up</a>
+
+                    </div>
+
+                  <nav class="navbar-inner">
+
+                      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+
+                        <span class="icon-bar"></span>
+
+                        <span class="icon-bar"></span>
+
+                        <span class="icon-bar"></span>
+
+                      </a>
+
+                      <div class="nav-collapse">
+
+                         <ul class="nav">
+
+                            <li><a href="index.html">Home</a></li>
+
+                            <li><a href="about-us.html">About Us</a></li>
+
+                            <li><a href="#">Pages</a>
+
+                                <ul>
+
+                                    <li><a href="search-result.html">Search Result</a></li>
+
+                                    <li><a href="404.html">Error 404</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li><a href="#">Buddy Press</a>
+
+                                <ul>
+
+                                    <li><a href="buddy-press.html">BuddyPress</a></li>
+
+                                    <li><a href="buddy-press-active.html">BuddyPress Active</a></li>
+
+                                    <li><a href="buddy-press-member.html">BuddyPress Active Members</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li><a href="#">Videos</a>
+
+                                <ul>
+
+                                    <li><a href="brows-videos.html">Brows Video</a></li>
+
+                                    <li><a href="video-detail.html">Video Detail</a></li>
+
+                                    <li><a href="archives.html">Archives</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li><a href="#">Blog</a>
+
+                                <ul>
+
+                                    <li><a href="blog.html">Blog</a></li>
+
+                                    <li><a href="blog-detail.html">Blog Detail</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li><a href="categories.html">Categories</a></li>
+
+                            <li><a href="contact-us.html">Contact us</a></li>
+
+                        </ul>
+
+                      </div>
+
+                  </nav>
+
+                </div>
+
         </div>
-        <div class="bor"></div>
-    </div>
-</div>
+
+    </header>

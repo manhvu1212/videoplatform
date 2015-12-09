@@ -19,7 +19,7 @@
 
 namespace Doctrine\Common\Cache;
 
-use \Memcached;
+use Memcached;
 
 /**
  * Memcached cache provider.

@@ -2,8 +2,8 @@
 
 namespace Intervention\Image\Gd\Shapes;
 
-use \Intervention\Image\Image;
-use \Intervention\Image\Gd\Color;
+use Intervention\Image\Gd\Color;
+use Intervention\Image\Image;
 
 class EllipseShape extends \Intervention\Image\AbstractShape
 {

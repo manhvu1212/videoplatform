@@ -3,10 +3,10 @@
 namespace Illuminate\Cache;
 
 use Closure;
+use Illuminate\Contracts\Cache\Factory as FactoryContract;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Contracts\Cache\Factory as FactoryContract;
 
 class CacheManager implements FactoryContract
 {
@@ -200,7 +200,7 @@ class CacheManager implements FactoryContract
     {
         $redis = $this->app['redis'];
 
-        $connection = Arr::get($config, 'connection', 'default') ?: 'default';
+        $connection = Arr::get($config, 'connection', 'default');
 
         return $this->repository(new RedisStore($redis, $this->getPrefix($config), $connection));
     }

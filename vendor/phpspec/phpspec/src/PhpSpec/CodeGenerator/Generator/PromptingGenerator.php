@@ -13,12 +13,12 @@
 
 namespace PhpSpec\CodeGenerator\Generator;
 
-use PhpSpec\Console\IO;
 use PhpSpec\CodeGenerator\TemplateRenderer;
-use PhpSpec\Process\Context\JsonExecutionContext;
-use PhpSpec\Process\Context\ExecutionContextInterface;
-use PhpSpec\Util\Filesystem;
+use PhpSpec\Console\IO;
 use PhpSpec\Locator\ResourceInterface;
+use PhpSpec\Process\Context\ExecutionContextInterface;
+use PhpSpec\Process\Context\JsonExecutionContext;
+use PhpSpec\Util\Filesystem;
 
 /**
  * Base class with common behaviour for generating class and spec class
@@ -39,15 +39,17 @@ abstract class PromptingGenerator implements GeneratorInterface
      * @var Filesystem
      */
     private $filesystem;
+
     /**
      * @var ExecutionContextInterface
      */
     private $executionContext;
 
     /**
-     * @param IO               $io
+     * @param IO $io
      * @param TemplateRenderer $templates
-     * @param Filesystem       $filesystem
+     * @param Filesystem $filesystem
+     * @param ExecutionContextInterface $executionContext
      */
     public function __construct(IO $io, TemplateRenderer $templates, Filesystem $filesystem = null, ExecutionContextInterface $executionContext = null)
     {
@@ -65,7 +67,7 @@ abstract class PromptingGenerator implements GeneratorInterface
     {
         $filepath = $this->getFilePath($resource);
 
-        if ($this->ifFileAlreadyExists($filepath)) {
+        if ($this->fileAlreadyExists($filepath)) {
             if ($this->userAborts($filepath)) {
                 return;
             }
@@ -114,7 +116,7 @@ abstract class PromptingGenerator implements GeneratorInterface
      *
      * @return bool
      */
-    private function ifFileAlreadyExists($filepath)
+    private function fileAlreadyExists($filepath)
     {
         return $this->filesystem->pathExists($filepath);
     }

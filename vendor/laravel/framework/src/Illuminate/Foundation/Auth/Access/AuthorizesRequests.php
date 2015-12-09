@@ -2,8 +2,8 @@
 
 namespace Illuminate\Foundation\Auth\Access;
 
-use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Auth\Access\UnauthorizedException;
+use Illuminate\Contracts\Auth\Access\Gate;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 trait AuthorizesRequests

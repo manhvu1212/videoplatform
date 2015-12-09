@@ -19,8 +19,8 @@
 
 namespace Doctrine\Tests\Common\Proxy;
 
-use ReflectionClass;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use ReflectionClass;
 
 /**
  * Class metadata test asset for @see LazyLoadableObject

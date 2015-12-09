@@ -2,8 +2,8 @@
 
 namespace Doctrine\Tests\Common\Util;
 
-use Doctrine\Tests\DoctrineTestCase;
 use Doctrine\Common\Util\Debug;
+use Doctrine\Tests\DoctrineTestCase;
 
 class DebugTest extends DoctrineTestCase
 {
