@@ -27,7 +27,7 @@ return [
     */
 
     'url' => 'http://localhost',
-    'domain' => 'http://videoplatform.novario.net/',
+    'domain' => 'http://videoplatform.dev/',
 
     /*
     |--------------------------------------------------------------------------
