@@ -2,6 +2,7 @@
 $user = Utility::getUser();
 $setting = Utility::setting();
 $setting=json_decode($setting->content);
+$taxo = Utility::get_video_cate();
 ?>
 <?php
 $user = Utility::getUser();
@@ -9,13 +10,93 @@ $setting = Utility::setting();
 $setting=json_decode($setting->content);
 
 ?>
+
+    <div id="signin" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+        <h3 id="myModalLabel">Sign In</h3>
+
+        </div>
+
+        <div class="modal-body">
+
+        <div class="login-widget">
+
+            <form>           
+
+                <input type="text" onfocus="if(this.value == 'User Name') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'User Name'; }" value="User Name" name="">
+
+                <input type="text" onfocus="if(this.value == 'Password') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Password'; }" value="Password" name="">
+
+                <button class="form-btn hover-style">Login</button>
+
+            </form>
+
+        </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <p>Enter your Username and Password</p>
+
+        </div>
+
+    </div>
+
+    <!--SIGNIN BOX END-->
+
+    <!--SIGNUP BOX START-->
+
+    <div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+        <h3 id="myModalLabel">Sign Up</h3>
+
+        </div>
+
+        <div class="modal-body">
+
+        <div class="login-widget">
+
+            <form action="<?php echo url('/user/loginypn') ?>" method="post">           
+            <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
+            <input type="text" onfocus="if(this.value == 'First Name') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'First Name'; }" value="First Name" name="">
+
+            <input type="text" onfocus="if(this.value == 'Last Name') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Last Name'; }" value="Last Name" name="">
+
+            <input type="text" onfocus="if(this.value == 'Your E-mail') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Your E-mail'; }" value="Your E-mail" name="">
+
+            <input type="password" onfocus="if(this.value == 'New Password') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'New Password'; }" value="New Password" name="">
+
+            <input type="submit" class="form-btn hover-style">Login</input>
+
+            </form>
+
+        </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <p>Fill the given fields for singing up</p>
+
+        </div>
+
+    </div>
 <header class="border-color">
 
         <div class="container">
 
             <div class="logo">
 
-            <img src="/assets/frontend/images/logo.png" alt="VIDEO MAGAZINE">
+            <a href="/home"><img src="/assets/frontend/images/logo.png" alt="VIDEO MAGAZINE"></a>
 
             </div>
 
@@ -46,64 +127,9 @@ $setting=json_decode($setting->content);
                          <ul class="nav">
 
                             <li><a href="index.html">Home</a></li>
-
-                            <li><a href="about-us.html">About Us</a></li>
-
-                            <li><a href="#">Pages</a>
-
-                                <ul>
-
-                                    <li><a href="search-result.html">Search Result</a></li>
-
-                                    <li><a href="404.html">Error 404</a></li>
-
-                                </ul>
-
-                            </li>
-
-                            <li><a href="#">Buddy Press</a>
-
-                                <ul>
-
-                                    <li><a href="buddy-press.html">BuddyPress</a></li>
-
-                                    <li><a href="buddy-press-active.html">BuddyPress Active</a></li>
-
-                                    <li><a href="buddy-press-member.html">BuddyPress Active Members</a></li>
-
-                                </ul>
-
-                            </li>
-
-                            <li><a href="#">Videos</a>
-
-                                <ul>
-
-                                    <li><a href="brows-videos.html">Brows Video</a></li>
-
-                                    <li><a href="video-detail.html">Video Detail</a></li>
-
-                                    <li><a href="archives.html">Archives</a></li>
-
-                                </ul>
-
-                            </li>
-
-                            <li><a href="#">Blog</a>
-
-                                <ul>
-
-                                    <li><a href="blog.html">Blog</a></li>
-
-                                    <li><a href="blog-detail.html">Blog Detail</a></li>
-
-                                </ul>
-
-                            </li>
-
-                            <li><a href="categories.html">Categories</a></li>
-
-                            <li><a href="contact-us.html">Contact us</a></li>
+                            @foreach($taxo as $cate)
+                             <li><a href="/c={{$cate->description}}">{{$cate->name}}</a></li>
+                            @endforeach
 
                         </ul>
 

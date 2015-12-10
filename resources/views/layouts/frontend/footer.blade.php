@@ -1,4 +1,3 @@
-
  <footer class="footer">
 
         <section class="home">
@@ -383,4 +382,4 @@
 
         </section>
 
-    </footer>
+    </footer>   

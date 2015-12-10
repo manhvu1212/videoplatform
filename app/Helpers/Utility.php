@@ -1,9 +1,8 @@
 <?php
 use App\Entities\Slideshow;
+use App\Entities\Taxonomy;
 use Cartalyst\Sentry\Facades\Laravel\Sentry;
 use Illuminate\Support\Facades\View;
-use Intervention\Image\Facades\Image;
-use Youtube;
 
 /**
  * Created by PhpStorm.
@@ -60,5 +59,11 @@ class Utility {
     public static function get_taxonomyitem($id=null)
     {
         return \App\Entities\Taxonomyitem::where('id','=',$id)->first();
+    }
+
+    public static function get_video_cate(){
+        $objTaxo = new Taxonomy();
+        $taxo = $objTaxo->get();
+        return $taxo;
     }
 }

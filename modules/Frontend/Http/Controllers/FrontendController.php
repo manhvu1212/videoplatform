@@ -28,45 +28,78 @@ class FrontendController extends Controller {
         $videoList = Youtube::getPopularVideos('US');       
         $objtaxo  = new Taxonomy();
         $objSetting = new Settings();  
-        $objVideos = new Videos();
-
-        //get personal videos
-        $personal_videos = $objVideos->select('idVideo')->where('status','=',1)->orderBy('updated_at','desc')->limit(5)->get();         
-        $list_id = array();
-        foreach ($personal_videos as $video) {
-            array_push($list_id, $video->idVideo);
-        }
-        $list_personal_videos= Youtube::getVideoInfo($list_id);      
-        //end
+        $objVideos = new Videos();       
 
         //get videos by category
         $taxo = $objtaxo->first();   
 
-        $params =array(  
+        $param_auto =array(  
             'q'=>'',      
             'part'=>'id,snippet',           
             'type'  =>'video',    
-            'maxResults' => 12,
-            'regionCode'=>'VN',
-            'videoCategoryId' =>$taxo->description,
+            'maxResults' => 6,            
+            'videoCategoryId' =>2,
         );
-        $search = Youtube::searchAdvanced($params, true);    
-        //end
+        $param_game =array(
+            'q'=>'',      
+            'part'=>'id,snippet',           
+            'type'  =>'video',    
+            'maxResults' => 6,            
+            'videoCategoryId' =>28,
+        );
 
+        $param_entertain =array(
+            'q'=>'',      
+            'part'=>'id,snippet',           
+            'type'  =>'video',    
+            'maxResults' => 6,            
+            'videoCategoryId' =>24,
+        );
 
-        $video_by_cate=array(
-            'name' => $taxo->name,
-            'list_videos'=>$search['results']
-            );              
+        $param_education =array(
+            'q'=>'',      
+            'part'=>'id,snippet',           
+            'type'  =>'video',    
+            'maxResults' => 6,            
+            'videoCategoryId' =>27,
+        );
+        
+        $search_auto        = Youtube::searchAdvanced($param_auto, true);    
+        $search_game        = Youtube::searchAdvanced($param_game,true);
+        $search_entertain   = Youtube::searchAdvanced($param_entertain,true);
+        $search_education   = Youtube::searchAdvanced($param_education,true);
+
+        $videos_by_auto =array(
+            'name'          =>  'Autos & Vehicles',
+            'list_videos'   =>  $search_auto['results']
+            );
+
+        
+        $video_by_game=array(
+            'name' => 'Science & Technology',
+            'list_videos'=>$search_game['results']
+            );   
+        $video_by_entertain=array(
+            'name'  => "Entertainment",
+            'list_videos'   => $search_entertain['results']
+
+            );
+        $video_by_education =array(
+            'name' => "Education",
+            'list_videos'   =>$search_education['results']
+            );
+      
+       
         $objSetting = $objSetting->where('type','=','site_settings')->first();
-        $setting = json_decode($objSetting->content);
+        $setting = json_decode($objSetting->content);  
 
+        $list_personal_videos = $this->get_recent_video();
         return view('frontend::home',array(
             'setting'=>$setting,
             'ft_videos'=>$videoList,
-            'cate_videos'=>$video_by_cate,
+            'youtube_cate'=>array($videos_by_auto,$video_by_game,$video_by_entertain,$video_by_education),
             'personal_videos'=>$list_personal_videos
-            ));
+        ));
     }
 
     public function page($alias=null){        
@@ -79,7 +112,18 @@ class FrontendController extends Controller {
         else  return view('frontend::templates.template_ira');
     }
     public function videoDetail($video_id=null){
-        return view('frontend::templates.video_detail');
+
+        $relatedVideos = Youtube::getRelatedVideos($video_id);
+
+        $video_info = Youtube::getVideoInfo($video_id);
+        $video_des = $video_info->snippet->description;
+     
+        return view('frontend::templates.video_detail',array(
+            'video_id'=>$video_id,
+            'video_des'=>$video_des,
+            'relate_videos'=>$relatedVideos,
+            'personal_videos'=>$this->get_recent_video()
+        ));
     }
     public function post($alias=null){
         $objPost= new Posts();
@@ -87,6 +131,11 @@ class FrontendController extends Controller {
         return view('frontend::templates.template_ira',array('data'=>$page));
 
     }
+
+    public function loginYpn(){
+        return "hi im ypn";
+    }
+
     public function contact(){
         $input = Input::all();
         $objSetting = new Settings();
@@ -387,5 +436,20 @@ class FrontendController extends Controller {
         $objPost = new Posts();
         $objPost=$objPost->where('alias','=',$alias)->first();
         return view('frontend::detail_form',array('objPost'=>$objPost));
+    }
+
+    public function get_recent_video(){
+
+        $objVideos = new Videos();
+
+        $personal_videos = $objVideos->select('idVideo')->where('status','=',1)->orderBy('updated_at','desc')->limit(5)->get();         
+        $list_id = array();
+        foreach ($personal_videos as $video) {
+            array_push($list_id, $video->idVideo);
+        }
+        $list_personal_videos= Youtube::getVideoInfo($list_id); 
+
+        return $list_personal_videos;
+
     }
 }
