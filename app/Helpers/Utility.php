@@ -1,4 +1,5 @@
 <?php
+use Alaouy\Youtube\Facades\Youtube;
 use App\Entities\Slideshow;
 use App\Entities\Taxonomy;
 use Cartalyst\Sentry\Facades\Laravel\Sentry;

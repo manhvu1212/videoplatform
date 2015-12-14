@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Youtube;
 
 class VideosController extends BaseController {
 	
@@ -66,10 +67,17 @@ class VideosController extends BaseController {
 				$objVideos->status=1;
 			}
 
+			$idVideo = isset($input['url_video'])?$input['url_video']:'';
+
+			$video_info = Youtube::getVideoInfo($idVideo);			
 			$objVideos->title 		= 	isset($input['title_video'])?$input['title_video']:'';
-			$objVideos->idVideo 	=	isset($input['url_video'])?$input['url_video']:'' ;
+			$objVideos->idVideo 	=	 $idVideo;
 			$objVideos->description = 	isset($input['content'])?$input['content']:'';
-			$objVideos->images 		= 	isset($input['image'])?$input['image']:'';		
+			$objVideos->images 		= 	isset($input['image'])?$input['image']:'';	
+			$objVideos->viewCount = $video_info->statistics->viewCount;
+			$objVideos->likeCount = $video_info->statistics->likeCount;
+			$objVideos->commentCount = $video_info->statistics->commentCount;	
+			$objVideos->dislikeCount= $video_info->statistics->dislikeCount;
 
 			$objVideos->save();		
 		}
