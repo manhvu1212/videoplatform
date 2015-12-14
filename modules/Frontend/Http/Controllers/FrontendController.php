@@ -25,7 +25,7 @@ class FrontendController extends Controller {
 
     public function home(){   
 
-        $videoList = Youtube::getPopularVideos('US');       
+               $videoList = Youtube::getPopularVideos('US');       
         $objtaxo  = new Taxonomy();
         $objSetting = new Settings();  
         $objVideos = new Videos();       
