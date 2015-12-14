@@ -179,7 +179,7 @@
         <div class="latest-vidios">
 
             <!--VIDEO FIGURE START-->           
-            @foreach($ft_videos as $k=>$video)
+            @foreach($populars as $k=>$video)
             @if($k<3)           
             <figure class="video-container">
 

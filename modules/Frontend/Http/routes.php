@@ -10,6 +10,8 @@ Route::group(['namespace' => 'Modules\Frontend\Http\Controllers'], function()
     Route::get('/', 'FrontendController@home');
     Route::get('/home', 'FrontendController@home');
     Route::get('/v={video_id}','FrontendController@videoDetail');
+    Route::get('/search','FrontendController@search');
+    Route::get('/t={cate_title}&c={cate_id}','FrontendController@videobycate');
     Route::post('/user/loginypn',array('before'=>'csrf','uses'=>'FrontendController@loginYpn'));
    
     Route::get('/about', 'FrontendController@about');

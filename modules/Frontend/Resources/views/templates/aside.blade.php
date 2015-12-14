@@ -1,3 +1,9 @@
+<?php 
+	$system_videos = Utility::getPersonalVideos();
+	$personal_videos = $system_videos['recent_videos'];
+	$comment_videos = $system_videos['comment_videos'];
+	$views_videos	= $system_videos['views_videos'];
+  ?>
 <div class="side-bar">
 
                 	<!--SEARCH WIDGET START-->
@@ -12,9 +18,9 @@
 
                         <div class="widget-bg">
 
-                           <form class="form-search">
+                           <form class="form-search" method="GET" action="/search">
 
-                            <input type="text" class="input-medium search-query">
+                            <input type="text" name="s_keyword" class="input-medium search-query">
 
                             <button type="submit" class="hover-style">Search</button>
 
@@ -94,7 +100,7 @@
 
                                                 <div class="thumb">
 
-                                                    <a href="video-detail.html"><img src="{{$thumb}}" alt=""></a>
+                                                    <a href="v={{$video->id}}"><img src="{{$thumb}}" alt=""></a>
 
                                                     <div class="play">
 
@@ -130,14 +136,18 @@
                                     <ul>
 
                                     	<!--LIST ITEMS START-->
-
+                                    	@foreach($comment_videos as $video)
+                                    	<?php 
+                                         	$title = $video->snippet->title; 
+                                         	$thumb = $video->snippet->thumbnails->default->url;
+                                         ?>
                                         <li>
 
                                             <figure>
 
                                                 <div class="thumb">
 
-                                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb2.png" alt=""></a>
+                                                    <a href="/v={{$video->id}}"><img src="{{$thumb}}" alt=""></a>
 
                                                     <div class="play">
 
@@ -149,7 +159,7 @@
 
                                                 <figcaption>
 
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu architecto... </p>
+                                                    <p>{{$title}}</p>
 
                                                     <p class="color">27 may 2013</p>
 
@@ -158,104 +168,7 @@
                                             </figure>
 
                                         </li>
-
-                                        <!--LIST ITEMS END-->
-
-                                        <!--LIST ITEMS START-->
-
-                                        <li>
-
-                                            <figure>
-
-                                                <div class="thumb">
-
-                                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb.png" alt=""></a>
-
-                                                    <div class="play">
-
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <figcaption>
-
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu architecto... </p>
-
-                                                    <p class="color">27 may 2013</p>
-
-                                                </figcaption>
-
-                                            </figure>
-
-                                        </li>
-
-                                        <!--LIST ITEMS END-->
-
-                                        <!--LIST ITEMS START-->
-
-                                        <li>
-
-                                            <figure>
-
-                                                <div class="thumb">
-
-                                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb4.png" alt=""></a>
-
-                                                    <div class="play">
-
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <figcaption>
-
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu architecto... </p>
-
-                                                    <p class="color">27 may 2013</p>
-
-                                                </figcaption>
-
-                                            </figure>
-
-                                        </li>
-
-                                        <!--LIST ITEMS END-->
-
-                                        <!--LIST ITEMS START-->
-
-                                        <li>
-
-                                            <figure>
-
-                                                <div class="thumb">
-
-                                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb3.png" alt=""></a>
-
-                                                    <div class="play">
-
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <figcaption>
-
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu architecto... </p>
-
-                                                    <p class="color">27 may 2013</p>
-
-                                                </figcaption>
-
-                                            </figure>
-
-                                        </li>
-
-                                        <!--LIST ITEMS END-->
+                                     	@endforeach
 
                                     </ul>
 
@@ -270,14 +183,18 @@
                                     <ul>
 
                                     	<!--LIST ITEMS START-->
-
+                                    	@foreach($views_videos as $video)
+                                    	<?php 
+                                         	$title = $video->snippet->title; 
+                                         	$thumb = $video->snippet->thumbnails->default->url;
+                                         ?>
                                         <li>
 
                                             <figure>
 
                                                 <div class="thumb">
 
-                                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb2.png" alt=""></a>
+                                                    <a href="/v={{$video->id}}"><img src="{{$thumb}}" alt=""></a>
 
                                                     <div class="play">
 
@@ -289,7 +206,7 @@
 
                                                 <figcaption>
 
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu architecto... </p>
+                                                    <p>{{$title}}</p>
 
                                                     <p class="color">27 may 2013</p>
 
@@ -300,103 +217,7 @@
                                         </li>
 
                                         <!--LIST ITEMS END-->
-
-                                        <!--LIST ITEMS START-->
-
-                                        <li>
-
-                                            <figure>
-
-                                                <div class="thumb">
-
-                                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb.png" alt=""></a>
-
-                                                    <div class="play">
-
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <figcaption>
-
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu architecto... </p>
-
-                                                    <p class="color">27 may 2013</p>
-
-                                                </figcaption>
-
-                                            </figure>
-
-                                        </li>
-
-                                        <!--LIST ITEMS END-->
-
-                                        <!--LIST ITEMS START-->
-
-                                        <li>
-
-                                            <figure>
-
-                                                <div class="thumb">
-
-                                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb4.png" alt=""></a>
-
-                                                    <div class="play">
-
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <figcaption>
-
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu architecto... </p>
-
-                                                    <p class="color">27 may 2013</p>
-
-                                                </figcaption>
-
-                                            </figure>
-
-                                        </li>
-
-                                        <!--LIST ITEMS END-->
-
-                                        <!--LIST ITEMS START-->
-
-                                        <li>
-
-                                            <figure>
-
-                                                <div class="thumb">
-
-                                                    <a href="video-detail.html"><img src="/assets/frontend/images/small-thumb3.png" alt=""></a>
-
-                                                    <div class="play">
-
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <figcaption>
-
-                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu architecto... </p>
-
-                                                    <p class="color">27 may 2013</p>
-
-                                                </figcaption>
-
-                                            </figure>
-
-                                        </li>
-
-                                        <!--LIST ITEMS END-->
-
+                                        @endforeach
                                     </ul>
 
                                  </div>

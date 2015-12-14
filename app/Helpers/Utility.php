@@ -2,6 +2,7 @@
 use Alaouy\Youtube\Facades\Youtube;
 use App\Entities\Slideshow;
 use App\Entities\Taxonomy;
+use App\Entities\Videos;
 use Cartalyst\Sentry\Facades\Laravel\Sentry;
 use Illuminate\Support\Facades\View;
 
@@ -64,7 +65,38 @@ class Utility {
 
     public static function get_video_cate(){
         $objTaxo = new Taxonomy();
-        $taxo = $objTaxo->get();
+        $taxo = $objTaxo->get();       
         return $taxo;
+    }
+
+    public static function getPersonalVideos(){
+        $objVideos = new Videos();
+
+        $personal_videos = $objVideos->select('idVideo')->where('status','=',1)->orderBy('updated_at','desc')->limit(5)->get(); 
+        $list_comment = $objVideos->select('idVideo')->orderBy('commentCount','desc')->limit(5)->get();
+        $list_views     = $objVideos->select('idVideo')->orderBy('viewCount','desc')->limit(5)->get();       
+        $list_id = array();
+        $list_id_comment = array();
+        $list_id_views =array();
+        foreach ($personal_videos as $video) {
+            array_push($list_id, $video->idVideo);
+        }
+
+        foreach ($list_comment as $video) {
+            array_push($list_id_comment,$video->idVideo);
+        }
+        foreach ($list_views as $video) {
+            array_push($list_id_views,$video->idVideo);
+        }
+        $list_personal_videos= Youtube::getVideoInfo($list_id); 
+        $list_comment_videos = Youtube::getVideoInfo($list_id_comment);
+        $list_views_videos   = Youtube::getVideoInfo($list_id_views);
+
+        return array(
+            'recent_videos'=>$list_personal_videos,
+            'comment_videos'=>$list_comment_videos,
+            'views_videos'=>$list_views_videos
+            );
+
     }
 }

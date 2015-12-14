@@ -128,7 +128,7 @@ $setting=json_decode($setting->content);
 
                             <li><a href="index.html">Home</a></li>
                             @foreach($taxo as $cate)
-                             <li><a href="/c={{$cate->description}}">{{$cate->name}}</a></li>
+                             <li><a href="/t={{$cate->name}}&c={{$cate->description}}">{{$cate->name}}</a></li>
                             @endforeach
 
                         </ul>

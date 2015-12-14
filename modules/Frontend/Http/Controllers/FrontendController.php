@@ -25,14 +25,40 @@ class FrontendController extends Controller {
 
     public function home(){   
 
-               $videoList = Youtube::getPopularVideos('US');       
+        //$videoList = Youtube::getPopularVideos('US');       
         $objtaxo  = new Taxonomy();
         $objSetting = new Settings();  
-        $objVideos = new Videos();       
+        $objVideos = new Videos();    
+        $popular =Youtube::getPopularVideos('US');   
 
         //get videos by category
-        $taxo = $objtaxo->first();   
+        $taxo = $objtaxo->first();  
 
+        
+        $objSetting = $objSetting->where('type','=','site_settings')->first();
+        $setting = json_decode($objSetting->content);  
+      
+        return view('frontend::home',array(
+            'setting'=>$setting,
+            'ft_videos'=>$this->getFeaturedVideos(),
+            'youtube_cate'=>  $this->getYoutubeVideos(),
+            'populars'   => $popular        
+        ));
+    }
+
+    public function getFeaturedVideos(){
+        $objVideos = new Videos();
+        $list = $objVideos->select('idVideo')->where('status',1)->get();
+        $list_id=array();
+        foreach ($list as $video) {
+           array_push($list_id,$video->idVideo);
+        }
+
+        $featured_vid = Youtube::getVideoInfo($list_id);
+        return $featured_vid;
+    }
+
+    public function getYoutubeVideos(){
         $param_auto =array(  
             'q'=>'',      
             'part'=>'id,snippet',           
@@ -61,7 +87,7 @@ class FrontendController extends Controller {
             'part'=>'id,snippet',           
             'type'  =>'video',    
             'maxResults' => 6,            
-            'videoCategoryId' =>27,
+            'videoCategoryId' =>27
         );
         
         $search_auto        = Youtube::searchAdvanced($param_auto, true);    
@@ -73,33 +99,25 @@ class FrontendController extends Controller {
             'name'          =>  'Autos & Vehicles',
             'list_videos'   =>  $search_auto['results']
             );
-
         
         $video_by_game=array(
             'name' => 'Science & Technology',
             'list_videos'=>$search_game['results']
-            );   
+            );  
+
         $video_by_entertain=array(
             'name'  => "Entertainment",
             'list_videos'   => $search_entertain['results']
 
             );
+
         $video_by_education =array(
             'name' => "Education",
             'list_videos'   =>$search_education['results']
             );
-      
-       
-        $objSetting = $objSetting->where('type','=','site_settings')->first();
-        $setting = json_decode($objSetting->content);  
 
-        $list_personal_videos = $this->get_recent_video();
-        return view('frontend::home',array(
-            'setting'=>$setting,
-            'ft_videos'=>$videoList,
-            'youtube_cate'=>array($videos_by_auto,$video_by_game,$video_by_entertain,$video_by_education),
-            'personal_videos'=>$list_personal_videos
-        ));
+        return array($videos_by_auto,$video_by_game,$video_by_entertain,$video_by_education) ;
+       
     }
 
     public function page($alias=null){        
@@ -121,8 +139,7 @@ class FrontendController extends Controller {
         return view('frontend::templates.video_detail',array(
             'video_id'=>$video_id,
             'video_des'=>$video_des,
-            'relate_videos'=>$relatedVideos,
-            'personal_videos'=>$this->get_recent_video()
+            'relate_videos'=>$relatedVideos           
         ));
     }
     public function post($alias=null){
@@ -132,9 +149,56 @@ class FrontendController extends Controller {
 
     }
 
-    public function loginYpn(){
-        return "hi im ypn";
+    public function search(){
+        session_start();        
+        $keywords = $_GET['s_keyword'];
+        $params =array(
+            'q'             => $keywords,
+            'type'          => 'video',
+            'part'          => 'id, snippet',
+            'maxResults'    => 15
+            );    
+       
+
+        if(!isset($_SESSION['search'])){  
+            $search = Youtube::paginateResults($params, null);         
+            $_SESSION['search'] = $search;  
+        }
+        else{            
+            $search = Youtube::paginateResults($params, null);   
+        }
+
+        if(isset($_GET['next'])){                     
+            $search = Youtube::paginateResults($params, $_SESSION['search']['info']['nextPageToken']); 
+            $_SESSION['search'] = $search; 
+        } 
+
+        if(isset($_GET['prev'])){
+            $search = Youtube::paginateResults($params, $_SESSION['search']['info']['prevPageToken']); 
+            $_SESSION['search'] = $search; 
+        }       
+       
+        return view('frontend::templates.search')->with('videos',$search['results']);
+    
     }
+
+    public function videobycate($cate_title,$cate_id){       
+        $params =array(
+            'q'                 => '',
+            'type'              => 'video',
+            'part'              => 'id, snippet',
+            'maxResults'        => 15,
+            'videoCategoryId'   =>  $cate_id
+            );    
+        $videos = Youtube::searchAdvanced($params,true);
+
+        return view('frontend::templates.category',array(
+            'videos'=>$videos['results'],
+            'title' =>$cate_title
+            ));
+
+    }
+
 
     public function contact(){
         $input = Input::all();
@@ -436,20 +500,5 @@ class FrontendController extends Controller {
         $objPost = new Posts();
         $objPost=$objPost->where('alias','=',$alias)->first();
         return view('frontend::detail_form',array('objPost'=>$objPost));
-    }
-
-    public function get_recent_video(){
-
-        $objVideos = new Videos();
-
-        $personal_videos = $objVideos->select('idVideo')->where('status','=',1)->orderBy('updated_at','desc')->limit(5)->get();         
-        $list_id = array();
-        foreach ($personal_videos as $video) {
-            array_push($list_id, $video->idVideo);
-        }
-        $list_personal_videos= Youtube::getVideoInfo($list_id); 
-
-        return $list_personal_videos;
-
-    }
+    }   
 }
