@@ -4,15 +4,15 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>Tastable</title>
 	<!--Core CSS -->
-	<link href="<?php echo Config::get('app.domain'); ?>/bs3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/bs3/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
 	<!-- Custom styles for this template -->
 	<link href="/css/admin/popup1.css" rel="stylesheet" />
-	<link href="<?php echo Config::get('app.domain'); ?>/js/contextMenu1/src/jquery.contextMenu.css" rel="stylesheet" />
+	<link href="/js/contextMenu1/src/jquery.contextMenu.css" rel="stylesheet" />
 	<!-- Just for debugging purposes. Don't actually copy this line! -->
 	<!--[if lt IE 9]>
 
-	<script src="<?php echo Config::get('app.domain'); ?>/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<script src="/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 s and media queries -->
 	<!--[if lt IE 9]>
@@ -163,7 +163,7 @@
 									<input name="server" type="hidden" id="input-photo-server"  >
 									<input name="input-extension"  type="hidden" id = "input-extension"   >
 									<div class="col-md-5 col-xs-5 img-modal">
-										<img id = "image_preview"  style="width: 200px;height: 200px"  src="<?php echo Config::get('app.domain'); ?>/images/admin/noimage.jpg" alt="">
+										<img id = "image_preview"  style="width: 200px;height: 200px"  src="/images/admin/noimage.jpg" alt="">
 										<p class="mtop10"><strong>File Name:</strong> <span id = "photo-filename"  ></span></p>
 										<p><strong>File Type:</strong> <span id="file-type" ></span></p>
 									</div>
@@ -228,22 +228,22 @@
 </section>
 
 
-<script src="<?php echo Config::get('app.domain'); ?>/js/jquery.js"></script>
+<script src="/js/jquery.js"></script>
 
 
-<script src="<?php echo Config::get('app.domain'); ?>/bs3/js/bootstrap.min.js"></script>
-<script src="<?php echo Config::get('app.domain'); ?>/js/ui-1.11.4/jquery-ui.js"></script>
+<script src="/bs3/js/bootstrap.min.js"></script>
+<script src="/js/ui-1.11.4/jquery-ui.js"></script>
 
 
-<script src="<?php echo Config::get('app.domain'); ?>/js/contextMenu1/src/jquery.contextMenu.js"></script>
+<script src="/js/contextMenu1/src/jquery.contextMenu.js"></script>
 
 
-<script src="<?php echo Config::get('app.domain'); ?>/js/file-uploader/js/jquery.fileupload.js" ></script>
-<script src="<?php echo Config::get('app.domain'); ?>/js/file-uploader/js/jquery.iframe-transport.js" ></script>
+<script src="/js/file-uploader/js/jquery.fileupload.js" ></script>
+<script src="/js/file-uploader/js/jquery.iframe-transport.js" ></script>
 
 <!--common script init for all pages-->
 
 
-<script src="<?php echo Config::get('app.domain'); ?>/js/admin/files.js"></script>
+<script src="/js/admin/files.js"></script>
 </body>
 </html>
