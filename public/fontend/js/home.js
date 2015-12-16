@@ -70,11 +70,9 @@ var HOME = {
 jQuery(document).ready(function(){
     HOME.showmenumobi();
     HOME.a_faq_click();
-    HOME.validation_contact();
+    //HOME.validation_contact();
     HOME.login_signup_2();
-    HOME.forms_docusign();
-
-
+    HOME.forms_docusign();   
 });
 function check_faq_search(){
     if(jQuery('#title').val()=='' || jQuery('#title').val()==null){

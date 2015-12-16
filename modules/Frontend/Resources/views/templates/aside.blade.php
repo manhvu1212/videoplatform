@@ -100,11 +100,12 @@
 
                                                 <div class="thumb">
 
-                                                    <a href="v={{$video->id}}"><img src="{{$thumb}}" alt=""></a>
+                                                    <a href="/v={{$video->id}}&pr=1"><img src="{{$thumb}}" alt=""></a>
 
                                                     <div class="play">
 
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
+                                                      <span class="quick-view" data-toggle="modal" data-target="#video-modal" data-videoid="{{$video->id}}"><img src="/assets/frontend/images/play.png" alt=""></span>
+
 
                                                     </div>
 
@@ -151,7 +152,8 @@
 
                                                     <div class="play">
 
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
+                                                       <span class="quick-view" data-toggle="modal" data-target="#video-modal" data-videoid="{{$video->id}}"><img src="/assets/frontend/images/play.png" alt=""></span>
+
 
                                                     </div>
 
@@ -198,7 +200,8 @@
 
                                                     <div class="play">
 
-                                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
+                                                       <span class="quick-view" data-toggle="modal" data-target="#video-modal" data-videoid="{{$video->id}}"><img src="/assets/frontend/images/play.png" alt=""></span>
+
 
                                                     </div>
 

@@ -1,4 +1,4 @@
-var minutes =0,seconds=0;
+var current_time=0,minutes =0,seconds=0;
 
 function onYouTubeIframeAPIReady() {
     if(jQuery('#url_video').val()!==''){
@@ -176,15 +176,14 @@ var VIDEOS ={
     },
 
     upload_image:function(obj){     
-    	POPUPFILE.open(function(data){     
-
+    	POPUPFILE.open(function(data){   
             jQuery('#list-img').append('<div class="video-img-dd '+data.id+'">'               
-                +'<input type="hidden" name="image['+data.id+'][id]" value="'+data.id+'">'             
-                +'<input type="hidden" name="image['+data.id+'][minutes]" value="'+minutes+'">'
-                +'<input type="hidden" name="image['+data.id+'][seconds]" value="'+seconds+'">'
+                +'<input type="hidden" name="image['+current_time+'][id]" value="'+data.id+'">'                          
+                +'<input type="hidden" name="image['+current_time+'][minutes]" value="'+minutes+'">'
+                +'<input type="hidden" name="image['+current_time+'][seconds]" value="'+seconds+'">'
                 +'<img src="'+SETTINGS.domain_image+'thumbs/200/200/'+data.url+'" height="100px" width="100px"><div class="img-caption"><h2>'
-                +data.title+'</h2><h5>'
-                +data.url+'</h5><span>Time: <b>'
+                +data.title+'</h2>'
+                +'<input type="text" class="form-control" name="image['+current_time+'][extern_url]"><span>Time: <b>'
                 +minutes+'</b>:<b>'+seconds                
                 +'</b></span></div>'
                 +'<div class="caption-action"><span class="delete-image"><i class="fa fa-trash-o"></i></span></div>'

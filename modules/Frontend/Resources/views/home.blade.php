@@ -183,7 +183,7 @@
             @if($k<3)           
             <figure class="video-container">
 
-                <a href="/v={{$video->id}}"><img src="{{$video->snippet->thumbnails->high->url}}" alt=""></a>
+                <a href="/v={{$video->id}}&pr=0"><img src="{{$video->snippet->thumbnails->high->url}}" alt=""></a>
                 <figcaption>
 
                     <h2>PRO AWARDS</h2>
@@ -232,11 +232,11 @@
 
                             <div class="thumb">
 
-                                <a href="/v={{$video->id}}"><img src="{{$video->snippet->thumbnails->high->url}}" alt=""></a>
+                                <a href="/v={{$video->id}}&pr=1"><img src="{{$video->snippet->thumbnails->high->url}}" alt=""></a>
 
                                 <div class="play">
 
-                                    <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play.png" alt=""></a>
+                                    <span class="quick-view" data-toggle="modal" data-target="#video-modal" data-videoid="{{$video->id}}"><img src="/assets/frontend/images/play.png" alt=""></span>
 
                                 </div>
 
@@ -250,9 +250,9 @@
 
                                     <li>27 Sep, 2013</li>
 
-                                    <li><i class="fa fa-comments"></i>23</li>
+                                    <li><i class="fa fa-comments"></i>{{$video->statistics->commentCount}}</li>
 
-                                    <li><i class="fa fa-eye"></i>875</li>
+                                    <li><i class="fa fa-eye"></i>{{$video->statistics->viewCount}}</li>
 
                                 </ul>
 
@@ -296,12 +296,11 @@
 
                                 <div class="thumb">
 
-                                    <a href="/v={{$video->id->videoId}}"><img src="{{$thumb}}"></a>
+                                    <a href="/v={{$video->id->videoId}}&pr=0"><img src="{{$thumb}}"></a>
 
                                     <div class="play">
 
-                                        <a rel="prettyPhoto" href="http://vimeo.com/7874398&width=700"><img src="/assets/frontend/images/play2.png" alt=""></a>
-
+                                     <span class="quick-view" data-toggle="modal" data-target="#video-modal" data-videoid="{{$video->id->videoId}}"><img src="/assets/frontend/images/play.png" alt=""></span>
 
 
                                     </div>

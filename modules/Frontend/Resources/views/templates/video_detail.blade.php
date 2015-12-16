@@ -3,336 +3,8 @@
 
     <section class="banner img-less">
 
-    	<div class="container">
-
-        	<div id="slider" class="flexslider">
-
-              <ul class="slides no-img">
-
-                <li>
-
-                    <img src="/assets/frontend/images/banner1.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>Lorem ipsum dolor</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner2.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>sadipscing elitr</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-                    
-                    <img src="/assets/frontend/images/banner3.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>justo duo</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner4.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>dolores et ea</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                <li>
-
-                    <img src="/assets/frontend/images/banner1.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>invidunt ut</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner2.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>Lorem ipsum dolor</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner3.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>labore et</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner4.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>Stet clita kasd</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                <li>
-
-                    <img src="/assets/frontend/images/banner1.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>accusam et justo</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner2.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>Stet clita kasd</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner3.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>magna aliquyam</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-                    <li>
-
-                    <img src="/assets/frontend/images/banner4.png" alt="">
-
-                    <div class="caption resize">
-
-                    	<h2>sed diam voluptua</h2>
-
-                        <h4>behind the scenes</h4>
-
-                    </div>
-
-                    </li>
-
-              </ul>
-
-        </div>
-
-        <div id="carousel" class="flexslider">
-
-          <ul class="slides">
-
-           		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Diam voluptua</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb2.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Sed diam</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb3.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Sadipscing elitr</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb4.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Lorem ipsum</a>
-
-                </div>
-
-  	    		</li>
-
-            	<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Dolor sit amet</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb2.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Takimata sanctus</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb3.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Accusam et</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb4.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Diam voluptua</a>
-
-                </div>
-
-  	    		</li>
-
-            	<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">At vero eoset</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb2.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Takimata sanctus</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb3.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Lorem ipsum</a>
-
-                </div>
-
-  	    		</li>
-
-  	    		<li>
-
-  	    	    <img src="/assets/frontend/images/banner-thumb4.png" alt="">
-
-                <div class="caption">
-
-                	<a href="#">Ipsum dolor</a>
-
-                </div>
-
-  	    		</li>
-
-          </ul>
-
-        </div>
-
+    	<div class="container">        	
+            @include('frontend::templates.top_slide')
         </div>
 
     </section>
@@ -342,15 +14,31 @@
     <!--FEATURED VIDEOS SECTION START-->
 
     <section class="container">
-
-    	<div class="video-detail">
-
-        	
-        		<iframe width="560" height="315" src="https://www.youtube.com/embed/{{$video_id}}?vq=hd720" frameborder="0" allowfullscreen></iframe>
-       
-
+    	<div class="video-detail" id="div_iframe" data-videoid="{{$video_id}}" <?php if($pr) echo('style="width:75%;"');  ?>>        	
         </div>
-
+        @if($pr)
+        <div class="image-video" style="width:24%;height:498px;border:1px solid #ddd;float:right;overflow:auto;">
+            @if(!empty($images))
+            <ul>            
+                @foreach($images as $img)
+                <li>
+                    <div class="person-image" data-current="{{$img['current']}}">
+                        <img src="/upload/{{$img['url']}}">
+                        <a href="{{isset($img['extern_url'])?$img['extern_url']:'#'}}">Route</a>
+                    </div>
+                </li>      
+                @endforeach              
+            </ul>
+            @else
+            <h3 style="text-align:center;">No images</h3>
+            @endif
+        </div>
+        <style type="text/css">
+                .image-video li{margin-top: 10px;}
+                .person-image{cursor: pointer;position: relative;}
+                .person-image a{position: absolute;top: 0;left: 0;}
+        </style>
+        @endif
     	<div class="row">
 
         	<div class="span8">
@@ -416,12 +104,12 @@
 
                                 <div class="thumb" style="float:none;">
 
-                                    <a href="/v={{$video->id->videoId}}">
+                                    <a href="/v={{$video->id->videoId}}&pr=0">
                                         <img src="{{$thumb}}" alt="">
 
                                         <div class="play">
 
-                                            <img src="/assets/frontend/images/play2.png" alt="">
+                                             <span class="quick-view" data-toggle="modal" data-target="#video-modal" data-videoid="{{$video->id->videoId}}"><img src="/assets/frontend/images/play.png" alt=""></span>
 
                                         </div>
 
@@ -463,41 +151,7 @@
                    <div data-width="100%" class="fb-comments" data-href="http://videoplatform.dev/v={{$video->id->videoId}}" data-numposts="5"></div>
                 </article>
 
-                <!--COMMENTS SECTION END-->
-
-                <article>
-
-                	<div class="widget-bg">
-
-                        <div class="form">
-
-                            <div class="heading">
-
-                                <h3>Leave us a reply</h3>
-
-                            </div>
-
-                           <ul class="row-fluid">
-                            
-                            	<li class="span4"><input name="" type="text" class="input-block-level" placeholder="Name" ></li>
-                                
-                                <li class="span4"><input name="" type="text" class="input-block-level" placeholder="E-mail" ></li>
-                                
-                                <li class="span4"><input name="" type="text" class="input-block-level" placeholder="Website" ></li>
-                            	
-                            </ul>
-                            
-                            <textarea name="" cols="" rows="" placeholder="Comments"></textarea>
-
-                            <button class="form-btn hover-style">Submit</button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-                <!--PAGINATION EBD-->
+                <!--COMMENTS SECTION END-->             
 
             </div>
 
@@ -528,4 +182,8 @@
         <p>Are you a morning person or is the night time the right time? Interesting perspectives on the forum - <a href="#" class="tweet-link">http://t.co/tdEHlbZf</a> <span class="tweet-date">Nov 04, 2013</span></p>
 
     </section>   
+@stop
+@section('script')
+<script src="https://www.youtube.com/iframe_api"></script>
+<script type="text/javascript" src="/fontend/js/videoplatform.js" ></script>
 @stop

@@ -74,7 +74,8 @@ class Utility {
 
         $personal_videos = $objVideos->select('idVideo')->where('status','=',1)->orderBy('updated_at','desc')->limit(5)->get(); 
         $list_comment = $objVideos->select('idVideo')->orderBy('commentCount','desc')->limit(5)->get();
-        $list_views     = $objVideos->select('idVideo')->orderBy('viewCount','desc')->limit(5)->get();       
+        $list_views     = $objVideos->select('idVideo')->orderBy('viewCount','desc')->limit(5)->get();    
+      
         $list_id = array();
         $list_id_comment = array();
         $list_id_views =array();
@@ -98,5 +99,9 @@ class Utility {
             'views_videos'=>$list_views_videos
             );
 
+    }
+    
+    public static function getPopularVideo(){
+        return Youtube::getPopularVideos('US');
     }
 }

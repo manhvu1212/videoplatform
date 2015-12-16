@@ -97,16 +97,17 @@
                                 </div>
                                 <div class="list-img" id="list-img">
                                     @if(isset($video->images)&&$video->images!='') 
-                                       @foreach($video->images  as $image)                                    
+                                       @foreach($video->images  as $k=>$image)                                    
                                             <div class="video-img-dd">                                               
-                                                <input type="hidden" name="image[{{$image->id}}][id]" value="{{$image->id}}">                                               
-                                                <input type="hidden" name="image[{{$image->id}}][minutes]" value="{{$image->minutes}}" >
-                                                <input type="hidden" name="image[{{$image->id}}][seconds]" value="{{$image->seconds}}">
+                                                <input type="hidden" name="image[{{$k}}][id]" value="{{$image->id}}">                                               
+                                                <input type="hidden" name="image[{{$k}}][minutes]" value="{{$image->minutes}}" >
+                                                <input type="hidden" name="image[{{$k}}][seconds]" value="{{$image->seconds}}">
                                                 <img src="/upload/{{$image->url}}" height="100px" width="100px" id="{{$image->id}}">
                                                 <div class='img-caption'>
                                                     <h2>{{$image->title}}</h2>
-                                                    <h5>{{$image->url}}</h5>
-                                                    <span>Time: <b>{{isset($image->minutes)?$image->minutes:''}}:{{isset($image->seconds)?$image->seconds:''}}<b></span>                          
+                                                    <input type="text" class="form-control" name="image[{{$k}}][extern_url]" value="{{isset($image->extern_url)?$image->extern_url:''}}">
+                                                    <span>Time: <b>{{isset($image->minutes)?$image->minutes:''}}:{{isset($image->seconds)?$image->seconds:''}}<b></span>   
+
                                                 </div>
                                                 <div class="caption-action">
                                                     <span class="delete-image"><i class="fa fa-trash-o"></i></span>

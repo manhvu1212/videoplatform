@@ -1,3 +1,11 @@
+<?php 
+    $system_videos = Utility::getPersonalVideos();
+    $popular_video = Utility::getPopularVideo();
+     $taxo = Utility::get_video_cate();
+    $views_videos   = $system_videos['views_videos'];
+
+  
+ ?>
  <footer class="footer">
 
         <section class="home">
@@ -21,24 +29,26 @@
                 <ul class="mycarousel jcarousel-skin-tango row">
 
                     <!--LIST ITEMS START-->
-
+                    @foreach($views_videos as $video)
+                    <?php 
+                        $title = $video->snippet->title; 
+                        $thumb = $video->snippet->thumbnails->default->url;
+                    ?>
                     <li class="span3">
 
                         <figure>
 
                             <div class="thumb">
 
-                                <a href="#">
-
-                                    <img src="/assets/frontend/images/v-gallery1.png" alt="">
-
+                                <a href="/v={{$video->id}}&pr=1">
+                                    <img src="{{$thumb}}" alt="">
                                 </a>
 
                             </div>
 
                             <figcaption>
 
-                                <p class="color">TVXQ! Live in L.A.  Backstage &amp; Onstage With the </p>
+                                <p class="color">{{strlen($title)<30?$title:substr($title,0,29).' ...'}}</p>
 
                                 <p>about 12 hours ago</p>
 
@@ -47,128 +57,7 @@
                         </figure>
 
                     </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li class="span3">
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="#">
-
-                                    <img src="/assets/frontend/images/v-gallery2.png" alt="">
-
-                                </a>
-
-                            </div>
-
-                            <figcaption>
-
-                                <p class="color">TVXQ! Live in L.A.  Backstage &amp; Onstage With the </p>
-
-                                <p>about 12 hours ago</p>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li class="span3">
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="#">
-
-                                    <img src="/assets/frontend/images/v-gallery3.png" alt="">
-
-                                </a>
-
-                            </div>
-
-                            <figcaption>
-
-                                <p class="color">TVXQ! Live in L.A.  Backstage &amp; Onstage With the </p>
-
-                                <p>about 12 hours ago</p>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li class="span3">
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="#">
-
-                                    <img src="/assets/frontend/images/v-gallery1.png" alt="">
-
-                                </a>
-
-                            </div>
-
-                            <figcaption>
-
-                                <p class="color">TVXQ! Live in L.A.  Backstage &amp; Onstage With the </p>
-
-                                <p>about 12 hours ago</p>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
-
-                    <!--LIST ITEMS START-->
-
-                    <li class="span3">
-
-                        <figure>
-
-                            <div class="thumb">
-
-                                <a href="#">
-
-                                    <img src="/assets/frontend/images/v-gallery2.png" alt="">
-
-                                </a>
-
-                            </div>
-
-                            <figcaption>
-
-                                <p class="color">TVXQ! Live in L.A.  Backstage &amp; Onstage With the </p>
-
-                                <p>about 12 hours ago</p>
-
-                            </figcaption>
-
-                        </figure>
-
-                    </li>
-
-                    <!--LIST ITEMS END-->
+                    @endforeach
 
                 </ul>
 
@@ -209,78 +98,17 @@
                     </header>
 
                     <ul>
-
+                        @foreach($popular_video as $video)
+                        <?php 
+                        $title = $video->snippet->title; 
+                        $thumb = $video->snippet->thumbnails->default->url;
+                        ?>
                         <li>
 
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery1.png" alt=""></a>
+                            <a href="/v={{$video->id}}&pr=0"><img style="width:70px;" src="{{$thumb}}" alt=""></a>
 
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery2.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery3.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery4.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery5.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery1.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery2.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery3.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery4.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery5.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery2.png" alt=""></a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><img src="/assets/frontend/images/footer-gallery3.png" alt=""></a>
-
-                        </li>
+                        </li> 
+                        @endforeach              
 
                     </ul>
 
@@ -301,21 +129,9 @@
                     </header>
 
                     <ul>
-
-                        <li><a href="#">News</a></li>
-
-                        <li><a href="#">Reviews</a></li>
-
-                        <li><a href="#">Photos</a></li>
-
-                        <li><a href="#">Video</a></li>
-
-                        <li><a href="#">Blogs</a></li>
-
-                        <li><a href="#">Festivals</a></li>
-
-                        <li><a href="#">Artists</a></li>
-
+                        @foreach($taxo as $cate)
+                             <li><a href="/t={{$cate->name}}&c={{$cate->description}}">{{$cate->name}}</a></li>
+                         @endforeach
                     </ul>
 
                 </div>
@@ -334,7 +150,7 @@
 
                     <ul>
 
-                        <li><a href="#">News</a></li>
+                        <li><a href="/search?s_keywor=news">News</a></li>
 
                         <li><a href="#">Reviews</a></li>
 
@@ -380,6 +196,15 @@
 
             </article>
 
+        </section>
+
+        <section>
+            <div id="video-modal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">                           
+                </div>
+              </div>
+            </div>
         </section>
 
     </footer>   

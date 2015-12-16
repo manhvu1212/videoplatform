@@ -36,17 +36,8 @@ $user = Sentry::getUser();
                         @endif
                     </ul>
                 </li>
-                @endif
-                        <!--
-            @if($user->hasAnyAccess(array('access-users')))
-                        <li class="<?php echo (Request::is('manager/files*')) ? 'active' : '' ?>">
-                    <a href="/manager/files">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Files </span>
-                    </a>
-                </li>
-            @endif
-                        -->
+                @endif             
+          
                 @if($user->hasAnyAccess(array('access-taxonomy')))
                     <li class="<?php echo (Request::is('manager/taxonomy*')) ? 'active open' : '' ?>">
                         <a href="javascript:;">
@@ -60,54 +51,20 @@ $user = Sentry::getUser();
                         </ul>
                     </li>
                 @endif
-
-                    @if($user->hasAnyAccess(array('access-page')))
-                        <li class="<?php echo (Request::is('manager/page*'))?'active open':'' ?>">
+               
+                
+                     @if($user->hasAnyAccess(array('access-videos')))
+                         <li class="<?php echo (Request::is('manager/videos*'))?'active open':'' ?>">
                             <a class="" href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span class="title">Pages</span>
+                                <span class="title">Videos</span>
                             </a>
                             <ul class="sub-menu">
-                                <li><a  href="/manager/page">List</a></li>
-                                <li><a  href="/manager/page/add/page">Add</a></li>
+                                <li><a href="/manager/videos">List</a></li>
+                                <li><a href="/manager/videos/add">Add</a></li>
                             </ul>
                         </li>
                     @endif
-
-                @if($user->hasAnyAccess(array('access-posts')))
-                    <li class="<?php echo (Request::is('manager/post*'))?'active open':'' ?>">
-                        <a class="" href="javascript:;">
-                            <i class="fa fa-book"></i>
-                            <span class="title">Posts</span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a  href="/manager/posts">List</a></li>
-                            <li><a  href="/manager/posts/add/">Add</a></li>
-                        </ul>
-                    </li>
-                @endif
-                    @if($user->hasAnyAccess(array('access-faq')))
-                        <li class="<?php echo (Request::is('manager/faq*'))?'active open':'' ?>">
-                            <a class="" href="javascript:;">
-                                <i class="fa fa-book"></i>
-                                <span class="title">FAQ</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a  href="/manager/faq">List</a></li>
-                                <li><a  href="/manager/faq/add/faq">Add</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                    <li>
-                        <a class="" href="javascript:;">
-                            <i class="fa fa-book"></i>
-                            <span class="title">Videos</span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a href="/manager/videos">List</a></li>
-                            <li><a href="/manager/videos/add">Add</a></li>
-                        </ul>
-                    </li>
 
                     @if($user->hasAnyAccess(array('access-form')))
                         <li class="<?php echo (Request::is('manager/form*'))?'active open':'' ?>">

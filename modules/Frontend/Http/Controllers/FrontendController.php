@@ -1,5 +1,6 @@
 <?php namespace Modules\Frontend\Http\Controllers;
 
+use App\Entities\Files;
 use App\Entities\Registers;
 use App\Entities\Settings;
 use App\Entities\Taxonomy;
@@ -22,10 +23,10 @@ use Pingpong\Modules\Routing\Controller;
 use Youtube;
 
 class FrontendController extends Controller {
-
     public function home(){   
 
-        //$videoList = Youtube::getPopularVideos('US');       
+
+        //$videoList = Youtube::getPopularVideos('US'); 
         $objtaxo  = new Taxonomy();
         $objSetting = new Settings();  
         $objVideos = new Videos();    
@@ -65,6 +66,10 @@ class FrontendController extends Controller {
             'type'  =>'video',    
             'maxResults' => 6,            
             'videoCategoryId' =>2,
+            'videoDuration' => 'medium',
+            'videoDefinition'=>'high',
+            'videoCaption'  =>'none',
+            'safeSearch'    =>'strict'
         );
         $param_game =array(
             'q'=>'',      
@@ -72,6 +77,10 @@ class FrontendController extends Controller {
             'type'  =>'video',    
             'maxResults' => 6,            
             'videoCategoryId' =>28,
+            'videoDuration' => 'medium',
+            'videoDefinition'=>'high',
+            'videoCaption'  =>'none',
+            'safeSearch'    =>'strict'
         );
 
         $param_entertain =array(
@@ -80,6 +89,10 @@ class FrontendController extends Controller {
             'type'  =>'video',    
             'maxResults' => 6,            
             'videoCategoryId' =>24,
+            'videoDuration' => 'medium',
+            'videoDefinition'=>'high',
+            'videoCaption'  =>'none',
+            'safeSearch'    =>'strict'
         );
 
         $param_education =array(
@@ -87,7 +100,11 @@ class FrontendController extends Controller {
             'part'=>'id,snippet',           
             'type'  =>'video',    
             'maxResults' => 6,            
-            'videoCategoryId' =>27
+            'videoCategoryId' =>27,
+            'videoDuration' => 'medium',
+            'videoDefinition'=>'high',
+            'videoCaption'  =>'none',
+            'safeSearch'    =>'strict'
         );
         
         $search_auto        = Youtube::searchAdvanced($param_auto, true);    
@@ -129,18 +146,46 @@ class FrontendController extends Controller {
         return view('frontend::templates.'.$page['template'],array('data'=>$page,'posts'=>$posts));
         else  return view('frontend::templates.template_ira');
     }
-    public function videoDetail($video_id=null){
+    public function videoDetail($video_id,$pr){
 
         $relatedVideos = Youtube::getRelatedVideos($video_id);
-
         $video_info = Youtube::getVideoInfo($video_id);
-        $video_des = $video_info->snippet->description;
-     
-        return view('frontend::templates.video_detail',array(
+        $video_des = $video_info->snippet->description;  
+        $sender = array(
             'video_id'=>$video_id,
-            'video_des'=>$video_des,
-            'relate_videos'=>$relatedVideos           
-        ));
+            'video_des'=>$video_des,                    
+            'relate_videos'=>$relatedVideos,   
+            'pr'=>$pr          
+        );
+
+        if($pr){
+            $objFile = new Files();
+            $objVideos = new Videos(); 
+            $video = $objVideos->where('idVideo',$video_id)->first();
+            $video = json_decode($video); 
+            $images=array();    
+            if(!empty($video->images)){
+                foreach ($video->images as $k => $img) {
+                    $file = $objFile->where('_id',$img->id)->first();     
+                    $images[]= array(
+                        'url'       =>  $file->url,
+                        'title'     =>  $file->title,
+                        'minutes'   =>  $img->minutes,
+                        'seconds'   =>  $img->seconds,
+                        'current'    => $k,
+                        'extern_url' => $img->extern_url
+                    );             
+                }    
+
+                $sender['images'] = $images;    
+            }  
+
+            else{
+                $sender['images'] = array();
+            }         
+
+        }        
+        return view('frontend::templates.video_detail',$sender);
     }
     public function post($alias=null){
         $objPost= new Posts();
@@ -156,9 +201,12 @@ class FrontendController extends Controller {
             'q'             => $keywords,
             'type'          => 'video',
             'part'          => 'id, snippet',
-            'maxResults'    => 15
-            );    
-       
+            'maxResults'    => 15,
+            'videoDuration' => 'medium',
+            'videoDefinition'=>'high',
+            'videoCaption'  =>'none',
+            'safeSearch'    =>'strict'
+            );           
 
         if(!isset($_SESSION['search'])){  
             $search = Youtube::paginateResults($params, null);         
@@ -188,7 +236,11 @@ class FrontendController extends Controller {
             'type'              => 'video',
             'part'              => 'id, snippet',
             'maxResults'        => 15,
-            'videoCategoryId'   =>  $cate_id
+            'videoCategoryId'   =>  $cate_id,
+            'videoDuration' => 'medium',
+            'videoDefinition'=>'high',
+            'videoCaption'  =>'none',
+            'safeSearch'    =>'strict'
             );    
         $videos = Youtube::searchAdvanced($params,true);
 

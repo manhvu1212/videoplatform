@@ -45,12 +45,11 @@ class VideosController extends BaseController {
 				$img->mime 		=	$file->mime;								
 			}
 		}
-
 		return view('videos::add')->with('video',$video);
 	}                   
 
 	public function save(){
-		$input = Input::all();		
+		$input = Input::all();			
 		$rules=array(
 			"title_video" => array('required'),
 			"url_video"	=> array("required")
@@ -74,10 +73,11 @@ class VideosController extends BaseController {
 			$objVideos->idVideo 	=	 $idVideo;
 			$objVideos->description = 	isset($input['content'])?$input['content']:'';
 			$objVideos->images 		= 	isset($input['image'])?$input['image']:'';	
-			$objVideos->viewCount = $video_info->statistics->viewCount;
-			$objVideos->likeCount = $video_info->statistics->likeCount;
-			$objVideos->commentCount = $video_info->statistics->commentCount;	
-			$objVideos->dislikeCount= $video_info->statistics->dislikeCount;
+			$objVideos->viewCount = (int)$video_info->statistics->viewCount;
+			$objVideos->likeCount = (int)$video_info->statistics->likeCount;
+			$objVideos->commentCount = (int)$video_info->statistics->commentCount;	
+			$objVideos->dislikeCount= (int)$video_info->statistics->dislikeCount;
+			
 
 			$objVideos->save();		
 		}
