@@ -1,55 +1,78 @@
 @extends('layouts.frontend.master')
 @section('content')
-
+   @if($pr&&!empty($images))
     <section class="banner img-less">
+    	<div class="container">             
+                
+            <div id="slider" class="flexslider">
+            
+              <ul class="slides no-img">
+                <li>
+                    <img src="/assets/frontend/images/topimg1.jpg" alt="">
+                     <div class="caption resize">
 
-    	<div class="container">        	
-            @include('frontend::templates.top_slide')
+                        <h2>Start</h2>
+
+                        <h4>Time: 0 : 0 </b></h4>
+
+                    </div>
+                </li>
+                @foreach($images as $img)
+                <li>
+
+                    <img src="/upload/{{$img['url']}}" alt="">
+
+                    <div class="caption resize">
+
+                        <h2>{{$img['title']}}</h2>
+
+                        <h4>Time: <b>{{$img['minutes']}} : {{$img['seconds']}}</b></h4>
+
+                    </div>
+
+                </li>              
+                @endforeach
+              </ul>
+      
+
+            </div>
+
+            <div id="carousel" class="flexslider">                  
+              <ul class="slides">
+             <li>
+            <img src="/assets/frontend/images/topimg1.jpg" alt="">
+            </li>
+               @foreach($images as $img)     
+                <li>
+                <div class="person-image" data-current="{{$img['current']}}">
+                    <img src="/upload/{{$img['url']}}" alt="">
+                    <div class="caption">
+                        <a href="{{isset($img['extern_url'])?$img['extern_url']:'#'}}">Go to page</a>
+                    </div>
+                </div>
+                </li>
+                @endforeach    
+              </ul>
+                 
+            </div>
+
         </div>
 
-    </section>
-
+    </section>   
+    @endif
     <!--BANNER END-->
 
     <!--FEATURED VIDEOS SECTION START-->
-
     <section class="container">
-    	<div class="video-detail" id="div_iframe" data-videoid="{{$video_id}}" <?php if($pr) echo('style="width:75%;"');  ?>>        	
-        </div>
-        @if($pr)
-        <div class="image-video" style="width:24%;height:498px;border:1px solid #ddd;float:right;overflow:auto;">
-            @if(!empty($images))
-            <ul>            
-                @foreach($images as $img)
-                <li>
-                    <div class="person-image" data-current="{{$img['current']}}">
-                        <img src="/upload/{{$img['url']}}">
-                        <a href="{{isset($img['extern_url'])?$img['extern_url']:'#'}}">Route</a>
-                    </div>
-                </li>      
-                @endforeach              
-            </ul>
-            @else
-            <h3 style="text-align:center;">No images</h3>
-            @endif
-        </div>
-        <style type="text/css">
-                .image-video li{margin-top: 10px;}
-                .person-image{cursor: pointer;position: relative;}
-                .person-image a{position: absolute;top: 0;left: 0;}
-        </style>
-        @endif
+    	<div class="video-detail" id="div_iframe" data-videoid="{{$video_id}}">        	
+        </div>       
     	<div class="row">
 
         	<div class="span8">
 
             	<header class="header-style">
 
-                    <h2 class="h-style">Video Detial</h2>
-
-                    <a href="#"><i class="fa fa-comment-o"></i>33 Comments</a>
-
-                    <a href="#"><i class="fa fa-clock-o"></i>Sep 16, 2013</a>
+                    <h2 class="h-style">Video Description</h2>                  
 
                 </header>
 
@@ -62,13 +85,12 @@
                         <figure>
 
                             <div class="text">
-
-                                <h2>Will IronMan-3 proved to be a block buster sequel?</h2>
-
-                                <p>Dolor donec sagittis sapien. Ante aptent feugiat adipisicing. Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing. Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing.Dolor donec sagittis sapien. Ante aptent feugiat adipisicing. Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing. Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing. Duis interdum...</p>
-
-                                <p>Dolor donec sagittis sapien. Ante aptent feugiat adipisicing. Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing. Duis interdum olor donec sagittis sapien. Ante aptent feugiat adipisicing. Duis interdum</p>
-
+                                <?php if(isset($description)){
+                                    echo ($description);
+                                    }else{
+                                        echo ($video_des);
+                                    }
+                                 ?>
                             </div>
 
                         </figure>
@@ -121,7 +143,7 @@
 
                                     <p>{{strlen($title)<20?$title:substr($title,0,18). '...'}}</p>
 
-                                    <p class="color">27 may 2013</p>
+                                     <p class="color">Published: {{date('d/M/Y', strtotime($video->snippet->publishedAt))}}</p>
 
                                 </figcaption>
 
@@ -185,5 +207,4 @@
 @stop
 @section('script')
 <script src="https://www.youtube.com/iframe_api"></script>
-<script type="text/javascript" src="/fontend/js/videoplatform.js" ></script>
 @stop

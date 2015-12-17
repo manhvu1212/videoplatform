@@ -246,9 +246,7 @@
 
                                 <h5>{{strlen($title)<30?$title:substr($title,0,29).' ...'}}</h5>
 
-                                <ul class="views">
-
-                                    <li>27 Sep, 2013</li>
+                                <ul class="views">                                   
 
                                     <li><i class="fa fa-comments"></i>{{$video->statistics->commentCount}}</li>
 
@@ -309,9 +307,7 @@
 
                                 <figcaption>
 
-                                    <p>{{strlen($title)<30?$title:substr($title,0,30).' ...'}}</p>
-
-                                    <p class="color">27 may 2013</p>
+                                    <p>{{strlen($title)<30?$title:substr($title,0,30).' ...'}}</p>                                    
 
                                 </figcaption>
 

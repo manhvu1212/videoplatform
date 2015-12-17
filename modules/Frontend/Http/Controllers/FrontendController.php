@@ -37,6 +37,7 @@ class FrontendController extends Controller {
 
         
         $objSetting = $objSetting->where('type','=','site_settings')->first();
+        
         $setting = json_decode($objSetting->content);  
       
         return view('frontend::home',array(
@@ -163,7 +164,10 @@ class FrontendController extends Controller {
             $objVideos = new Videos(); 
             $video = $objVideos->where('idVideo',$video_id)->first();
             $video = json_decode($video); 
-            $images=array();    
+            $images=array();  
+            if($video->description!=''){
+                $sender['description'] = $video->description;
+            }  
             if(!empty($video->images)){
                 foreach ($video->images as $k => $img) {
                     $file = $objFile->where('_id',$img->id)->first();     
@@ -175,7 +179,7 @@ class FrontendController extends Controller {
                         'current'    => $k,
                         'extern_url' => $img->extern_url
                     );             
-                }    
+                }   
 
                 $sender['images'] = $images;    
             }  
@@ -183,8 +187,10 @@ class FrontendController extends Controller {
             else{
                 $sender['images'] = array();
             }         
+        }    
 
-        }        
+        //print_r($sender);die;   
+
         return view('frontend::templates.video_detail',$sender);
     }
     public function post($alias=null){
@@ -200,12 +206,12 @@ class FrontendController extends Controller {
         $params =array(
             'q'             => $keywords,
             'type'          => 'video',
-            'part'          => 'id, snippet',
+            'part'          => 'snippet',
             'maxResults'    => 15,
-            'videoDuration' => 'medium',
             'videoDefinition'=>'high',
             'videoCaption'  =>'none',
-            'safeSearch'    =>'strict'
+            'religionCode'  =>'US',
+            'safeSearch'    =>'moderate'
             );           
 
         if(!isset($_SESSION['search'])){  
@@ -224,8 +230,8 @@ class FrontendController extends Controller {
         if(isset($_GET['prev'])){
             $search = Youtube::paginateResults($params, $_SESSION['search']['info']['prevPageToken']); 
             $_SESSION['search'] = $search; 
-        }       
-       
+        }        
+
         return view('frontend::templates.search')->with('videos',$search['results']);
     
     }

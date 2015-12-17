@@ -14,30 +14,6 @@ jQuery(document).ready(function($){
 		$("[data-toggle='tooltip']").tooltip();
 	}
 	
-	//Carousel
-	
-
-      $('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: true,
-        slideshow: false,
-        itemWidth: 182,
-        itemMargin: 0,
-        asNavFor: '#slider'
-      });
-      
-      $('#slider').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        sync: "#carousel",
-        start: function(slider){
-
-        }
-      });
-
 
 	
 

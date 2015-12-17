@@ -28,7 +28,7 @@
     @yield('content')
     <!--Footer-->
     @include('layouts.frontend.footer')
-</div>
+</div>        
     <script type="text/javascript" src="/assets/frontend/js/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/frontend/misc/bootstrap/bootstrap.min.js"></script>    
     <script defer src="/fontend/js/jquery.flexslider.js"></script>
@@ -40,6 +40,7 @@
     <script type="text/javascript" src="/fontend/js/jquery.lightSlider.min.js"></script>
     <script type="text/javascript" src="/fontend/js/home.js" ></script>
     <script type="text/javascript" src="/fontend/js/videoplatform.js" ></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 @yield('script')
 </body>
 </html>

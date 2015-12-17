@@ -60,18 +60,8 @@
 
 	                            <figcaption>
 
-	                            	<h5>{{strlen($title)<30?$title:substr($title, 0,28). ' ...'}}</h5>
-
-	                                <ul class="views">
-
-	                                	<li>27 Sep, 2013</li>
-
-	                                    <li><i class="fa fa-comments"></i>23</li>
-
-	                                    <li><i class="fa fa-eye"></i>875</li>
-
-	                                </ul>
-
+	                            	<h5>{{strlen($title)<30?$title:substr($title, 0,28). ' ...'}}</h5>	 
+                                    <p class="color">Published: {{date('d/M/Y', strtotime($video->snippet->publishedAt))}}</p>                              
 	                            </figcaption>
 
 	                        </figure>

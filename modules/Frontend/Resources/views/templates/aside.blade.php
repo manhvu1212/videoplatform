@@ -115,7 +115,8 @@
 
                                                     <p>{{$title}}</p>
 
-                                                    <p class="color">27 may 2013</p>
+                                                    <p class="color"><i class="fa fa-eye"></i> {{$video->statistics->viewCount}}</p>
+                                                   
 
                                                 </figcaption>
 
@@ -163,7 +164,7 @@
 
                                                     <p>{{$title}}</p>
 
-                                                    <p class="color">27 may 2013</p>
+                                                    <p class="color"><i class="fa fa-comments"></i> {{$video->statistics->commentCount}}</p>
 
                                                 </figcaption>
 
@@ -211,7 +212,7 @@
 
                                                     <p>{{$title}}</p>
 
-                                                    <p class="color">27 may 2013</p>
+                                                    <p class="color"><i class="fa fa-eye"></i> {{$video->statistics->viewCount}}</p>
 
                                                 </figcaption>
 

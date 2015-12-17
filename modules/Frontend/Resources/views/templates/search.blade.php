@@ -26,7 +26,7 @@
 
             	<header class="header-style">
 
-                    <h2 class="h-style">Search Result for: <span>Animation</span></h2>
+                    <h2 class="h-style">Search Result for: <span>{{$_GET['s_keyword']}}</span></h2>
 
                 </header>
 
@@ -51,7 +51,6 @@
 	                        		<a href="/v={{$video->id->videoId}}&pr=0"><img src="{{$thumb}}" alt=""></a>
 
 	                                <div class="play">
-
 	                                   <span class="quick-view" data-toggle="modal" data-target="#video-modal" data-videoid="{{$video->id->videoId}}"><img src="/assets/frontend/images/play.png" alt=""></span>
 
 	                                </div>
@@ -62,16 +61,10 @@
 
 	                            	<h5>{{strlen($title)<30?$title:substr($title, 0,28). ' ...'}}</h5>
 
-	                                <ul class="views">
 
-	                                	<li>27 Sep, 2013</li>
+                                    <p class="color">Published: {{date('d/M/Y', strtotime($video->snippet->publishedAt))}}</p>
 
-	                                    <li><i class="fa fa-comments"></i>23</li>
-
-	                                    <li><i class="fa fa-eye"></i>875</li>
-
-	                                </ul>
-
+	                               
 	                            </figcaption>
 
 	                        </figure>

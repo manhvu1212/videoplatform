@@ -715,6 +715,8 @@ footer div.widget:first-child{
 
     display:block;
 
+    z-index: 999999;
+
 }
 
 #carousel .caption:after {

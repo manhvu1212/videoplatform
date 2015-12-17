@@ -172,156 +172,156 @@
 
               </ul>
 
+</div>
+
+<div id="carousel" class="flexslider">
+
+  <ul class="slides">
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg1.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Diam voluptua</a>
+
         </div>
 
-        <div id="carousel" class="flexslider">
+        </li>
 
-          <ul class="slides">
+        <li>
 
-                <li>
+        <img src="/assets/frontend/images/topimg2.jpg" alt="">
 
-                <img src="/assets/frontend/images/topimg1.jpg" alt="">
+        <div class="caption">
 
-                <div class="caption">
-
-                    <a href="#">Diam voluptua</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg2.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Sed diam</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg3.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Sadipscing elitr</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg1.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Lorem ipsum</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg1.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Dolor sit amet</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg2.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Takimata sanctus</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg3.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Accusam et</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg1.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Diam voluptua</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg1.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">At vero eoset</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg2.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Takimata sanctus</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg3.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Lorem ipsum</a>
-
-                </div>
-
-                </li>
-
-                <li>
-
-                <img src="/assets/frontend/images/topimg1.jpg" alt="">
-
-                <div class="caption">
-
-                    <a href="#">Ipsum dolor</a>
-
-                </div>
-
-                </li>
-
-          </ul>
+            <a href="#">Sed diam</a>
 
         </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg3.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Sadipscing elitr</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg1.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Lorem ipsum</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg1.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Dolor sit amet</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg2.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Takimata sanctus</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg3.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Accusam et</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg1.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Diam voluptua</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg1.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">At vero eoset</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg2.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Takimata sanctus</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg3.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Lorem ipsum</a>
+
+        </div>
+
+        </li>
+
+        <li>
+
+        <img src="/assets/frontend/images/topimg1.jpg" alt="">
+
+        <div class="caption">
+
+            <a href="#">Ipsum dolor</a>
+
+        </div>
+
+        </li>
+
+  </ul>
+
+</div>
