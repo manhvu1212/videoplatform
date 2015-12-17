@@ -342,7 +342,7 @@ class UsersController extends BaseController {
             Sentry::authenticate($credentials, false);
         }
         if($user->hasAccess('dashboard')){
-            return  Redirect::to('/manager/posts');
+            return  Redirect::to('/manager/videos');
         }else{
             return  Redirect::to('/');
         }
