@@ -205,6 +205,3 @@
 
     </section>   
 @stop
-@section('script')
-<script src="https://www.youtube.com/iframe_api"></script>
-@stop
