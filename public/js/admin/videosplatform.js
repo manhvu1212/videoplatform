@@ -195,14 +195,21 @@ var VIDEOS = {
         });
     },
 
+    show_add_link: function () {
+        $('#link').val("");
+        jQuery('#modal-add-link').modal('show');
+    },
+
     add_link: function () {
         var url = $('#link').val();
-        jQuery.ajax({
-            url: url,
-            success: function (data) {
-                alert(data);
-            }
-        });
+        if (url !== "") {
+            jQuery.ajax({
+                url: url,
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        }
     },
 
     reload_iframe: function (idVideo) {

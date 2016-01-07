@@ -116,7 +116,7 @@
                                     </button>
                                     &nbsp;
                                     <button type="button" class="btn green" data-toggle="modal"
-                                            data-target="#modal-add-link">Add Link
+                                            onclick="VIDEOS.show_add_link(this)">Add Link
                                     </button>
                                 </div>
                                 <div class="list-img" id="list-img">
