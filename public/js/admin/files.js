@@ -1,5 +1,5 @@
 function getBaseURL () {
-    return location.protocol + "//" + location.hostname;
+    return location.protocol + "//" + location.hostname + (location.port && ":" + location.port);
 }
 var FILES = {
     slugify:function(text){
@@ -18,7 +18,7 @@ var FILES = {
             if(jQuery('.wp-progress').length > 0){
                 window.location.reload();
             }
-        })
+        });
         jQuery('#browser-file').click(function(){
             jQuery('#image').click();
         });
@@ -146,12 +146,11 @@ var FILES = {
             parent.FILESELECTED.id = jQuery('#input-photo-id').val();
             parent.FILESELECTED.name = jQuery('#input-photo-filename').val();
             parent.FILESELECTED.title = jQuery('#input-photo-title').val();
-            parent.FILESELECTED.server = jQuery('#input-photo-server').val();
+            parent.FILESELECTED.server  = jQuery('#input-photo-server').val();
             parent.FILESELECTED.url = jQuery('#input-photo-link').val();
             parent.FILESELECTED.extension = jQuery('#input-extension').val();
             parent.POPUPFILE.close();
             jQuery('#photo-detail').modal('hide');           
-           
         })
     },
     newfolder:function(){

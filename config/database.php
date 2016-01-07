@@ -55,9 +55,9 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => 'videoplatform',//env('DB_DATABASE', 'laravel5'),
-            'username'  => env('DB_USERNAME', 'videoplatform'),
-            'password'  => env('DB_PASSWORD', 'ZNZHfa7qteS22ssQ'),
+            'database'  => 'videoplatform_v2',//env('DB_DATABASE', 'laravel5'),
+            'username'  => env('DB_USERNAME', 'root'),
+            'password'  => env('DB_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -92,7 +92,7 @@ return [
             'port'     => 27017,
             'username' => 'admin',
             'password' => '',
-            'database' => 'videoplatform',
+            'database' => 'videoplatform_v2',
             'options' => array(
                 'db' => 'admin' // sets the authentication database required by mongo 3
             )

@@ -2,7 +2,7 @@
  * Created by Admin on 10/26/2015.
  */
 function getBaseURL () {
-    return location.protocol + "//" + location.hostname;
+    return location.protocol + "//" + location.hostname + (location.port && ":" + location.port);
 }
 var HOME = {
     a_faq_click:function(){

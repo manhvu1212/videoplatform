@@ -2,7 +2,7 @@
  * Created by mrhoang on 4/1/15.
  */
 function getBaseURL () {
-    return location.protocol + "//" + location.hostname;
+    return location.protocol + "//" + location.hostname + (location.port && ":" + location.port);
 }
 
 var SYSTEM = {
