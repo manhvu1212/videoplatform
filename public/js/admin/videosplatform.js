@@ -196,8 +196,13 @@ var VIDEOS = {
     },
 
     add_link: function () {
-        jQuery('#modal-add-link').modal('show');
         var url = $('#link').val();
+        jQuery.ajax({
+            url: url,
+            success: function (data) {
+                alert(data);
+            }
+        });
     },
 
     reload_iframe: function (idVideo) {

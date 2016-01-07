@@ -115,7 +115,8 @@
                                     <button type="button" class="btn green" onclick="VIDEOS.upload_image(this)">Upload
                                     </button>
                                     &nbsp;
-                                    <button type="button" class="btn green" onclick="VIDEOS.add_link(this)">Add Link
+                                    <button type="button" class="btn green" data-toggle="modal"
+                                            data-target="#modal-add-link">Add Link
                                     </button>
                                 </div>
                                 <div class="list-img" id="list-img">
@@ -166,7 +167,8 @@
                 <div class="modal-body">
                     <form action="" method="post" id="form-add-link">
                         <input id="_token" name="_token" type="hidden" value="{{ csrf_token() }}">
-                        <input id="link" name="link" type="url" class="form-control" placeholder="Url">
+                        <input id="link" name="link" type="url" class="form-control" placeholder="Url"
+                               onchange="VIDEOS.add_link(this)">
                     </form>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
