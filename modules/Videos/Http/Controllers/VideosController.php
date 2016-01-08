@@ -126,18 +126,19 @@ class VideosController extends BaseController
             $title = $nodes->item(0)->nodeValue;
             $output['title'] = $title;
             $metas = $doc->getElementsByTagName('meta');
+            $image = "";
             for ($i = 0; $i < $metas->length; $i++) {
                 $meta = $metas->item($i);
                 if (strpos($meta->getAttribute('property'), 'image')) {
                     $image = $meta->getAttribute('content');
-                    $output['image'] = $image;
-                } else {
-                    $body = $doc->getElementsByTagName('body');
-                    $images = $body[0]->getElementsByTagName('img');
-                    $image = $images[0]->getAttribute('src');
-                    $output['image'] = parse_url($input['link'])['scheme'] . '://' . parse_url($input['link'])['host'] . '/' . $image;
                 }
             }
+            if($image == "") {
+                $body = $doc->getElementsByTagName('body');
+                $images = $body[0]->getElementsByTagName('img');
+                $image = parse_url($input['link'])['scheme'] . '://' . parse_url($input['link'])['host'] . '/' . $images[0]->getAttribute('src');
+            }
+            $output['image'] = $image;
             $output['url'] = $input['link'];
         }
         return Response::json($output);
