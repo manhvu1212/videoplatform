@@ -116,7 +116,7 @@
                                     </button>
                                     &nbsp;
                                     <button type="button" class="btn green" data-toggle="modal"
-                                            onclick="VIDEOS.show_add_link(this)">Add Link
+                                            onclick="VIDEOS.show_modal_link(this)">Add Link
                                     </button>
                                 </div>
                                 <div class="list-img" id="list-img">
@@ -163,16 +163,20 @@
                 <div class="modal-header">
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                     <h4 class="modal-title">Add Link</h4>
+
                 </div>
                 <div class="modal-body">
                     <form action="" method="post" id="form-add-link">
                         <input id="_token" name="_token" type="hidden" value="{{ csrf_token() }}">
-                        <input id="link" name="link" type="url" class="form-control" placeholder="Url"
-                               onchange="VIDEOS.add_link(this)">
+                        <input id="link" name="link" type="url" class="form-control" placeholder="Url">
+                        <span class="help-block help-block-error" style="display: none;">Url not right.</span>
+                        <img src="/images/loading.gif" class="img-responsive loading" src="/images/loading.gif"
+                             height="40px" width="40px" style="display: none; margin: 10px auto;">
+                        <div class="list-img bind-link"></div>
                     </form>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" id="add-image-link" class="btn btn-primary">Add</button>
+                        <button type="button" onclick="VIDEOS.add_link_done()" class="btn btn-primary">Add</button>
                     </div>
                 </div>
             </div>

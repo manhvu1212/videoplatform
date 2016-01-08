@@ -12,7 +12,7 @@
 
 </style>
 <script>
-    var FILESELECTED = {}
+    var FILESELECTED = {};
     var POPUPFILE = {
         open:function(callback){
             jQuery('#popup-files').dialog({
@@ -26,7 +26,7 @@
             });
         },
         close:function(){
-            jQuery('#popup-files').dialog('close')
+            jQuery('#popup-files').dialog('close');
 
         }
     }

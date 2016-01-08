@@ -14,6 +14,8 @@ Route::group(['prefix' => '/manager/files', 'namespace' => 'Modules\Files\Http\C
 
 	Route::post('/uploadimage',  array('before' => 'auth',  'uses' => 'FilesController@uploadimage'));
 	Route::get('/uploadimage',  array('before' => 'auth',  'uses' => 'FilesController@uploadimage'));
+	Route::post('/uploadimagefromurl',  array('before' => 'auth',  'uses' => 'FilesController@uploadimagefromurl'));
+
 	Route::post('/getdetail',  array('before' => 'auth',  'uses' => 'FilesController@getdetail'));
 	Route::post('/destroyfile',  array('before' => 'auth',  'uses' => 'FilesController@destroyfile') );
 	Route::post('/update',  array('before' => 'auth',  'uses' => 'FilesController@update') );

@@ -7,4 +7,5 @@ Route::group(['prefix' => 'manager/videos', 'namespace' => 'Modules\Videos\Http\
 	Route::get('/edit/{video_id}',array('before'=>'auth|role:access-videos','uses'=>'VideosController@edit'));
 	Route::post('/change_status',array('before'=>'auth|role:access-videos','uses'=>'VideosController@change_status'));
 	Route::post('/destroy',array('before'=>'auth|role:access-videos','uses'=>'VideosController@destroy'));
+	Route::post('/bind_link',array('before'=>'auth|role:access-videos','uses'=>'VideosController@bind_link'));
 });

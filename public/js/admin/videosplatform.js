@@ -195,21 +195,101 @@ var VIDEOS = {
         });
     },
 
-    show_add_link: function () {
-        $('#link').val("");
+    show_modal_link: function () {
+        jQuery('#link').val('');
         jQuery('#modal-add-link').modal('show');
+        jQuery('#link').removeAttr('disabled');
     },
 
     add_link: function () {
-        var url = $('#link').val();
-        if (url !== "") {
-            jQuery.ajax({
-                url: url,
-                success: function (data) {
-                    alert(data);
+        var is_check_link = false;
+        var t;
+        jQuery('#link').on('input', function () {
+            if (t) {
+                clearTimeout(t);
+                t = setTimeout(callBack, 1000);
+            }
+            else {
+                t = setTimeout(callBack, 1000);
+            }
+            function callBack() {
+                var url = jQuery('#link').val();
+                if (/^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url)) {
+                    console.log('is url');
+                    jQuery('#form-add-link span').hide();
+                    var data = jQuery('#form-add-link').serialize();
+                    jQuery.ajax({
+                        url: getBaseURL() + '/manager/videos/bind_link',
+                        type: "post",
+                        data: data,
+                        dataType: 'json',
+                        beforeSend: function () {
+                            jQuery('#link').attr('disabled', 'disabled');
+                            jQuery('.loading').show();
+                        },
+                        success: function (data) {
+                            jQuery('.loading').hide();
+                            console.log(data);
+                            if (data['url_exist']) {
+                                var elm = '<div class="video-img-dd"> \
+                                                <input type="hidden" name="image" value="'+ data['image'] +'"> \
+                                                <img src="' + data['image'] + '" width="100px" height="100px"> \
+                                                <input type="hidden" name="title" value="' + data['title'] + '">\
+                                                <div class="img-caption"> \
+                                                    <h2 id="title-new-add">' + data['title'] + '</h2> \
+                                                    <input type="url" id="url-new-add" value="' + data['url'] + '" disabled class="form-control"> \
+                                                    <span>Time: <b>' + minutes + ':' + seconds + '<b></span> \
+                                                </div> \
+                                            </div>';
+                                jQuery('.bind-link').children().remove();
+                                jQuery('.bind-link').append(elm);
+                            } else {
+                                jQuery('#link').removeAttr('disabled');
+                                jQuery('#form-add-link span').show();
+                            }
+                        },
+                        error: function () {
+                            jQuery('#link').removeAttr('disabled');
+                            jQuery('#form-add-link span').show();
+                            jQuery('.loading').hide();
+                        }
+                    });
+                } else {
+                    jQuery('#form-add-link span').show();
                 }
-            });
-        }
+            }
+        });
+    },
+
+    add_link_done: function () {
+        var data = jQuery('#form-add-link').serialize();
+        jQuery.ajax({
+            url: getBaseURL() + '/manager/files/uploadimagefromurl',
+            type: "post",
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                if(data['status'] == 1) {
+                    var title = jQuery('#title-new-add').html();
+                    var url = jQuery('#url-new-add').val();
+                    jQuery('#list-img').append('<div class="video-img-dd ' + data.id + '"> \
+                        <input type="hidden" name="image[' + current_time + '][id]" value="' + data.id + '"> \
+                        <input type="hidden" name="image[' + current_time + '][minutes]" value="' + minutes + '"> \
+                        <input type="hidden" name="image[' + current_time + '][seconds]" value="' + seconds + '"> \
+                        <img src="' + SETTINGS.domain_image + 'files/' + data.url +'" height="100px" width="100px"> \
+                        <div class="img-caption"> \
+                            <h2>' + title + '</h2> \
+                            <input type="text" class="form-control" name="image[' + current_time + '][extern_url]" value="' + url + '"> \
+                            <span>Time: <b>' + minutes + '</b>:<b>' + seconds + '</b></span></div> \
+                            <div class="caption-action"><span class="delete-image"><i class="fa fa-trash-o"></i></span></div> \
+                        </div>'
+                    );
+                    VIDEOS.delete_image();
+                    jQuery('#modal-add-link').modal('hide');
+                }
+            }
+        });
     },
 
     reload_iframe: function (idVideo) {
@@ -246,4 +326,5 @@ jQuery(document).ready(function () {
     VIDEOS.delete();
     VIDEOS.deletemulti();
     VIDEOS.delete_image();
+    VIDEOS.add_link();
 });	

@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Modules\Videos\Http\Controllers;
 
 use App\Entities\Files;
@@ -11,99 +11,132 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Youtube;
 
-class VideosController extends BaseController {
-	
-	public function index()
-	{
-		$user = $this->getUser();
-		$request=Request::all();
-		$objVideos = new Videos();
-		$videos = $objVideos->get();
-		
-		if(isset($request['name'])){				
-			$videos = $objVideos->where('title','like', '%'.$request['name'].'%')->get();
-		}
+class VideosController extends BaseController
+{
 
-		return view('videos::index')->with('videos',$videos);
-	}
-	public function add(){
-		return view('videos::add');
-	}
+    public function index()
+    {
+        $user = $this->getUser();
+        $request = Request::all();
+        $objVideos = new Videos();
+        $videos = $objVideos->get();
 
-	public function edit($video_id){
-		$objVideos = new Videos();
-		$objFile = new Files();
-		$video = $objVideos->where('_id',$video_id)->first();		
-		$video = json_decode($video);	
-		if(isset($video->images)&&$video->images!=''){	
-			foreach ($video->images as $img) {
-				$file = $objFile->where('_id',$img->id)->first();
-				$img->title 	=	$file->title;
-				$img->url 		=	$file->url;
-				$img->name 		=	$file->name;
-				$img->folder_id	=	$file->folder_id;
-				$img->mime 		=	$file->mime;								
-			}
-		}
-		return view('videos::add')->with('video',$video);
-	}                   
+        if (isset($request['name'])) {
+            $videos = $objVideos->where('title', 'like', '%' . $request['name'] . '%')->get();
+        }
 
-	public function save(){
-		$input = Input::all();			
-		$rules=array(
-			"title_video" => array('required'),
-			"url_video"	=> array("required")
-			);
+        return view('videos::index')->with('videos', $videos);
+    }
 
-		$validation = Validator::make(Input::all(), $rules);
-		if(!$validation->fails()){
-			$objVideos = new Videos();
+    public function add()
+    {
+        return view('videos::add');
+    }
 
-			if(isset($input['_id'])&&$input['_id']!=''){
-				$objVideos = $objVideos->where('_id',$input['_id'])->first();
-			}
-			else{
-				$objVideos->status=1;
-			}
+    public function edit($video_id)
+    {
+        $objVideos = new Videos();
+        $objFile = new Files();
+        $video = $objVideos->where('_id', $video_id)->first();
+        $video = json_decode($video);
+        if (isset($video->images) && $video->images != '') {
+            foreach ($video->images as $img) {
+                $file = $objFile->where('_id', $img->id)->first();
+                $img->title = $file->title;
+                $img->url = $file->url;
+                $img->name = $file->name;
+                $img->folder_id = $file->folder_id;
+                $img->mime = $file->mime;
+            }
+        }
+        return view('videos::add')->with('video', $video);
+    }
 
-			$idVideo = isset($input['url_video'])?$input['url_video']:'';
+    public function save()
+    {
+        $input = Input::all();
+        $rules = array(
+            "title_video" => array('required'),
+            "url_video" => array("required")
+        );
 
-			$video_info = Youtube::getVideoInfo($idVideo);			
-			$objVideos->title 		= 	isset($input['title_video'])?$input['title_video']:'';
-			$objVideos->idVideo 	=	 $idVideo;
-			$objVideos->description = 	isset($input['content'])?$input['content']:'';
-			$objVideos->images 		= 	isset($input['image'])?$input['image']:'';	
-			$objVideos->viewCount = (int)$video_info->statistics->viewCount;
-			$objVideos->likeCount = (int)$video_info->statistics->likeCount;
-			$objVideos->commentCount = (int)$video_info->statistics->commentCount;	
-			$objVideos->dislikeCount= (int)$video_info->statistics->dislikeCount;
-			
+        $validation = Validator::make(Input::all(), $rules);
+        if (!$validation->fails()) {
+            $objVideos = new Videos();
 
-			$objVideos->save();		
-		}
-		
-		return response()->json("ypn response");
-	}	
+            if (isset($input['_id']) && $input['_id'] != '') {
+                $objVideos = $objVideos->where('_id', $input['_id'])->first();
+            } else {
+                $objVideos->status = 1;
+            }
 
-	public function change_status(){
-		$input= Input::all();		
-		if(isset($input['id'])&&$input['id']!=''){		
-			$video = Videos::where('_id',$input['id'])->first();
-			$video->status=(int)$input['activated'];
-			$video->save();
-		}
-		Response::json('1');
-	}
+            $idVideo = isset($input['url_video']) ? $input['url_video'] : '';
 
-	public function destroy(){
-		$input= Input::all();	
-		foreach ($input['aids'] as $l) {
-			$objVideo = new Videos();
-			$video = $objVideo->where('_id',$l)->first();
-			$video->delete();
-		}
+            $video_info = Youtube::getVideoInfo($idVideo);
+            $objVideos->title = isset($input['title_video']) ? $input['title_video'] : '';
+            $objVideos->idVideo = $idVideo;
+            $objVideos->description = isset($input['content']) ? $input['content'] : '';
+            $objVideos->images = isset($input['image']) ? $input['image'] : '';
+            $objVideos->viewCount = (int)$video_info->statistics->viewCount;
+            $objVideos->likeCount = (int)$video_info->statistics->likeCount;
+            $objVideos->commentCount = (int)$video_info->statistics->commentCount;
+            $objVideos->dislikeCount = (int)$video_info->statistics->dislikeCount;
 
-		Session::flash('message',trans('Delete'));
-		return Response::json('1');
-	}
+
+            $objVideos->save();
+        }
+
+        return response()->json("ypn response");
+    }
+
+    public function change_status()
+    {
+        $input = Input::all();
+        if (isset($input['id']) && $input['id'] != '') {
+            $video = Videos::where('_id', $input['id'])->first();
+            $video->status = (int)$input['activated'];
+            $video->save();
+        }
+        Response::json('1');
+    }
+
+    public function destroy()
+    {
+        $input = Input::all();
+        foreach ($input['aids'] as $l) {
+            $objVideo = new Videos();
+            $video = $objVideo->where('_id', $l)->first();
+            $video->delete();
+        }
+
+        Session::flash('message', trans('Delete'));
+        return Response::json('1');
+    }
+
+    public function bind_link()
+    {
+        $input = Input::all();
+        $output = [];
+        $output['url_exist'] = $url_exist = $this->url_exist($input['link']);
+        if ($url_exist) {
+            $html = $this->file_get_contents_curl($input['link']);
+            $doc = new \DOMDocument();
+            @$doc->loadHTML($html);
+            $nodes = $doc->getElementsByTagName('title');
+            $title = $nodes->item(0)->nodeValue;
+            $output['title'] = $title;
+            $metas = $doc->getElementsByTagName('meta');
+            for ($i = 0; $i < $metas->length; $i++) {
+                $meta = $metas->item($i);
+                if (strpos($meta->getAttribute('property'), 'image')) {
+                    $image = $meta->getAttribute('content');
+                    $output['image'] = $image;
+                }
+            }
+            $output['url'] = $input['link'];
+        } else {
+            //
+        }
+        return Response::json($output);
+    }
 }
