@@ -131,11 +131,14 @@ class VideosController extends BaseController
                 if (strpos($meta->getAttribute('property'), 'image')) {
                     $image = $meta->getAttribute('content');
                     $output['image'] = $image;
+                } else {
+                    $body = $doc->getElementsByTagName('body');
+                    $images = $body[0]->getElementsByTagName('img');
+                    $image = $images[0]->getAttribute('src');
+                    $output['image'] = parse_url($input['link'])['scheme'] . '://' . parse_url($input['link'])['host'] . '/' . $image;
                 }
             }
             $output['url'] = $input['link'];
-        } else {
-            //
         }
         return Response::json($output);
     }
