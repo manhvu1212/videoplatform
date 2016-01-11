@@ -1,5 +1,5 @@
 {
-	"name": "pingpong-modules/slide",
+	"name": "pingpong-modules/slides",
 	"description": "",
 	"authors": [
 		{
@@ -9,7 +9,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Modules\\Slide\\": ""
+			"Modules\\Slides\\": ""
 		}
 	}
 }

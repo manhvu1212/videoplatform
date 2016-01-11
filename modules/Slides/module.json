@@ -1,12 +1,12 @@
 {
-    "name": "Slide",
-    "alias": "slide",
+    "name": "Slides",
+    "alias": "slides",
     "description": "",
     "keywords": [],
     "active": 1,
     "order": 0,
     "providers": [
-        "Modules\\Slide\\Providers\\SlideServiceProvider"
+        "Modules\\Slides\\Providers\\SlidesServiceProvider"
     ],
     "aliases":{},
     "files": [

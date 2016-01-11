@@ -1,9 +1,9 @@
-<?php namespace Modules\Slide\Database\Seeders;
+<?php namespace Modules\Slides\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class SlideDatabaseSeeder extends Seeder {
+class SlidesDatabaseSeeder extends Seeder {
 
 	/**
 	 * Run the database seeds.

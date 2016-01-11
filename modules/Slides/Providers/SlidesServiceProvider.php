@@ -1,8 +1,8 @@
-<?php namespace Modules\Slide\Providers;
+<?php namespace Modules\Slides\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class SlideServiceProvider extends ServiceProvider {
+class SlidesServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -41,10 +41,10 @@ class SlideServiceProvider extends ServiceProvider {
 	protected function registerConfig()
 	{
 		$this->publishes([
-		    __DIR__.'/../Config/config.php' => config_path('slide.php'),
+		    __DIR__.'/../Config/config.php' => config_path('slides.php'),
 		]);
 		$this->mergeConfigFrom(
-		    __DIR__.'/../Config/config.php', 'slide'
+		    __DIR__.'/../Config/config.php', 'slides'
 		);
 	}
 
@@ -55,7 +55,7 @@ class SlideServiceProvider extends ServiceProvider {
 	 */
 	public function registerViews()
 	{
-		$viewPath = base_path('resources/views/modules/slide');
+		$viewPath = base_path('resources/views/modules/slides');
 
 		$sourcePath = __DIR__.'/../Resources/views';
 
@@ -63,7 +63,7 @@ class SlideServiceProvider extends ServiceProvider {
 			$sourcePath => $viewPath
 		]);
 
-		$this->loadViewsFrom([$viewPath, $sourcePath], 'slide');
+		$this->loadViewsFrom([$viewPath, $sourcePath], 'slides');
 	}
 
 	/**
@@ -73,12 +73,12 @@ class SlideServiceProvider extends ServiceProvider {
 	 */
 	public function registerTranslations()
 	{
-		$langPath = base_path('resources/lang/modules/slide');
+		$langPath = base_path('resources/lang/modules/slides');
 
 		if (is_dir($langPath)) {
-			$this->loadTranslationsFrom($langPath, 'slide');
+			$this->loadTranslationsFrom($langPath, 'slides');
 		} else {
-			$this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'slide');
+			$this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'slides');
 		}
 	}
 
