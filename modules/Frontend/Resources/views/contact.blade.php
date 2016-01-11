@@ -35,7 +35,7 @@
                                         </div>
                                     </div>
                                     <div class="star-con">
-                                        <img src="<?php echo Config::get('app.domain'); ?>assets/frontend/images/star.png">
+                                        <img src="assets/frontend/images/star.png">
                                     </div>
                                 </div>
                             </div>

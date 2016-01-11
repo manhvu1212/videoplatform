@@ -1,12 +1,12 @@
 @extends('system::layouts.master')
 @section('style')
-    <link rel="stylesheet" type="text/css" href="/js/select2/select2.css"/>
+    {{--<link rel="stylesheet" type="text/css" href="/js/select2/select2.css"/>--}}
     <link rel="stylesheet" type="text/css" href="/css/admin/home.css"/>
     <link rel="stylesheet" type="text/css" href="/css/admin/videosplatform.css">
 @stop
 @section('script')
     <script src="/js/tinymce/tinymce.min.js"></script>
-    <script src="/js/select2/select2.js"></script>
+    {{--<script src="/js/select2/select2.js"></script>--}}
     <script src="/js/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
     <script src="/assets/admin/pages/scripts/form-validation.js"></script>
@@ -21,64 +21,60 @@
     }
     ?>
     <script>
-        var SETTINGS = <?php echo isset($setting->content)?$setting->content:''?>;
-        var UPLOAD = {size:<?php echo $setting1->maximum_size*1024*1024 ;?>, ext: "<?php echo $setting1->extension ?>"}
+        var SETTINGS = "<?php isset($setting->content) ? $setting->content : '' ?>";
+        var UPLOAD = {
+            size: "<?php echo $setting1->maximum_size*1024*1024 ;?>",
+            ext: "<?php echo $setting1->extension ?>"
+        }
     </script>
 @stop
 @section('content')
-    <ul class="page-breadcrumb breadcrumb">
-        <li>
-            <a href="/dashboard">Home</a>
-            <i class="fa fa-circle"></i>
-        </li>
-        <li>
-            <a href="#">Add new</a>
-        </li>
-    </ul>
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="breadcrumb">
+                <li><a href="/dashboard"><i class="fa fa-home"></i> Dashboard</a></li>
+                <li><a href="/manager/videos">Video</a></li>
+                <li class="active">{{isset($video) ? 'Edit' : 'Add'}}</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-12">
             <div class="portlet box blue">
                 <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-gift"></i> {{trans('system.videos')}}
-                    </div>
-                    <div class="tools">
-                        <a href="javascript:;" class="collapse" data-original-title="" title="">
-                        </a>
-                        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title="">
-                        </a>
-                        <a href="javascript:;" class="reload" data-original-title="" title="">
-                        </a>
-                        <a href="javascript:;" class="remove" data-original-title="" title="">
-                        </a>
-                    </div>
+                    <div class="caption"><i class="fa fa-video-camera"></i>Video</div>
                 </div>
                 <div class="portlet-body form">
                     <form method="POST" id="form-add-video" class="form-horizontal">
                         <input id="_token" type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input id="_id" name="_id" type="hidden" value="{{isset($video->_id)?$video->_id:''}}">
+                        <input id="_id" name="_id" type="hidden" value="{{isset($video->_id) ? $video->_id : ''}}">
 
                         <div class="row" style="padding-top:20px;">
-                            <div class="col-md-9">
+                            <div class="col-md-8">
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">{{trans('system.title')}}<span
-                                                class="required"> *</span></label>
+                                    <label class="col-md-2 control-label">
+                                        {{trans('system.title')}}
+                                        <span class="required"> *</span>
+                                    </label>
 
-                                    <div class="col-md-9"><input type="text" name="title_video" id="title_video"
-                                                                 class="form-control"
-                                                                 value="{{(isset($video)&&isset($video->title))?$video->title:''}}">
+                                    <div class="col-md-10">
+                                        <input type="text" name="title_video" id="title_video" class="form-control"
+                                               value="{{(isset($video) && isset($video->title)) ? $video->title : ''}}">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">{{trans('system.video_id')}}<span
-                                                class="required"> *</span></label>
+                                    <label class="col-md-2 control-label">
+                                        {{trans('system.video_id')}}
+                                        <span class="required"> *</span>
+                                    </label>
 
-                                    <div class="col-md-8"><input type="text" name="url_video" id="url_video"
-                                                                 class="form-control"
-                                                                 value="{{(isset($video)&&isset($video->idVideo))?$video->idVideo:''}}">
+                                    <div class="col-md-8">
+                                        <input type="text" name="url_video" id="url_video" class="form-control"
+                                               value="{{(isset($video) && isset($video->idVideo)) ? $video->idVideo : ''}}">
                                     </div>
-                                    <div class="col-md-1" style="text-align:right;">
+                                    <div class="col-md-2" style="text-align:right;">
                                         <button id="btn-reload" onclick="VIDEOS.reload_iframe($('#url_video').val())"
                                                 type="button" class="btn btn-default"><i class="fa fa-refresh"></i>
                                         </button>
@@ -86,42 +82,34 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="col-md-offset-3 col-md-9" id="div_iframe"></div>
+                                    <div class="col-md-offset-2 col-md-10" id="div_iframe"></div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">{{trans('system.description')}}</label>
+                                    <label class="col-md-2 control-label">{{trans('system.description')}}</label>
 
-                                    <div class="col-md-9"><textarea name="content" class="form-control content_post"
-                                                                    style="height:300px;"
-                                                                    id="content">{{(isset($video)&&isset($video->description))?$video->description:''}}</textarea>
+                                    <div class="col-md-10">
+                                        <textarea name="content" class="form-control content_post" style="height:300px;"
+                                                  id="content">{{(isset($video) && isset($video->description)) ? $video->description : ''}}</textarea>
                                     </div>
                                 </div>
 
-                                <div class="form-actions">
-                                    <div>
-                                        <div class="col-md-offset-3 col-md-9">
-                                            <button type="submit" class="btn green" id="submit">Submit</button>
-                                            <button type="button" class="btn default">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="input-group" style="padding:0px 15px !important;">
                                     <input type="hidden" id="imageid" name="imageid">
-                                    {{--<input type="text" class="form-control" readonly id = "imageurl" name="imageurl" value="{{isset($img->url)?$img->url:''}}">--}}
-                                    <button type="button" class="btn green" onclick="VIDEOS.upload_image(this)">Upload
+                                    <button type="button" class="btn green" onclick="VIDEOS.upload_image(this)">
+                                        Upload
                                     </button>
                                     &nbsp;
-                                    <button type="button" class="btn green" data-toggle="modal"
-                                            onclick="VIDEOS.show_modal_link(this)">Add Link
+                                    <button type="button" class="btn green" onclick="VIDEOS.show_modal_link(this)">
+                                        Add Link
                                     </button>
                                 </div>
                                 <div class="list-img" id="list-img">
-                                    @if(isset($video->images)&&$video->images!='')
-                                        @foreach($video->images  as $k=>$image)
+                                    @if(isset($video->images) && $video->images != '')
+                                        @foreach($video->images as $k=>$image)
                                             <div class="video-img-dd">
                                                 <input type="hidden" name="image[{{$k}}][id]" value="{{$image->id}}">
                                                 <input type="hidden" name="image[{{$k}}][minutes]"
@@ -135,10 +123,14 @@
                                                     <h2>{{$image->title}}</h2>
                                                     <input type="text" class="form-control"
                                                            name="image[{{$k}}][extern_url]"
-                                                           value="{{isset($image->extern_url)?$image->extern_url:''}}">
-                                                    <span>Time: <b>{{isset($image->minutes)?$image->minutes:''}}
-                                                            :{{isset($image->seconds)?$image->seconds:''}}<b></span>
-
+                                                           value="{{isset($image->extern_url) ? $image->extern_url : ''}}">
+                                                    <span>Time:
+                                                        <b>
+                                                            {{isset($image->minutes) ? $image->minutes : ''}}
+                                                            :
+                                                            {{isset($image->seconds) ? $image->seconds : ''}}
+                                                        </b>
+                                                    </span>
                                                 </div>
                                                 <div class="caption-action">
                                                     <span class="delete-image"><i class="fa fa-trash-o"></i></span>
@@ -146,6 +138,14 @@
                                             </div>
                                         @endforeach
                                     @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green" id="submit">Submit</button>
+                                    <button type="button" class="btn default">Cancel</button>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +163,6 @@
                 <div class="modal-header">
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                     <h4 class="modal-title">Add Link</h4>
-
                 </div>
                 <div class="modal-body">
                     <form action="" method="post" id="form-add-link">
@@ -172,6 +171,7 @@
                         <span class="help-block help-block-error" style="display: none;">Url not right.</span>
                         <img src="/images/loading.gif" class="img-responsive loading" src="/images/loading.gif"
                              height="40px" width="40px" style="display: none; margin: 10px auto;">
+
                         <div class="list-img bind-link"></div>
                     </form>
                     <div class="modal-footer">

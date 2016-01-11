@@ -110,7 +110,7 @@
 
 @stop
 @section('script')
-    <script src="<?php echo Config::get('app.domain'); ?>/js/admin/users.js" ></script>
+    <script src="/js/admin/users.js" ></script>
 @stop
 
 

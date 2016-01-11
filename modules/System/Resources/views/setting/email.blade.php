@@ -136,5 +136,5 @@
     </div>
 @stop
 @section('script')
-    <script src="<?php echo Config::get('app.domain'); ?>/js/admin/settings.js" ></script>
+    <script src="/js/admin/settings.js" ></script>
 @stop

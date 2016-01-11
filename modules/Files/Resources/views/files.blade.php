@@ -230,15 +230,14 @@
                                     <input id="_token" name="_token" type="hidden" value="{{ csrf_token() }}">
 
                                     <div class="modal-body" style="text-align: center">
-                                        <div class="list-process">
-                                        </div>
+                                        <div class="list-process"></div>
                                         <input type="file" id="image" name="image" style="display: none" multiple>
                                     </div>
                                 </form>
-
                                 <div class="modal-footer">
-                                    <span>The size of file must be less than <?php echo $setting1->maximum_size?>
-                                        MB</span>
+                                    <span>
+                                        The size of file must be less than <?php echo $setting1->maximum_size?> MB
+                                    </span>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     <button type="submit" id="browser-file" class="btn btn-primary">Browser</button>
                                 </div>
@@ -247,7 +246,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 </section>

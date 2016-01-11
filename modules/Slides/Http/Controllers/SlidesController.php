@@ -1,12 +1,17 @@
 <?php namespace Modules\Slides\Http\Controllers;
 
-use Pingpong\Modules\Routing\Controller;
+use App\Http\Controllers\BaseController;
 
-class SlidesController extends Controller {
-	
-	public function index()
-	{
-		return view('slides::index');
-	}
-	
+class SlidesController extends BaseController
+{
+
+    public function index()
+    {
+        return view('slides::index');
+    }
+
+    public function add()
+    {
+        return view('slides::add');
+    }
 }

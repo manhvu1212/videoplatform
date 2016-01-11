@@ -1,4 +1,3 @@
-
 <?php
 $url = Request::url();
 $user = Sentry::getUser();
@@ -36,74 +35,93 @@ $user = Sentry::getUser();
                         @endif
                     </ul>
                 </li>
-                @endif             
-          
-                @if($user->hasAnyAccess(array('access-taxonomy')))
-                    <li class="<?php echo (Request::is('manager/taxonomy*')) ? 'active open' : '' ?>">
-                        <a href="javascript:;">
-                            <i class="icon-rocket"></i>
-                            <span class="title">Category</span>
-                            <span class="arrow "></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="<?php echo (Request::is('manager/taxonomy*')) ? 'active' : '' ?>" ><a href="/manager/taxonomy">List</a></li>
-                            {{--<li><a href="/manager/products/catproduct/add">Add Catproduct</a></li>--}}
-                        </ul>
-                    </li>
-                @endif
-               
-                
-                     @if($user->hasAnyAccess(array('access-videos')))
-                         <li class="<?php echo (Request::is('manager/videos*'))?'active open':'' ?>">
-                            <a class="" href="javascript:;">
-                                <i class="fa fa-book"></i>
-                                <span class="title">Videos</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a href="/manager/videos">List</a></li>
-                                <li><a href="/manager/videos/add">Add</a></li>
-                            </ul>
-                        </li>
-                    @endif
+            @endif
 
-                    @if($user->hasAnyAccess(array('access-form')))
-                        <li class="<?php echo (Request::is('manager/form*'))?'active open':'' ?>">
-                            <a class="" href="javascript:;">
-                                <i class="fa fa-book"></i>
-                                <span class="title">Docusign Form</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a  href="/manager/form">List</a></li>
-                                <li><a  href="/manager/form/add ">Add</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                    @if($user->hasAnyAccess(array('access-registers')))
-                        <li class="<?php echo (Request::is('manager/registers*'))?'active open':'' ?>">
-                            <a class="" href="javascript:;">
-                                <i class="fa fa-book"></i>
-                                <span class="title">Registers</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li><a  href="/manager/registers">List</a></li>
-                            </ul>
-                        </li>
-                    @endif
+            @if($user->hasAnyAccess(array('access-taxonomy')))
+                <li class="<?php echo (Request::is('manager/taxonomy*')) ? 'active open' : '' ?>">
+                    <a href="javascript:;">
+                        <i class="icon-rocket"></i>
+                        <span class="title">Category</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="<?php echo (Request::is('manager/taxonomy*')) ? 'active' : '' ?>"><a
+                                    href="/manager/taxonomy">List</a></li>
+                        {{--<li><a href="/manager/products/catproduct/add">Add Catproduct</a></li>--}}
+                    </ul>
+                </li>
+            @endif
 
-                @if($user->hasAnyAccess(array('access-settings')))
-                    <li lass="last ">
-                        <a class="<?php echo (Request::is('manager/system/setting*')) ? 'active dcjq-parent' : '' ?>"
-                           href="javascript:;">
-                            <i class="icon-settings"></i>
-                            <span class="title">Settings</span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a href="/manager/system/setting/email">Email</a></li>
-                            <li><a href="/manager/system/setting/file">File</a></li>
-                            <li><a href="/manager/system/setting/site">Site</a></li>
-                        </ul>
-                    </li>
-                @endif
+
+            @if($user->hasAnyAccess(array('access-videos')))
+                <li class="<?php echo (Request::is('manager/videos*')) ? 'active open' : '' ?>">
+                    <a class="" href="javascript:;">
+                        <i class="fa fa-video-camera"></i>
+                        <span class="title">Videos</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="<?php echo (Request::is('manager/videos')) ? 'active' : '' ?>"><a href="/manager/videos">List</a></li>
+                        <li class="<?php echo (Request::is('manager/videos/add')) ? 'active' : '' ?>"><a href="/manager/videos/add">Add</a></li>
+                    </ul>
+                </li>
+            @endif
+
+            @if($user->hasAnyAccess(array('access-slides')))
+                <li class="<?php echo (Request::is('manager/slides*')) ? 'active open' : '' ?>">
+                    <a class="" href="javascript:;">
+                        <i class="fa fa-slideshare"></i>
+                        <span class="title">Slides</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="<?php echo (Request::is('manager/slides')) ? 'active' : '' ?>"><a href="/manager/slides">List</a></li>
+                        <li class="<?php echo (Request::is('manager/slides/add')) ? 'active' : '' ?>"><a href="/manager/slides/add">Add</a></li>
+                    </ul>
+                </li>
+            @endif
+
+            @if($user->hasAnyAccess(array('access-form')))
+                <li class="<?php echo (Request::is('manager/form*')) ? 'active open' : '' ?>">
+                    <a class="" href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span class="title">Docusign Form</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/manager/form">List</a></li>
+                        <li><a href="/manager/form/add ">Add</a></li>
+                    </ul>
+                </li>
+            @endif
+            @if($user->hasAnyAccess(array('access-registers')))
+                <li class="<?php echo (Request::is('manager/registers*')) ? 'active open' : '' ?>">
+                    <a class="" href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span class="title">Registers</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/manager/registers">List</a></li>
+                    </ul>
+                </li>
+            @endif
+
+            @if($user->hasAnyAccess(array('access-settings')))
+                <li lass="last ">
+                    <a class="<?php echo (Request::is('manager/system/setting*')) ? 'active dcjq-parent' : '' ?>"
+                       href="javascript:;">
+                        <i class="icon-settings"></i>
+                        <span class="title">Settings</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/manager/system/setting/email">Email</a></li>
+                        <li><a href="/manager/system/setting/file">File</a></li>
+                        <li><a href="/manager/system/setting/site">Site</a></li>
+                    </ul>
+                </li>
+            @endif
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>
