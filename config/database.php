@@ -92,7 +92,7 @@ return [
             'port'     => 27017,
             'username' => 'admin',
             'password' => '',
-            'database' => 'videoplatform_v2',
+            'database' => 'videoplatform',
             'options' => array(
                 'db' => 'admin' // sets the authentication database required by mongo 3
             )
