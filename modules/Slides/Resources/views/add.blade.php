@@ -17,9 +17,10 @@
     <script>
         var SETTINGS = "<?php isset($setting->content) ? $setting->content : '' ?>";
         var UPLOAD = {
-            size: "<?php echo $setting1->maximum_size*1024*1024 ;?>",
+            size: parseInt("<?php echo $setting1->maximum_size*1024*1024 ;?>"),
             ext: "<?php echo $setting1->extension ?>"
-        }
+        };
+        console.log(UPLOAD.size);
     </script>
 @stop
 
@@ -85,7 +86,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div id="thumb-preview">
+                                <div id="thumb-preview" class="text-center">
 
                                 </div>
                             </div>

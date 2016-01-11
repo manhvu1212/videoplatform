@@ -32,7 +32,6 @@
         },
         close: function () {
             jQuery('#popup-files').dialog('close');
-
         }
     }
 </script>

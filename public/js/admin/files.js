@@ -274,11 +274,8 @@ var FILES = {
 
         });
         itemsDisableds["newfolder"] = true;
-
     }
-
-
-}
+};
 
 jQuery(document).ready(function () {
     FILES.upload_file();
@@ -288,4 +285,4 @@ jQuery(document).ready(function () {
     FILES.slect_file();
     FILES.newfolder();
     FILES.contextMenuleft();
-})
+});
