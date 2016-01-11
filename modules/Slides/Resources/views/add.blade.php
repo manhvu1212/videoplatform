@@ -8,19 +8,23 @@
 @section('script')
     <script src="/js/admin/slide.js"></script>
     <?php
-    $setting = Utility::setting();
+    $setting = Utility::setting('site_settings');
+    if (isset($setting->content)) {
+        $setting = json_decode($setting->content);
+    }
     $setting1 = Utility::setting('file_settings');
     if (isset($setting1->content)) {
         $setting1 = json_decode($setting1->content);
     }
     ?>
     <script>
-        var SETTINGS = "<?php isset($setting->content) ? $setting->content : '' ?>";
+        var SETTINGS = {
+            domain_image: "<?php echo $setting->domain_image ?>"
+        };
         var UPLOAD = {
             size: parseInt("<?php echo $setting1->maximum_size*1024*1024 ;?>"),
             ext: "<?php echo $setting1->extension ?>"
         };
-        console.log(UPLOAD.size);
     </script>
 @stop
 
@@ -58,18 +62,36 @@
                                                        onclick="SLIDES.choose_image()">
                                                     <input type="radio" name="options" value="image" class="toggle">IMAGE
                                                 </label>
-                                                <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
+                                                <label class="btn btn-transparent red btn-outline btn-circle btn-sm"
+                                                       onclick="SLIDES.choose_video()">
                                                     <input type="radio" name="options" value="video" class="toggle">VIDEO
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Id</label>
+
+                                        <div class="input-group input-icon right">
+                                            <span class="input-group-addon"><i class="fa fa-info"></i></span>
+                                            <input id="image_video_id" class="input-error form-control"
+                                                   type="text" name="id" disabled
+                                                   value="">
+                                            <span class="input-group-addon refresh-video display-hide"
+                                                  style="cursor: pointer;"
+                                                  onclick="SLIDES.refresh_video(jQuery('#image_video_id').val())">
+                                                <i class="fa fa-refresh"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label>Title</label>
 
                                         <div class="input-group input-icon right">
                                             <span class="input-group-addon"><i class="fa fa-info"></i></span>
-                                            <input class="input-error form-control input-lg" type="text" name="title"
+                                            <input class="input-error form-control" type="text" name="title"
                                                    value="">
                                         </div>
                                     </div>
@@ -79,16 +101,14 @@
 
                                         <div class="input-group input-icon right">
                                             <span class="input-group-addon"><i class="fa fa-info"></i></span>
-                                            <input class="input-error form-control input-lg" type="text"
+                                            <input class="input-error form-control" type="text"
                                                    name="description" value="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div id="thumb-preview" class="text-center">
-
-                                </div>
+                                <div id="thumb-preview" class="text-center"></div>
                             </div>
                         </div>
 
