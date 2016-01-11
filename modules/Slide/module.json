@@ -1,0 +1,15 @@
+{
+    "name": "Slide",
+    "alias": "slide",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Slide\\Providers\\SlideServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}
