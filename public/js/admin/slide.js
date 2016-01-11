@@ -4,11 +4,11 @@
 var SLIDES = {
     choose_image: function() {
         POPUPFILE.open(function (data) {
-
+            console.log(data);
         });
     }
 };
 
 jQuery(document).ready(function(){
-    SLIDES.choose_image();
+
 });
