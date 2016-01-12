@@ -54,6 +54,7 @@
                                     <input id="_token" type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input id="_id" name="_id" type="hidden"
                                            value="{{isset($slide->_id) ? $slide->_id : ''}}">
+                                    <input id="url" name="url" type="hidden" value="">
 
                                     <div class="form-group">
                                         <div class="text-center">
@@ -71,12 +72,12 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Id</label>
+                                        <label>Video Id</label>
 
                                         <div class="input-group input-icon right">
                                             <span class="input-group-addon"><i class="fa fa-info"></i></span>
                                             <input id="image_video_id" class="input-error form-control"
-                                                   type="text" name="id" disabled
+                                                   type="text" name="image_video_id" readonly
                                                    value="">
                                             <span class="input-group-addon refresh-video display-hide"
                                                   style="cursor: pointer;"
@@ -103,6 +104,15 @@
                                             <span class="input-group-addon"><i class="fa fa-info"></i></span>
                                             <input class="input-error form-control" type="text"
                                                    name="description" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="thumbnail">
+                                        <label>Thumbnail</label>
+
+                                        <div class="input-group input-icon right">
+                                            <input class="input-error form-control" type="hidden"
+                                                   name="thumb" value="">
                                         </div>
                                     </div>
                                 </div>

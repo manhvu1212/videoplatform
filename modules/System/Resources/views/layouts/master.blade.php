@@ -61,12 +61,12 @@
             <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
         <div class="page-content">
-            @if (Session::has('message'))
+            @if (\Illuminate\Support\Facades\Session::has('message'))
                 <div class="alert alert-success fade in">
                     <button data-dismiss="alert" class="close close-sm" type="button">
                         <i class="fa fa-times"></i>
                     </button>
-                    {{ Session::get('message') }}
+                    {{ \Illuminate\Support\Facades\Session::get('message') }}
                 </div>
             @endif
             @yield('content')
