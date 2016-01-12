@@ -3,7 +3,7 @@
 return [
     'permission' => 'Permission',
     'name' => 'Name',
-    'apply'=> 'Apply',
+    'apply' => 'Apply',
     'actions' => 'Actions',
     'addnew' => 'Add new',
     'description' => 'Description',
@@ -45,6 +45,7 @@ return [
     'update' => 'Update',
     'phone' => 'Phone',
     'Account_Id' => 'Account Id',
-    'videos'    =>'Videos',
-    'video_id'  => 'Video Id',
+    'videos' => 'Videos',
+    'video_id' => 'Video Id',
+    'thumb' => 'Thumbnail',
 ];
