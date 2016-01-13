@@ -19,8 +19,6 @@ Route::group(['prefix' => 'manager/users', 'namespace' => 'Modules\Users\Http\Co
 	Route::post('/changstatususer', array('before' => 'auth|role:access-permission',  'uses' => 'UsersController@changstatususer'));
 });
 
-
-
 Route::group(['prefix' => 'user', 'namespace' => 'Modules\Users\Http\Controllers'], function()
 {
     Route::get('/login',  array('uses' => 'UsersController@login') );

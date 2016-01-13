@@ -9,7 +9,7 @@
 ==============================================
 */
 
-.color, .fa-twitter, .tweets .tweet-link, ul.views li, ul.views li a, input[type="text"]:focus, .more, .more:hover, .v-gallery p.color, .copyrights a, .video-status ul li i, .video-status ul li a:hover, .video-status ul li a, ul.members .thumb h3, ul.members .thumb h3 small, .pagination ul li a:hover, .group-directory p.color, .error-404 h1, #carousel .caption:after, .product-list-detail h2 {
+.color, .fa-twitter, .tweets .tweet-link, ul.views li, ul.views li a, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, .more, .more:hover, .v-gallery p.color, .copyrights a, .video-status ul li i, .video-status ul li a:hover, .video-status ul li a, ul.members .thumb h3, ul.members .thumb h3 small, .pagination ul li a:hover, .group-directory p.color, .error-404 h1, #carousel .caption:after, .product-list-detail h2 {
 	color:#00d8ff;
 }
 
@@ -28,6 +28,6 @@
 				BORDER COLOR
 ==============================================
 */
-.border-color, .video-container h3, .header-style, .small-thumbs ul li, input[type="text"]:focus, textarea:focus, .tabs-widget .nav-tabs, .poted-by, .footer, .v-gallery .thumb img:hover, .widget-papuler-video ul li:hover img, .video-status ul, .video-status ul li, ul.members .thumb, .group-directory ul li, .recent-members ul li:hover img, .group-directory ul ul li:first-child, .group-directory ul ul li, .videos li, .banner #carousel.flexslider li, .recent-replies ul li{
+.border-color, .video-container h3, .header-style, .small-thumbs ul li, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, .tabs-widget .nav-tabs, .poted-by, .footer, .v-gallery .thumb img:hover, .widget-papuler-video ul li:hover img, .video-status ul, .video-status ul li, ul.members .thumb, .group-directory ul li, .recent-members ul li:hover img, .group-directory ul ul li:first-child, .group-directory ul ul li, .videos li, .banner #carousel.flexslider li, .recent-replies ul li{
 	border-color:#00d8ff;
 }

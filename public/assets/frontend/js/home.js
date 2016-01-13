@@ -22,8 +22,9 @@ var HOME = {
         jQuery("#cb-mob-close").click(function () {
             jQuery(".menu-mobile").slideToggle();
         });
-    },
-}
+    }
+};
+
 function handleAnimatedHeader() {
     var header = jQuery('.header.fixed');
     function refresh() {
