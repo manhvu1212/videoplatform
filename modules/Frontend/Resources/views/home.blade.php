@@ -15,10 +15,10 @@
                                             frameborder="0"
                                             webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                 @endif
-                                {{--<div class="caption">--}}
-                                    {{--<h2>{{$slide->title}}</h2>--}}
-                                    {{--<h4>{{$slide->description}}</h4>--}}
-                                {{--</div>--}}
+                                <div class="caption">
+                                    <h2>{{$slide->title}}</h2>
+                                    <h4>{{$slide->description}}</h4>
+                                </div>
                             </li>
                         @endforeach
                     </ul>
