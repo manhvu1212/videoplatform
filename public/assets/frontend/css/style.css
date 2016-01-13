@@ -393,6 +393,10 @@ footer div.widget:first-child {
 
 }
 
+.modal-body {
+    max-height: none;
+}
+
 .main-navigation {
 
     float: right;

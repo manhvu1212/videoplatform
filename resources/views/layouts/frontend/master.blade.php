@@ -16,8 +16,7 @@
 
     <link rel="stylesheet" id="dashicons-css" href="/assets/frontend/css/dashicons.min.css" type="text/css" media="all">
 
-    <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/color.css" type="text/css" media="all">
+
     <link rel="stylesheet" id="themename-cssss"
           href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" type="text/css"
           media="all">
@@ -29,6 +28,8 @@
     <link href="/fontend/css/alert.css" rel="stylesheet">
     <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/bootstrap-responsive.css" type="text/css"
           media="all">
+    <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/color.css" type="text/css" media="all">
 
     @yield('style')
 </head>
