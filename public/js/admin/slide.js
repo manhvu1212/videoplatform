@@ -82,7 +82,7 @@ var SLIDES = {
             var aids = new Array();
             aids[0] = jQuery(this).attr('data-id');
             var _token = jQuery('#_token').val();
-            Confirm('Are you want to delete "' + name + '"', 'Message', function (r) {
+            bootbox.confirm('Are you want to delete "' + name + '"?', function (r) {
                 if (r) {
                     jQuery.ajax({
                         url: getBaseURL() + '/manager/slides/destroy',
@@ -93,7 +93,7 @@ var SLIDES = {
                         }
                     });
                 }
-            })
+            });
         })
     },
 
@@ -102,7 +102,7 @@ var SLIDES = {
             var count = jQuery('.checkone:checked').length;
             var aids = {};
             if (count == 0) {
-                Alert('Please select item for delete', '');
+                bootbox.alert("Please select item for delete", function() {});
                 return false;
             } else {
                 var i = 0;
@@ -110,7 +110,7 @@ var SLIDES = {
                     aids[i] = jQuery(this).val();
                     i++;
                 });
-                Confirm('Are you sure you want to delete?', '', function (r) {
+                bootbox.confirm('Are you sure you want to delete?', function (r) {
                     if (r) {
                         jQuery.ajax({
                             url: getBaseURL() + '/manager/slides/destroy',

@@ -116,6 +116,7 @@
 <!--Core js-->
 <script src="/js/admin/function.js"></script>
 <script src="/js/admin/alerts.js"></script>
+<script src="/js/admin/bootbox.min.js"></script>
 <!--[if lte IE 8]><![endif]-->
 <script src="/js/bootstrap-switch.js"></script>
 <!--common script init for all pages-->

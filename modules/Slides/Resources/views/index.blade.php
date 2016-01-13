@@ -67,7 +67,8 @@
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <button title="delete" class="btn btn-sm btn-warning delete-item"
-                                                data-id="{{$slide->_id}}"><i class="fa fa-trash-o"></i>
+                                                data-id="{{$slide->_id}}"
+                                                data-name="{{$slide->title}}"><i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>
                                 </tr>
