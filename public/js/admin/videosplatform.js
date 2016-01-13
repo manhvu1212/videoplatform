@@ -232,9 +232,8 @@ var VIDEOS = {
                                 var elm = '<div class="video-img-dd"> \
                                                 <input type="hidden" name="image" value="'+ data['image'] +'"> \
                                                 <img src="' + data['image'] + '" width="100px" height="100px"> \
-                                                <input type="hidden" name="title" value="' + data['title'] + '">\
                                                 <div class="img-caption"> \
-                                                    <h2 id="title-new-add">' + data['title'] + '</h2> \
+                                                    <input id="title-new-add" type="text" name="title" class="form-control input-lg" value="' + data['title'] + '" style="margin-bottom: 5px;">\
                                                     <input type="url" id="url-new-add" value="' + data['url'] + '" disabled class="form-control"> \
                                                     <span>Time: <b>' + minutes + ':' + seconds + '<b></span> \
                                                 </div> \
@@ -268,7 +267,7 @@ var VIDEOS = {
             dataType: 'json',
             success: function (data) {
                 if(data['status'] == 1) {
-                    var title = jQuery('#title-new-add').html();
+                    var title = jQuery('#title-new-add').val();
                     var url = jQuery('#url-new-add').val();
                     jQuery('#list-img').append('<div class="video-img-dd ' + data.id + '"> \
                         <input type="hidden" name="image[' + current_time + '][id]" value="' + data.id + '"> \

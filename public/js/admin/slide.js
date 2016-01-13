@@ -31,8 +31,8 @@ var SLIDES = {
             dataType: "jsonp",
             success: function (data) {
                 jQuery('input[name=title]').val(data.items[0].snippet.title);
-                jQuery('#thumbnail input').val(data.items[0].snippet.thumbnails.default.url);
-                jQuery('#thumbnail').append('<img src="' + data.items[0].snippet.thumbnails.default.url + '" width="150">');
+                jQuery('#thumbnail input').val(data.items[0].snippet.thumbnails.medium.url);
+                jQuery('#thumbnail').append('<img src="' + data.items[0].snippet.thumbnails.medium.url + '" width="150">');
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert(textStatus, +' | ' + errorThrown);

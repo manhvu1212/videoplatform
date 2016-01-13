@@ -14,14 +14,19 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="/js/admin/videosplatform.js"></script>
     <?php
-    $setting = Utility::setting();
+    $setting = Utility::setting('site_settings');
+    if (isset($setting->content)) {
+        $setting = json_decode($setting->content);
+    }
     $setting1 = Utility::setting('file_settings');
     if (isset($setting1->content)) {
         $setting1 = json_decode($setting1->content);
     }
     ?>
     <script>
-        var SETTINGS = "<?php isset($setting->content) ? $setting->content : '' ?>";
+        var SETTINGS = {
+            domain_image: "<?php echo $setting->domain_image ?>"
+        };
         var UPLOAD = {
             size: "<?php echo $setting1->maximum_size*1024*1024 ;?>",
             ext: "<?php echo $setting1->extension ?>"

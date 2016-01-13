@@ -34,7 +34,7 @@
             <ul class="breadcrumb">
                 <li><a href="/dashboard"><i class="fa fa-home"></i> Dashboard</a></li>
                 <li><a href="/manager/slides">Slide</a></li>
-                <li class="active">Add</li>
+                <li class="active">{{isset($slide) ? 'Edit' : 'Add'}}</li>
             </ul>
         </div>
     </div>
@@ -81,9 +81,9 @@
                                             <span class="input-group-addon"><i class="fa fa-info"></i></span>
                                             <input id="image_video_id" class="input-error form-control"
                                                    type="text" name="image_video_id"
-                                                   {{isset($slide->type) && $slide->type == 'image' ? 'readonly' : ''}}
+                                                   {{(isset($slide->type) && $slide->type == 'image') || !isset($slide->type) ? 'readonly' : ''}}
                                                    value="{{isset($slide->image_video_id) ? $slide->image_video_id : ''}}">
-                                            <span class="input-group-addon refresh-video {{isset($slide->type) && $slide->type == 'image' ? 'display-hide' : ''}}"
+                                            <span class="input-group-addon refresh-video {{(isset($slide->type) && $slide->type == 'image') || !isset($slide->type) ? 'display-hide' : ''}}"
                                                   style="cursor: pointer;"
                                                   onclick="SLIDES.refresh_video(jQuery('#image_video_id').val())">
                                                 <i class="fa fa-refresh"></i>
@@ -140,7 +140,7 @@
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <button type="submit" class="btn green" id="submit">Submit</button>
-                                    <button type="button" class="btn default">Cancel</button>
+                                    <a class="btn default" href="/manager/slides">Cancel</a>
                                 </div>
                             </div>
                         </div>
