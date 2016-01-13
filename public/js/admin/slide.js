@@ -12,7 +12,7 @@ var SLIDES = {
             jQuery('#url').val(SETTINGS.domain_image + data.url);
             jQuery('#thumb-preview').append('<img src="' + SETTINGS.domain_image + data.url + '" class="img-responsive">');
             jQuery('#thumbnail input').val(SETTINGS.domain_image + data.url);
-            jQuery('#thumbnail').append('<img src="'+ SETTINGS.domain_image + data.url +'" width="150">');
+            jQuery('#thumbnail').append('<img src="' + SETTINGS.domain_image + data.url + '" width="150">');
         });
     },
     choose_video: function () {
@@ -31,8 +31,8 @@ var SLIDES = {
             dataType: "jsonp",
             success: function (data) {
                 jQuery('input[name=title]').val(data.items[0].snippet.title);
-                jQuery('#thumbnail input').val(data.items[0].snippet.thumbnails.medium.url);
-                jQuery('#thumbnail').append('<img src="'+ data.items[0].snippet.thumbnails.medium.url +'">');
+                jQuery('#thumbnail input').val(data.items[0].snippet.thumbnails.default.url);
+                jQuery('#thumbnail').append('<img src="' + data.items[0].snippet.thumbnails.default.url + '" width="150">');
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert(textStatus, +' | ' + errorThrown);
@@ -49,13 +49,89 @@ var SLIDES = {
                 data: data,
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);
+                    window.location.href = getBaseURL() + '/manager/slides/';
                 }
             });
+        });
+    },
+    change_status: function () {
+        try {
+            jQuery(".switch-mini").bootstrapSwitch().on("switchChange.bootstrapSwitch", function (event, state) {
+                var id = jQuery(this).attr('data-id');
+                if (state == true) {
+                    state = 1;
+                } else {
+                    state = 0;
+                }
+                jQuery.ajax({
+                    url: getBaseURL() + '/manager/slides/change_status',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {activated: state, _token: jQuery('#_token').val(), id: id},
+                    success: function (data) {
+                    }
+                })
+            });
+        } catch (e) {
+        }
+    },
+
+    delete: function () {
+        jQuery('.delete-item').click(function () {
+            var name = jQuery(this).attr('data-name');
+            var aids = new Array();
+            aids[0] = jQuery(this).attr('data-id');
+            var _token = jQuery('#_token').val();
+            Confirm('Are you want to delete "' + name + '"', 'Message', function (r) {
+                if (r) {
+                    jQuery.ajax({
+                        url: getBaseURL() + '/manager/slides/destroy',
+                        type: 'post',
+                        data: {aids: aids, _token: _token},
+                        success: function (data) {
+                            window.location.reload()
+                        }
+                    });
+                }
+            })
+        })
+    },
+
+    deletemulti: function () {
+        jQuery('.product-delete-multi').click(function () {
+            var count = jQuery('.checkone:checked').length;
+            var aids = {};
+            if (count == 0) {
+                Alert('Please select item for delete', '');
+                return false;
+            } else {
+                var i = 0;
+                jQuery('.checkone:checked').each(function () {
+                    aids[i] = jQuery(this).val();
+                    i++;
+                });
+                Confirm('Are you sure you want to delete?', '', function (r) {
+                    if (r) {
+                        jQuery.ajax({
+                            url: getBaseURL() + '/manager/slides/destroy',
+                            data: {_token: jQuery('#_token').val(), aids: aids},
+                            type: 'POST',
+                            dataType: 'json',
+                            success: function (data) {
+                                window.location.reload();
+                            }
+                        })
+                    }
+
+                });
+            }
         });
     }
 };
 
 jQuery(document).ready(function () {
     SLIDES.submit_form();
+    SLIDES.change_status();
+    SLIDES.delete();
+    SLIDES.deletemulti();
 });
