@@ -156,7 +156,7 @@ var VIDEOS = {
                 url_video: {
                     minlength: 11,
                     required: true
-                },
+                }
             },
 
             submitHandler: function (form) {

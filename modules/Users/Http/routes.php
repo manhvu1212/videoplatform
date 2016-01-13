@@ -22,7 +22,8 @@ Route::group(['prefix' => 'manager/users', 'namespace' => 'Modules\Users\Http\Co
 Route::group(['prefix' => 'user', 'namespace' => 'Modules\Users\Http\Controllers'], function()
 {
     Route::get('/login',  array('uses' => 'UsersController@login') );
-    Route::post('/loginsubmit',  array('uses' => 'UsersController@loginsubmit') );
+    Route::post('/loginsubmit', array('uses' => 'UsersController@loginsubmit'));
+    Route::post('/check_login', array('uses' => 'UsersController@checklogin'));
     Route::get('/logout',  array('uses' => 'UsersController@logout') );
     Route::get('/myprofiles',  array('uses' => 'UsersController@myprofiles') );
     Route::post('/myprofilestore',  array('uses' => 'UsersController@myprofilestore') );

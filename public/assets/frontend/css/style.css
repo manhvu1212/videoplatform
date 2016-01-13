@@ -366,6 +366,11 @@ footer div.widget:first-child {
 
 }
 
+.sigin .user-logged {
+    color: white;
+    font-size: 1.2em;
+}
+
 .sigin a {
 
     margin: 0px 0px 0px 5px;

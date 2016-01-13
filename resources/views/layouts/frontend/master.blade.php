@@ -52,6 +52,7 @@
 <script type="text/javascript" src="/fontend/js/videoplatform.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="/fontend/js/login.js"></script>
+<script src="/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
 @yield('script')
 </body>
 </html>
