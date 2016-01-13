@@ -26,11 +26,11 @@
     <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/skin.css" type="text/css" media="all">
     <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/prettyph.css" type="text/css" media="all">
     <link href="/fontend/css/alert.css" rel="stylesheet">
-    <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/bootstrap-responsive.css" type="text/css"
-          media="all">
+
     <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/style.css" type="text/css" media="all">
     <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/color.css" type="text/css" media="all">
-
+    <link rel="stylesheet" id="themename-css" href="/assets/frontend/css/bootstrap-responsive.css" type="text/css"
+          media="all">
     @yield('style')
 </head>
 <body>
