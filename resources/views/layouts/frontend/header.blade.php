@@ -47,11 +47,11 @@ $tax = Utility::get_video_cate();
                         <div class="login-widget">
                             <form method="post" id="form_sign_up">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="text" name="firstname" placeholder="First name">
-                                <input type="text" name="lastname" placeholder="Last name">
+                                <input type="text" name="first_name" placeholder="First name">
+                                <input type="text" name="last_name" placeholder="Last name">
                                 <input type="text" name="email" placeholder="Email">
                                 <input type="password" id="password" name="password" placeholder="Password">
-                                <input type="password" name="repassword" placeholder="Retype Password">
+                                <input type="password" name="retype_password" placeholder="Retype Password">
                                 <button type="submit" class="form-btn hover-style">Sing Up</button>
                             </form>
                         </div>
@@ -77,10 +77,10 @@ $tax = Utility::get_video_cate();
                     <a href="#signin" role="button" data-toggle="modal">Sign In</a>
                     <a href="#signup" role="button" data-toggle="modal">Sign Up</a>
                 @else
-                    <p class="user-logged">
+                    <div class="user-logged">
                         <span>Hello,</span> <span>{{$user['first_name']}}</span> <span>{{$user['last_name']}}</span>
                         <span><a href="/user/logout">Logout</a></span>
-                    </p>
+                    </div>
                 @endif
             </div>
             <nav class="navbar-inner">

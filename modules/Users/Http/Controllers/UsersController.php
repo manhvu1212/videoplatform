@@ -233,14 +233,11 @@ class UsersController extends BaseController
                 } catch (GroupNotFoundException $e) {
                     Session::flash('message', 'Group was not found.');
                     return Redirect::to('manager/users/edit');
-
                 }
-
             }
             Session::flash('message', 'User created');
             return Redirect::to('manager/users');
         }
-
     }
 
 
@@ -259,6 +256,66 @@ class UsersController extends BaseController
         return Response::json('1');
     }
 
+    public function signup()
+    {
+        $input = Input::all();
+        $rules = array(
+            'password' => array('required', 'min:6'),
+            'email' => 'required|email',
+
+        );
+        $validation = Validator::make(Input::all(), $rules);
+        //check
+        $objUsers = new Users();
+        $check = $objUsers->where('email', '=', trim(strtolower($input['email'])))->count();
+        if ($validation->fails() || $check > 0) {
+            $messages = '';
+            if ($check > 0) {
+                $messages .= 'User with this email already exists. ';
+            }
+            $mess = $validation->errors()->getMessages();
+            foreach ($mess as $v) {
+                $messages .= $v[0] . ' ';
+            }
+            if ($messages != '') {
+                Session::flash('message', $messages);
+            }
+            return Response::json(0);
+        } else {
+            try {
+                $datacreateUser = array(
+                    'email' => trim(strtolower($input['email'])),
+                    'password' => isset($input['password']) ? $input['password'] : '',
+                    'activated' => true,
+                    'first_name' => isset($input['first_name']) ? $input['first_name'] : '',
+                    'last_name' => isset($input['last_name']) ? $input['last_name'] : '',
+                );
+
+                $user = Sentry::createUser($datacreateUser);
+
+                Sentry::authenticate(array(
+                    'email' => trim(strtolower($input['email'])),
+                    'password' => isset($input['password']) ? $input['password'] : '',
+                ));
+
+                /*Mail::send('system::email.email_template.acount_info', $input, function($message) use ($email, $first_name) {
+                    $message->to($email, $first_name)->subject('Welcome to the Tastable.net');
+                });*/
+            } catch (LoginRequiredException $e) {
+                Session::flash('message', 'Login field is required. ');
+                return Response::json(0);
+            } catch (PasswordRequiredException $e) {
+                Session::flash('message', 'Password field is required. ');
+                return Response::json(0);
+            } catch (UserExistsException $e) {
+                Session::flash('message', 'User with this email already exists. ');
+                return Response::json(0);
+            }
+        }
+        Session::flash('message', 'User created');
+        return Response::json(1);
+    }
+
     public function login()
     {
         $user = $this->getUser();
@@ -274,7 +331,7 @@ class UsersController extends BaseController
         $input = Input::all();
         $rules = array(
             'password' => array('required'),
-            'email' => array('required'),
+            'email' => 'required|email',
         );
         $validation = Validator::make(Input::all(), $rules);
         if ($validation->fails()) {

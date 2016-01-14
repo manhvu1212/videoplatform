@@ -40,10 +40,10 @@ var SINGUP = {
             errorElement: 'span',
             errorClass: 'help-block help-block-error',
             rules: {
-                firstname: {
+                first_name: {
                     required: true
                 },
-                lastname: {
+                last_name: {
                     required: true
                 },
                 email: {
@@ -53,24 +53,24 @@ var SINGUP = {
                 password: {
                     required: true
                 },
-                repassword: {
+                retype_password: {
                     required: true,
                     equalTo: '#password'
                 }
             },
             submitHandler: function () {
                 var data = jQuery('#form_sign_up').serialize();
-                //jQuery.ajax({
-                //    url: getBaseURL() + '/user/check_login',
-                //    type: "post",
-                //    data: data,
-                //    dataType: 'json',
-                //    success: function (data) {
-                //        if(data == 1) {
-                //            window.location.reload();
-                //        }
-                //    }
-                //});
+                jQuery.ajax({
+                    url: getBaseURL() + '/user/signup',
+                    type: "post",
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        if(data == 1) {
+                            window.location.reload();
+                        }
+                    }
+                });
             }
         });
     }
