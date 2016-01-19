@@ -14,6 +14,7 @@ class RegistersController extends BaseController {
 		$objRegisters = new Registers();
 
 		$limit = 50;
+
 		$request = Request::all();
 		$page = isset($request['page'])?$request['page']:1;
 		$order = isset($request['order'])?$request['order']:'asc';

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="059ea04d-bccf-4165-8958-d01e540bd6e5" name="Vanda" url="http://52.74.168.111">
+        <fileTransfer host="52.74.168.111" port="22" rootFolder="/var/www/html/websites/vanda" accessType="SFTP" password="dfc7dfcbdfc4dfc2dfdcdfdf" username="manhvu">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
